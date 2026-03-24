@@ -414,10 +414,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#features" class="md-nav__link">
+  <a href="#installation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Features
+        Installation
       
     </span>
   </a>
@@ -436,10 +436,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#links" class="md-nav__link">
+  <a href="#next-steps" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Links
+        Next Steps
       
     </span>
   </a>
@@ -1724,10 +1724,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#features" class="md-nav__link">
+  <a href="#installation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Features
+        Installation
       
     </span>
   </a>
@@ -1746,10 +1746,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#links" class="md-nav__link">
+  <a href="#next-steps" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Links
+        Next Steps
       
     </span>
   </a>
@@ -1777,47 +1777,27 @@
 
 
 <h1 id="psscriptbuilder">PSScriptBuilder<a class="headerlink" href="#psscriptbuilder" title="Permanent link">&para;</a></h1>
-<p>A dependency-aware script builder for PowerShell. Combines multi-file PowerShell projects into a single, deployable script with automatic dependency resolution, topological sorting, and full support for classes, enums, and functions.</p>
-<h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>Dependency Resolution</strong> — Analyzes class-to-class and function-to-class dependencies using PowerShell AST parsing</li>
-<li><strong>Topological Sorting</strong> — Guarantees correct loading order; base classes always load before derived classes</li>
-<li><strong>Flexible Templates</strong> — Define your output structure once using a template with token placeholders</li>
-<li><strong>Multiple Collectors</strong> — Dedicated collectors for Classes, Functions, Enums, Using statements, and raw Files</li>
-<li><strong>Release Management</strong> — Built-in SemVer version bumping, Git metadata extraction, and file update automation</li>
-<li><strong>Build Validation</strong> — Detects circular dependencies and configuration errors before any output is written</li>
-<li><strong>PS 5.1 Compatible</strong> — Works with Windows PowerShell 5.1 and PowerShell 7+</li>
-</ul>
-<h2 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
-<p><strong>Installation:</strong></p>
+<p>A dependency-aware script builder for PowerShell.</p>
+<p>Combines multi-file PowerShell projects into a single, deployable script with automatic dependency resolution, topological sorting, and full support for classes, enums, and functions.</p>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">Install-Module</span> <span class="n">-Name</span> <span class="n">PSScriptBuilder</span> <span class="n">-Scope</span> <span class="n">CurrentUser</span>
 </code></pre></div>
-<p><strong>Import:</strong></p>
+<h2 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">using</span> <span class="n">module</span> <span class="n">PSScriptBuilder</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nv">$cc</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderContentCollector</span> <span class="p">|</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Class</span>    <span class="n">-IncludePath</span> <span class="s1">&#39;.\src\Classes&#39;</span> <span class="p">|</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="k">Function</span> <span class="n">-IncludePath</span> <span class="s1">&#39;.\src\Public&#39;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="nb">Invoke-PSScriptBuilderBuild</span> <span class="p">`</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="n">-ContentCollector</span> <span class="nv">$cc</span> <span class="p">`</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="n">-TemplatePath</span>     <span class="s1">&#39;.\build\Templates\MyModule.psm1.template&#39;</span> <span class="p">`</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    <span class="n">-OutputPath</span>       <span class="s1">&#39;.\build\Output\MyModule.psm1&#39;</span>
 </code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Always use <code>using module</code> — not <code>Import-Module</code>. PowerShell only loads class and enum definitions with <code>using module</code>. The statement must appear at the very top of your script.</p>
-</div>
-<p><strong>Configure collectors:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">$contentCollector</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderContentCollector</span> <span class="p">|</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Class</span>    <span class="n">-IncludePath</span> <span class="s2">&quot;src/Classes&quot;</span> <span class="p">|</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="k">Function</span> <span class="n">-IncludePath</span> <span class="s2">&quot;src/Public&quot;</span>
-</code></pre></div>
-<p><strong>Build:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">Invoke-PSScriptBuilderBuild</span> <span class="p">`</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="n">-ContentCollector</span> <span class="nv">$contentCollector</span> <span class="p">`</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="n">-TemplatePath</span>     <span class="s2">&quot;build/MyModule.psm1.template&quot;</span> <span class="p">`</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="n">-OutputPath</span>       <span class="s2">&quot;build/Output/MyModule.psm1&quot;</span>
-</code></pre></div>
-<p>PSScriptBuilder automatically discovers the project root by searching for <code>psscriptbuilder.config.json</code> in the current directory and its parents.</p>
-<h2 id="links">Links<a class="headerlink" href="#links" title="Permanent link">&para;</a></h2>
+<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="getting-started/installation/">Getting Started</a></li>
-<li><a href="cmdlets/">Cmdlet Reference</a></li>
-<li><a href="guides/release-management/">Release Management</a></li>
-<li><a href="https://github.com/PSScriptBuilder/PSScriptBuilder">GitHub Repository</a></li>
-<li><a href="https://www.powershellgallery.com/packages/PSScriptBuilder">PowerShell Gallery</a></li>
+<li><a href="getting-started/installation/">Getting Started</a> — Installation and project configuration</li>
+<li><a href="getting-started/quick-start/">Quick Start Guide</a> — Step-by-step walkthrough with a complete example</li>
 </ul>
 
 
@@ -1849,6 +1829,30 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+        
+          
+          <a href="getting-started/installation/" class="md-footer__link md-footer__link--next" aria-label="Next: Installation">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Installation
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
@@ -1874,7 +1878,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
