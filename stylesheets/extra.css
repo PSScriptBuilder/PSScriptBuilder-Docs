@@ -3,7 +3,20 @@
   max-width: 100%;
 }
 
-/* Wider content area for long cmdlet names */
+/* Wider layout grid */
 .md-grid {
   max-width: 1440px;
 }
+
+/* Prevent GitHub repo name from being truncated in the header */
+.md-source__repository {
+  max-width: 12rem;
+}
+
+/* Reduce gap between logo and site title */
+.md-header__button.md-logo {
+  margin-right: -0.3rem;
+  padding-right: 0;
+}
+
+
