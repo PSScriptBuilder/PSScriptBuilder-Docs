@@ -2175,7 +2175,10 @@ script.</p>
 <p>Collectors process files, not definitions. Every file in the configured path is read and all
 definitions it contains are extracted individually. A single file may contain multiple class
 definitions, multiple function definitions, or multiple enum definitions — the collector
-handles all of them transparently. There is no requirement to keep one definition per file.</p>
+handles all of them transparently. There is no requirement to keep one definition per file.
+A single file may even mix different definition types — a class and a function in the same file
+are handled correctly. Each collector extracts only its own component type, leaving the rest
+untouched. See <a href="../../examples/#04-flexible-file-structure">Example 04</a> for a demonstration.</p>
 <p>Every build starts by configuring one or more collectors. The collectors define <em>what</em> gets
 collected and <em>from where</em> — the <a href="../templates/">template</a> defines <em>how</em> it is assembled.</p>
 <h2 id="collector-types">Collector Types<a class="headerlink" href="#collector-types" title="Permanent link">&para;</a></h2>
@@ -2586,6 +2589,8 @@ not need to configure this — it happens automatically.</p>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../javascripts/external-links.js"></script>
       
     
   </body>
