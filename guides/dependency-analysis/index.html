@@ -2491,9 +2491,7 @@ size and complexity of the dependency graph:</p>
 <a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Graph nodes:      </span><span class="p">$(</span><span class="nv">$analysis</span><span class="p">.</span><span class="n">TotalNodes</span><span class="p">)</span><span class="s2">&quot;</span>
 <a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Graph edges:      </span><span class="p">$(</span><span class="nv">$analysis</span><span class="p">.</span><span class="n">TotalEdges</span><span class="p">)</span><span class="s2">&quot;</span>
 </code></pre></div>
-<p><code>TotalNodes</code> counts only components with at least one dependency — components with no
-dependencies are not added to the graph as nodes. <code>TotalEdges</code> counts the number of
-dependency relationships between components.</p>
+<p><code>TotalNodes</code> counts all components that participate in at least one dependency relationship — either as a dependent or as a prerequisite. A base class like <code>Person</code> with no outgoing dependencies is still counted as a node if another component depends on it. <code>TotalEdges</code> counts the number of dependency relationships between components.</p>
 <h3 id="7-pre-build-validation-pattern">7. Pre-Build Validation Pattern<a class="headerlink" href="#7-pre-build-validation-pattern" title="Permanent link">&para;</a></h3>
 <p>Combining dependency analysis with a build call into a single script is the recommended
 pattern for automated builds. Check for cycles first, report cross-dependencies if present,

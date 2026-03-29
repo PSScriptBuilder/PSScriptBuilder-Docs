@@ -2362,7 +2362,7 @@ idempotent — removing a non-existent key produces a warning, not an error:</p>
 <ul>
 <li>Relative paths are resolved against <code>$Global:PSScriptBuilderProjectRoot</code></li>
 <li><code>-IncludeFile</code> entries bypass all path exclusion filters</li>
-<li>Non-existent paths produce a warning, not an error — the collector continues with valid paths</li>
+<li>Non-existent <code>-IncludePath</code> values produce a warning at collector creation time, not an error — the collector is still created. At collection time, a missing path that was accepted with a warning will throw an error.</li>
 <li><code>-NoRecurse</code> only affects <code>-IncludePath</code> scanning; <code>-IncludeFile</code> entries are always explicit</li>
 </ul>
 <h3 id="collected-data-properties">Collected Data Properties<a class="headerlink" href="#collected-data-properties" title="Permanent link">&para;</a></h3>
@@ -2393,7 +2393,7 @@ idempotent — removing a non-existent key produces a warning, not an error:</p>
 </tr>
 <tr>
 <td><code>File</code></td>
-<td><code>FileName</code>, <code>FilePath</code>, <code>Content</code></td>
+<td><code>FileName</code>, <code>FullPath</code>, <code>Content</code></td>
 </tr>
 </tbody>
 </table>
