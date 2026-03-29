@@ -1632,6 +1632,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../cmdlets/New-PSScriptBuilderConfiguration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New-PSScriptBuilderConfiguration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../cmdlets/Set-PSScriptBuilderProjectRoot/" class="md-nav__link">
         
   
@@ -2838,7 +2866,7 @@ the version tokens in the template must be updated before <code>Invoke-PSScriptB
 <tr>
 <td><code>GIT_COMMIT_SHORT</code></td>
 <td><code>2a98ae5</code></td>
-<td>Short hash (7+ characters)</td>
+<td>Short hash (7–40 characters)</td>
 </tr>
 <tr>
 <td><code>GIT_BRANCH</code></td>
@@ -2871,6 +2899,26 @@ the version tokens in the template must be updated before <code>Invoke-PSScriptB
 <td>Full SemVer including optional prerelease and metadata</td>
 </tr>
 <tr>
+<td><code>{REGEX_VERSION_MAJOR}</code></td>
+<td>Major version number (one or more digits)</td>
+</tr>
+<tr>
+<td><code>{REGEX_VERSION_MINOR}</code></td>
+<td>Minor version number (one or more digits)</td>
+</tr>
+<tr>
+<td><code>{REGEX_VERSION_PATCH}</code></td>
+<td>Patch version number (one or more digits)</td>
+</tr>
+<tr>
+<td><code>{REGEX_VERSION_PRERELEASE}</code></td>
+<td>Prerelease identifier (e.g. <code>rc.1</code>, <code>alpha</code>)</td>
+</tr>
+<tr>
+<td><code>{REGEX_VERSION_BUILDMETADATA}</code></td>
+<td>Build metadata (e.g. <code>build.5</code>)</td>
+</tr>
+<tr>
 <td><code>{REGEX_BUILD_NUMBER}</code></td>
 <td>One or more digits</td>
 </tr>
@@ -2887,12 +2935,36 @@ the version tokens in the template must be updated before <code>Invoke-PSScriptB
 <td>ISO 8601 timestamp</td>
 </tr>
 <tr>
+<td><code>{REGEX_BUILD_YEAR}</code></td>
+<td>Four-digit year (e.g. <code>2026</code>)</td>
+</tr>
+<tr>
+<td><code>{REGEX_BUILD_MONTH}</code></td>
+<td>Zero-padded month (e.g. <code>03</code>)</td>
+</tr>
+<tr>
+<td><code>{REGEX_BUILD_DAY}</code></td>
+<td>Zero-padded day (e.g. <code>24</code>)</td>
+</tr>
+<tr>
+<td><code>{REGEX_BUILD_HOUR}</code></td>
+<td>Zero-padded hour (e.g. <code>18</code>)</td>
+</tr>
+<tr>
+<td><code>{REGEX_BUILD_MINUTE}</code></td>
+<td>Zero-padded minute (e.g. <code>00</code>)</td>
+</tr>
+<tr>
+<td><code>{REGEX_BUILD_SECOND}</code></td>
+<td>Zero-padded second (e.g. <code>00</code>)</td>
+</tr>
+<tr>
 <td><code>{REGEX_GIT_COMMIT}</code></td>
 <td>40-character hex string</td>
 </tr>
 <tr>
 <td><code>{REGEX_GIT_COMMIT_SHORT}</code></td>
-<td>7+ character hex string</td>
+<td>7–40 character hex string</td>
 </tr>
 <tr>
 <td><code>{REGEX_GIT_BRANCH}</code></td>

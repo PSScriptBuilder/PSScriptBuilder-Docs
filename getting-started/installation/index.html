@@ -1483,6 +1483,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../cmdlets/New-PSScriptBuilderConfiguration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New-PSScriptBuilderConfiguration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../cmdlets/Set-PSScriptBuilderProjectRoot/" class="md-nav__link">
         
   
@@ -2044,22 +2072,25 @@ work but classes and enums are <strong>not</strong> accessible.</p>
 </code></pre></div>
 <p>The <code>using module</code> statement must appear at the <strong>very top</strong> of your script, before any other code.</p>
 <h3 id="4-add-the-configuration-file">4. Add the Configuration File<a class="headerlink" href="#4-add-the-configuration-file" title="Permanent link">&para;</a></h3>
-<p>PSScriptBuilder uses a configuration file (<code>psscriptbuilder.config.json</code>) to locate project paths.
-Place this file in the root of your project:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="nt">&quot;build&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">        </span><span class="nt">&quot;outputPath&quot;</span><span class="p">:</span><span class="w">             </span><span class="s2">&quot;.\\build\\Output&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">        </span><span class="nt">&quot;ensureOutputPathExists&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">        </span><span class="nt">&quot;backupPath&quot;</span><span class="p">:</span><span class="w">             </span><span class="s2">&quot;.\\build\\Output\\Backup&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">        </span><span class="nt">&quot;templatesPath&quot;</span><span class="p">:</span><span class="w">          </span><span class="s2">&quot;.\\build\\Templates&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">        </span><span class="nt">&quot;orderedComponentsKey&quot;</span><span class="p">:</span><span class="w">   </span><span class="s2">&quot;ORDERED_COMPONENTS&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">        </span><span class="nt">&quot;backupEnabled&quot;</span><span class="p">:</span><span class="w">          </span><span class="kc">false</span>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">    </span><span class="nt">&quot;release&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">        </span><span class="nt">&quot;dataFile&quot;</span><span class="p">:</span><span class="w">       </span><span class="s2">&quot;.\\build\\Release\\psscriptbuilder.releasedata.json&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">        </span><span class="nt">&quot;bumpConfigFile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;.\\build\\Release\\psscriptbuilder.bumpconfig.json&quot;</span>
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="p">}</span>
+<p>Run the following cmdlet to generate <code>psscriptbuilder.config.json</code> in your project root:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">New-PSScriptBuilderConfiguration</span>
+</code></pre></div>
+<p>This creates the file with all required fields pre-filled. If you prefer to create it manually,
+use the following structure:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="nt">&quot;build&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">        </span><span class="nt">&quot;outputPath&quot;</span><span class="p">:</span><span class="w">             </span><span class="s2">&quot;.\\build\\Output&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">        </span><span class="nt">&quot;ensureOutputPathExists&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">        </span><span class="nt">&quot;backupPath&quot;</span><span class="p">:</span><span class="w">             </span><span class="s2">&quot;.\\build\\Output\\Backup&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">        </span><span class="nt">&quot;templatesPath&quot;</span><span class="p">:</span><span class="w">          </span><span class="s2">&quot;.\\build\\Templates&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">        </span><span class="nt">&quot;orderedComponentsKey&quot;</span><span class="p">:</span><span class="w">   </span><span class="s2">&quot;ORDERED_COMPONENTS&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">        </span><span class="nt">&quot;backupEnabled&quot;</span><span class="p">:</span><span class="w">          </span><span class="kc">false</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">    </span><span class="nt">&quot;release&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">        </span><span class="nt">&quot;dataFile&quot;</span><span class="p">:</span><span class="w">       </span><span class="s2">&quot;.\\build\\Release\\psscriptbuilder.releasedata.json&quot;</span><span class="p">,</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">        </span><span class="nt">&quot;bumpConfigFile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;.\\build\\Release\\psscriptbuilder.bumpconfig.json&quot;</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="p">}</span>
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">All fields are required</p>
@@ -2072,19 +2103,19 @@ as required — omitting any field causes an error when the configuration is loa
 <p class="admonition-title">Set the project root explicitly</p>
 <p>If PSScriptBuilder cannot automatically discover the configuration file, set the project root
 at runtime:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">Set-PSScriptBuilderProjectRoot</span> <span class="n">-Path</span> <span class="s2">&quot;C:\Projects\MyModule&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">Set-PSScriptBuilderProjectRoot</span> <span class="n">-Path</span> <span class="s2">&quot;C:\Projects\MyModule&quot;</span>
 </code></pre></div>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Keeping PSScriptBuilder up to date</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">Update-Module</span> <span class="n">-Name</span> <span class="n">PSScriptBuilder</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">Update-Module</span> <span class="n">-Name</span> <span class="n">PSScriptBuilder</span>
 </code></pre></div>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Building from source</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">://</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">PSScriptBuilder</span><span class="p">/</span><span class="n">PSScriptBuilder</span><span class="p">.</span><span class="n">git</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nb">cd </span><span class="n">PSScriptBuilder</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="p">.\</span><span class="n">build</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-ProjectRoot</span> <span class="p">.</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">://</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">PSScriptBuilder</span><span class="p">/</span><span class="n">PSScriptBuilder</span><span class="p">.</span><span class="n">git</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nb">cd </span><span class="n">PSScriptBuilder</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="p">.\</span><span class="n">build</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-ProjectRoot</span> <span class="p">.</span>
 </code></pre></div>
 </div>
 <h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>

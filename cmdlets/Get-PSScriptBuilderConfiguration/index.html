@@ -18,7 +18,7 @@
         <link rel="prev" href="../Test-PSScriptBuilderTemplate/">
       
       
-        <link rel="next" href="../Set-PSScriptBuilderProjectRoot/">
+        <link rel="next" href="../New-PSScriptBuilderConfiguration/">
       
       
         
@@ -1563,6 +1563,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../New-PSScriptBuilderConfiguration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New-PSScriptBuilderConfiguration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Set-PSScriptBuilderProjectRoot/" class="md-nav__link">
         
   
@@ -2164,9 +2192,9 @@
 <h2 id="description">DESCRIPTION<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
 <p>The Get-PSScriptBuilderConfiguration function loads the psscriptbuilder.config.json file 
 and returns the configuration object.
-This includes release, build, and logging configuration 
+This includes release and build configuration 
 settings.</p>
-<p>By default, returns hierarchical data with Release, Build, and Log sections.
+<p>By default, returns hierarchical data with Release and Build sections.
 With -Flat parameter, returns a single flat structure with all properties on one level.</p>
 <h2 id="examples">EXAMPLES<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
 <h3 id="example-1">EXAMPLE 1<a class="headerlink" href="#example-1" title="Permanent link">&para;</a></h3>
@@ -2181,7 +2209,7 @@ With -Flat parameter, returns a single flat structure with all properties on one
 <h2 id="parameters">PARAMETERS<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
 <h3 id="-flat">-Flat<a class="headerlink" href="#-flat" title="Permanent link">&para;</a></h3>
 <p>If specified, returns configuration in a flat single-level structure with all properties 
-prefixed by category (Release<em>, Build</em>, Log*).
+prefixed by category (Release<em>, Build</em>).
 Useful for tabular display or when flat 
 structure is preferred.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SwitchParameter</span>
@@ -2257,13 +2285,13 @@ structure is preferred.</p>
         
         
           
-          <a href="../Set-PSScriptBuilderProjectRoot/" class="md-footer__link md-footer__link--next" aria-label="Next: Set-PSScriptBuilderProjectRoot">
+          <a href="../New-PSScriptBuilderConfiguration/" class="md-footer__link md-footer__link--next" aria-label="Next: New-PSScriptBuilderConfiguration">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Set-PSScriptBuilderProjectRoot
+                New-PSScriptBuilderConfiguration
               </div>
             </div>
             <div class="md-footer__button md-icon">
