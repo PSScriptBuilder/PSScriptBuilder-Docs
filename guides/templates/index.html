@@ -2164,25 +2164,15 @@ detected. Hybrid Mode is activated manually by placing the ordered components pl
 <h2 id="walkthrough">Walkthrough<a class="headerlink" href="#walkthrough" title="Permanent link">&para;</a></h2>
 <h3 id="1-your-first-template">1. Your First Template<a class="headerlink" href="#1-your-first-template" title="Permanent link">&para;</a></h3>
 <p>The simplest template maps each collector type to a separate placeholder in the expected order:</p>
-<div class="highlight"><span class="filename">MyModule.psm1.template</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c">#region Using Statements</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">{{</span><span class="n">UsingStatements</span><span class="p">}}</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c">#endregion Using Statements</span>
+<div class="highlight"><span class="filename">MyModule.psm1.template</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{{</span><span class="n">USING_STATEMENTS</span><span class="p">}}</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="p">{{</span><span class="n">ENUM_DEFINITIONS</span><span class="p">}}</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c">#region Enums</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">{{</span><span class="n">EnumDefinitions</span><span class="p">}}</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c">#endregion Enums</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">{{</span><span class="n">CLASS_DEFINITIONS</span><span class="p">}}</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">{{</span><span class="n">FUNCTION_DEFINITIONS</span><span class="p">}}</span>
 <a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="c">#region Classes</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="p">{{</span><span class="n">ClassDefinitions</span><span class="p">}}</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="c">#endregion Classes</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="c">#region Functions</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="p">{{</span><span class="n">FunctionDefinitions</span><span class="p">}}</span>
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="c">#endregion Functions</span>
-<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="c">#region Files</span>
-<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="p">{{</span><span class="n">FileContents</span><span class="p">}}</span>
-<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="c">#endregion Files</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">{{</span><span class="n">FILE_CONTENTS</span><span class="p">}}</span>
 </code></pre></div>
 <p>Each placeholder is replaced with the correctly ordered source code collected by the
 corresponding collector. The token names match the default <code>CollectionKey</code> for each collector
@@ -2226,7 +2216,7 @@ if the template is valid for the current collector configuration:</p>
 that require them to be interleaved. <strong>Hybrid Mode</strong> is activated manually — by placing the
 ordered components placeholder (default: <code>{{ORDERED_COMPONENTS}}</code>) in a template whose code
 has no cross-dependencies. Both modes use the same template structure and validation rules:</p>
-<div class="highlight"><span class="filename">Ordered / Hybrid Mode template</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{{</span><span class="n">UsingStatements</span><span class="p">}}</span>
+<div class="highlight"><span class="filename">Ordered / Hybrid Mode template</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{{</span><span class="n">USING_STATEMENTS</span><span class="p">}}</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="p">{{</span><span class="n">ORDERED_COMPONENTS</span><span class="p">}}</span>
 </code></pre></div>
 <p>All Enum, Class, and Function components are emitted in a single topologically ordered block
@@ -2265,9 +2255,9 @@ template and the build call in sync, store a custom key in <code>psscriptbuilder
 This allows release metadata — version numbers, build timestamps, Git commit hashes — to be
 injected directly into the template using the same <code>{{Token}}</code> syntax:</p>
 <div class="highlight"><span class="filename">Template with release tokens</span><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c"># Version {{VERSION}} — built {{BUILD_DATE}}</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="p">{{</span><span class="n">UsingStatements</span><span class="p">}}</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="p">{{</span><span class="n">ClassDefinitions</span><span class="p">}}</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="p">{{</span><span class="n">FunctionDefinitions</span><span class="p">}}</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="p">{{</span><span class="n">USING_STATEMENTS</span><span class="p">}}</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="p">{{</span><span class="n">CLASS_DEFINITIONS</span><span class="p">}}</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="p">{{</span><span class="n">FUNCTION_DEFINITIONS</span><span class="p">}}</span>
 </code></pre></div>
 <div class="highlight"><span class="filename">psscriptbuilder.bumpconfig.json (excerpt)</span><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">{</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="nt">&quot;bumpFiles&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
@@ -2377,7 +2367,7 @@ position of <code>File</code> placeholders is unrestricted relative to <code>Enu
 </tr>
 <tr>
 <td>Forbidden placeholder in Ordered/Hybrid mode</td>
-<td><code>{{ClassDefinitions}}</code> etc. present when the ordered components placeholder is used</td>
+<td><code>{{CLASS_DEFINITIONS}}</code> etc. present when the ordered components placeholder is used</td>
 <td>Remove per-type placeholders; use only the ordered components placeholder</td>
 </tr>
 <tr>
@@ -2387,12 +2377,12 @@ position of <code>File</code> placeholders is unrestricted relative to <code>Enu
 </tr>
 <tr>
 <td>Wrong placeholder order (Using)</td>
-<td>A non-<code>Using</code> placeholder appears before <code>{{UsingStatements}}</code></td>
+<td>A non-<code>Using</code> placeholder appears before <code>{{USING_STATEMENTS}}</code></td>
 <td>Move <code>Using</code> placeholders before all others</td>
 </tr>
 <tr>
 <td>Wrong placeholder order (Enum)</td>
-<td>A <code>Class</code> or <code>Function</code> placeholder appears before <code>{{EnumDefinitions}}</code></td>
+<td>A <code>Class</code> or <code>Function</code> placeholder appears before <code>{{ENUM_DEFINITIONS}}</code></td>
 <td>Move <code>Enum</code> placeholders before all <code>Class</code> and <code>Function</code> placeholders</td>
 </tr>
 <tr>
