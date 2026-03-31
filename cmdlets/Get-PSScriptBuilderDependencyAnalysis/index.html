@@ -2254,9 +2254,10 @@ input to enable fluent chaining from Add-PSScriptBuilderCollector.</p>
 <p>This cmdlet delegates all analysis to PSScriptBuilderDependencyAnalyzer, which executes all registered
 collectors via ContentCollector.Execute().
 For large codebases, this may take some time.</p>
-<p>If circular dependencies are detected, the OrderedComponents array will be empty, as topological
-sorting is not possible with cycles.
-You must resolve the cycles before building.</p>
+<p>If an Inheritance or StaticInitializer cycle is detected, <code>OrderedComponents</code> is empty and the build will fail.
+Inheritance and StaticInitializer cycles must be resolved in the source code before building.
+Type reference cycles (classes referencing each other in method bodies or property type annotations)
+are resolved automatically and do not affect <code>HasCycles</code>.</p>
 <p>Cross-dependencies occur when component types are intermixed in the sorted order (e.g., a class
 depends on a function that depends on another class).
 While not necessarily an error, this may

@@ -713,6 +713,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Circular Dependencies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fatal-cycles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fatal cycles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-reference-cycles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Type reference cycles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2042,6 +2070,34 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Circular Dependencies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fatal-cycles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fatal cycles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#type-reference-cycles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Type reference cycles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2291,7 +2347,7 @@ information per component:</p>
 <tbody>
 <tr>
 <td>Class</td>
-<td><code>BaseClass</code>, <code>TypeReferences</code> (properties, method parameters), <code>CalledFunctions</code></td>
+<td><code>BaseClass</code>, <code>TypeReferences</code> (properties, method parameters), <code>StaticInitializerReferences</code>, <code>CalledFunctions</code></td>
 </tr>
 <tr>
 <td>Function</td>
@@ -2304,10 +2360,86 @@ information per component:</p>
 </tbody>
 </table>
 <h2 id="circular-dependencies">Circular Dependencies<a class="headerlink" href="#circular-dependencies" title="Permanent link">&para;</a></h2>
-<p>If component A depends on component B and component B depends on component A — directly or
-through a chain — the dependency graph contains a cycle. Topological sorting is not possible
-in this case. PSScriptBuilder detects cycles before attempting to sort and fails immediately
-with a clear error that names all components involved in the cycle.</p>
+<p>PSScriptBuilder distinguishes two types of circular dependencies: fatal cycles and type reference
+cycles. Understanding the difference is important — one prevents the build entirely, the other is
+handled automatically.</p>
+<h3 id="fatal-cycles">Fatal cycles<a class="headerlink" href="#fatal-cycles" title="Permanent link">&para;</a></h3>
+<p>A cycle is fatal when it creates an unresolvable ordering constraint at PowerShell load time.
+PowerShell processes a script file from top to bottom: before any code runs, it works through all
+type definitions in order. A class must appear in the file after the types it depends on — otherwise,
+PowerShell cannot resolve the type at load time and the script fails immediately with a type-not-found
+error.</p>
+<p>Two dependency types create this ordering constraint:</p>
+<p><strong>Inheritance</strong> — when class A inherits from class B, class B must already be defined at the point
+where class A is loaded. If two classes inherit from each other — directly or through a chain —
+there is no valid top-to-bottom order that satisfies both requirements at the same time.</p>
+<p>A direct cycle involves just two classes:</p>
+<div class="highlight"><span class="filename">Direct inheritance cycle</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">class</span> <span class="n">ClassA</span> <span class="p">:</span> <span class="n">ClassB</span> <span class="p">{</span> <span class="p">}</span>  <span class="c"># ClassA requires ClassB to be defined first</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">class</span> <span class="n">ClassB</span> <span class="p">:</span> <span class="n">ClassA</span> <span class="p">{</span> <span class="p">}</span>  <span class="c"># ClassB requires ClassA to be defined first — impossible</span>
+</code></pre></div>
+<pre class="mermaid"><code>graph LR
+    classDef fatal stroke:#e53935,stroke-width:3px
+    ClassA([ClassA&lt;br/&gt;class]):::fatal --&gt;|inherits| ClassB([ClassB&lt;br/&gt;class]):::fatal
+    ClassB --&gt;|inherits| ClassA</code></pre>
+<p>A chain cycle can span any number of classes — the result is the same:</p>
+<div class="highlight"><span class="filename">Chain inheritance cycle</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">class</span> <span class="n">ClassA</span> <span class="p">:</span> <span class="n">ClassB</span> <span class="p">{</span> <span class="p">}</span>  <span class="c"># ClassA requires ClassB</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">class</span> <span class="n">ClassB</span> <span class="p">:</span> <span class="n">ClassC</span> <span class="p">{</span> <span class="p">}</span>  <span class="c"># ClassB requires ClassC</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">class</span> <span class="n">ClassC</span> <span class="p">:</span> <span class="n">ClassA</span> <span class="p">{</span> <span class="p">}</span>  <span class="c"># ClassC requires ClassA — cycle: A → B → C → A</span>
+</code></pre></div>
+<pre class="mermaid"><code>graph LR
+    classDef fatal stroke:#e53935,stroke-width:3px
+    ClassA([ClassA&lt;br/&gt;class]):::fatal --&gt;|inherits| ClassB([ClassB&lt;br/&gt;class]):::fatal
+    ClassB --&gt;|inherits| ClassC([ClassC&lt;br/&gt;class]):::fatal
+    ClassC --&gt;|inherits| ClassA</code></pre>
+<p><strong>Static property initializers</strong> — when PowerShell reads a class definition, it immediately runs
+any static property initializer expressions. A static initializer is therefore not just a
+declaration — it is code that executes at load time. Any type referenced in the initializer must
+already be defined at that point — the same hard requirement as inheritance.</p>
+<div class="highlight"><span class="filename">Mutual static initializer cycle</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">class</span> <span class="n">ClassA</span> <span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="n">static</span> <span class="no">[ClassB]</span> <span class="nv">$Default</span> <span class="p">=</span> <span class="no">[ClassB]</span><span class="p">::</span><span class="n">new</span><span class="p">()</span>  <span class="c"># [ClassB]::new() runs when ClassA loads</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">}</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">class</span> <span class="n">ClassB</span> <span class="p">{</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="n">static</span> <span class="no">[ClassA]</span> <span class="nv">$Default</span> <span class="p">=</span> <span class="no">[ClassA]</span><span class="p">::</span><span class="n">new</span><span class="p">()</span>  <span class="c"># [ClassA]::new() runs when ClassB loads</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p">}</span>
+</code></pre></div>
+<pre class="mermaid"><code>graph LR
+    classDef fatal stroke:#e53935,stroke-width:3px
+    ClassA([ClassA&lt;br/&gt;class]):::fatal --&gt;|static init| ClassB([ClassB&lt;br/&gt;class]):::fatal
+    ClassB --&gt;|static init| ClassA</code></pre>
+<p>If ClassA has a static initializer that references ClassB, and ClassB has a static initializer
+that references ClassA, neither can be loaded first. This is just as fatal as a direct inheritance
+cycle, and PSScriptBuilder treats it accordingly.</p>
+<p>PSScriptBuilder detects both cycle types before attempting to sort and fails immediately with a
+clear error that names all components involved. The error must be resolved in the source code —
+there is no workaround.</p>
+<h3 id="type-reference-cycles">Type reference cycles<a class="headerlink" href="#type-reference-cycles" title="Permanent link">&para;</a></h3>
+<p>A type reference cycle occurs when two classes reference each other inside method bodies. At first
+glance this looks like the same problem — but it is fundamentally different. Method bodies are not
+executed when the class is loaded; they only run when the method is called. By the time any method
+is called, all class definitions in the module have already been loaded and are available. So it
+does not matter in which order the classes appear in the file.</p>
+<div class="highlight"><span class="filename">Mutual type reference cycle</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">class</span> <span class="n">ClassA</span> <span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="no">[void]</span> <span class="n">Run</span><span class="p">()</span> <span class="p">{</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>        <span class="nv">$b</span> <span class="p">=</span> <span class="no">[ClassB]</span><span class="p">::</span><span class="n">new</span><span class="p">()</span>  <span class="c"># only executed when Run() is called, not on load</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="p">}</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">}</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="n">class</span> <span class="n">ClassB</span> <span class="p">{</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="no">[void]</span> <span class="n">Run</span><span class="p">()</span> <span class="p">{</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>        <span class="nv">$a</span> <span class="p">=</span> <span class="no">[ClassA]</span><span class="p">::</span><span class="n">new</span><span class="p">()</span>  <span class="c"># only executed when Run() is called, not on load</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    <span class="p">}</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="p">}</span>
+</code></pre></div>
+<pre class="mermaid"><code>graph LR
+    classDef resolved stroke:#43a047,stroke-width:3px
+    ClassA([ClassA&lt;br/&gt;class]):::resolved --&gt;|type reference| ClassB([ClassB&lt;br/&gt;class]):::resolved
+    ClassB --&gt;|type reference| ClassA</code></pre>
+<p>Whether <code>ClassA</code> or <code>ClassB</code> appears first in the file makes no difference here. PowerShell
+parses all class definitions in the output script together, so both types are known before any
+method body is ever invoked.</p>
+<p>PSScriptBuilder detects and resolves these cycles automatically. No build failure occurs and no
+changes to the source code are required.</p>
 <h2 id="cross-dependencies">Cross-Dependencies<a class="headerlink" href="#cross-dependencies" title="Permanent link">&para;</a></h2>
 <p>Cross-dependencies arise when classes and functions must be interleaved in the output.
 PSScriptBuilder detects this condition automatically — see below for when and why this
@@ -2322,9 +2454,9 @@ collector maps to its own placeholder in the template; inter-collector ordering 
 by the position of those placeholders in the template.</p>
 <p><strong>Ordered Mode</strong> applies when the global dependency graph requires classes and functions
 to be interleaved in the output — meaning it is not possible to output all classes as a single
-block followed by all functions. PSScriptBuilder detects this automatically by scanning the
-topologically sorted component list: a Function→Class transition (a function appearing before a
-class in the sorted sequence) indicates that interleaving is required.</p>
+block followed by all functions. PSScriptBuilder detects this automatically: after all components
+are sorted in dependency order, any function that must appear before a class signals that
+interleaving is required.</p>
 <p>When this condition is detected, the template must be adapted — see the
 <a href="../templates/#4-ordered-mode-and-hybrid-mode">Templates Guide</a> for the required template structure.</p>
 <p><strong>Hybrid Mode</strong> applies when the template already contains the ordered-components placeholder
@@ -2358,17 +2490,17 @@ PSScriptBuilder detects the Function→Class transition and activates Ordered Mo
 cross-dependency is introduced entirely by the <code>Write-Log → New-LogEntry</code> call chain.</p>
 <p>Replacing the factory call with a direct constructor call removes the function-to-function
 dependency:</p>
-<div class="highlight"><span class="filename">Factory call — PSScriptBuilder detects a cross-dependency</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">Function</span> <span class="nb">Write-Log</span> <span class="p">{</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="k">param</span><span class="p">(</span><span class="no">[LoggerBase]</span> <span class="nv">$Logger</span><span class="p">,</span> <span class="no">[LogLevel]</span> <span class="nv">$Level</span><span class="p">,</span> <span class="no">[string]</span> <span class="nv">$Message</span><span class="p">)</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="nv">$entry</span> <span class="p">=</span> <span class="nb">New-LogEntry</span> <span class="n">-Level</span> <span class="nv">$Level</span> <span class="n">-Message</span> <span class="nv">$Message</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="nv">$Logger</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="nv">$entry</span><span class="p">)</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">}</span>
+<div class="highlight"><span class="filename">Factory call — PSScriptBuilder detects a cross-dependency</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">Function</span> <span class="nb">Write-Log</span> <span class="p">{</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="k">param</span><span class="p">(</span><span class="no">[LoggerBase]</span> <span class="nv">$Logger</span><span class="p">,</span> <span class="no">[LogLevel]</span> <span class="nv">$Level</span><span class="p">,</span> <span class="no">[string]</span> <span class="nv">$Message</span><span class="p">)</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="nv">$entry</span> <span class="p">=</span> <span class="nb">New-LogEntry</span> <span class="n">-Level</span> <span class="nv">$Level</span> <span class="n">-Message</span> <span class="nv">$Message</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="nv">$Logger</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="nv">$entry</span><span class="p">)</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">}</span>
 </code></pre></div>
-<div class="highlight"><span class="filename">Direct constructor — no cross-dependency</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">Function</span> <span class="nb">Write-Log</span> <span class="p">{</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="k">param</span><span class="p">(</span><span class="no">[LoggerBase]</span> <span class="nv">$Logger</span><span class="p">,</span> <span class="no">[LogLevel]</span> <span class="nv">$Level</span><span class="p">,</span> <span class="no">[string]</span> <span class="nv">$Message</span><span class="p">)</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="nv">$entry</span> <span class="p">=</span> <span class="no">[LogEntry]</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="nv">$Level</span><span class="p">,</span> <span class="nv">$Message</span><span class="p">)</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="nv">$Logger</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="nv">$entry</span><span class="p">)</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">}</span>
+<div class="highlight"><span class="filename">Direct constructor — no cross-dependency</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">Function</span> <span class="nb">Write-Log</span> <span class="p">{</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="k">param</span><span class="p">(</span><span class="no">[LoggerBase]</span> <span class="nv">$Logger</span><span class="p">,</span> <span class="no">[LogLevel]</span> <span class="nv">$Level</span><span class="p">,</span> <span class="no">[string]</span> <span class="nv">$Message</span><span class="p">)</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="nv">$entry</span> <span class="p">=</span> <span class="no">[LogEntry]</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="nv">$Level</span><span class="p">,</span> <span class="nv">$Message</span><span class="p">)</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="nv">$Logger</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="nv">$entry</span><span class="p">)</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="p">}</span>
 </code></pre></div>
 <p>With the direct constructor, no function depends on another function. The topological sort
 places all classes first, then all functions, and PSScriptBuilder stays in Free Mode.</p>
@@ -2414,6 +2546,10 @@ a level, all components are equally valid candidates. Their sequence within that
 depends on the internal graph traversal order, which is not guaranteed to be stable.</p>
 </div>
 <p>The following example illustrates the guaranteed load order for a simple inheritance chain:</p>
+<pre class="mermaid"><code>graph LR
+    Person([Person&lt;br/&gt;class])
+    Employee([Employee&lt;br/&gt;class]) --&gt;|inherits| Person
+    Manager([Manager&lt;br/&gt;class]) --&gt;|inherits| Employee</code></pre>
 <table>
 <thead>
 <tr>
@@ -2448,46 +2584,49 @@ runs the full dependency analysis pipeline — collection, graph building, cycle
 topological sort — and returns a result object with all findings. It does not produce any
 output file. Use it to inspect the dependency structure of your project without performing a
 build.</p>
-<div class="highlight"><span class="filename">Run a dependency analysis</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">$contentCollector</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderContentCollector</span> <span class="p">|</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Class</span>    <span class="n">-IncludePath</span> <span class="s2">&quot;src\Classes&quot;</span> <span class="p">|</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="k">Function</span> <span class="n">-IncludePath</span> <span class="s2">&quot;src\Public&quot;</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nv">$analysis</span> <span class="p">=</span> <span class="nb">Get-PSScriptBuilderDependencyAnalysis</span> <span class="n">-ContentCollector</span> <span class="nv">$contentCollector</span>
+<div class="highlight"><span class="filename">Run a dependency analysis</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nv">$contentCollector</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderContentCollector</span> <span class="p">|</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Class</span>    <span class="n">-IncludePath</span> <span class="s2">&quot;src\Classes&quot;</span> <span class="p">|</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="k">Function</span> <span class="n">-IncludePath</span> <span class="s2">&quot;src\Public&quot;</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="nv">$analysis</span> <span class="p">=</span> <span class="nb">Get-PSScriptBuilderDependencyAnalysis</span> <span class="n">-ContentCollector</span> <span class="nv">$contentCollector</span>
 </code></pre></div>
 <p>Add <code>-Verbose</code> to see detailed output during collection and graph construction.</p>
 <h3 id="2-inspect-the-ordered-components">2. Inspect the Ordered Components<a class="headerlink" href="#2-inspect-the-ordered-components" title="Permanent link">&para;</a></h3>
 <p>The <code>OrderedComponents</code> property contains all component names in the order they will appear
 in the output script. This is the final result of the topological sort — the sequence that
 guarantees every prerequisite appears before its dependents:</p>
-<div class="highlight"><span class="filename">Inspect the ordered components</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Load order:&quot;</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nv">$analysis</span><span class="p">.</span><span class="n">OrderedComponents</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span> <span class="nb">Write-Host</span> <span class="s2">&quot;  - $_&quot;</span> <span class="p">}</span>
+<div class="highlight"><span class="filename">Inspect the ordered components</span><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Load order:&quot;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nv">$analysis</span><span class="p">.</span><span class="n">OrderedComponents</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span> <span class="nb">Write-Host</span> <span class="s2">&quot;  - $_&quot;</span> <span class="p">}</span>
 </code></pre></div>
-<p>If <code>HasCycles</code> is <code>true</code>, <code>OrderedComponents</code> is empty — sorting is not possible when a cycle
-exists.</p>
+<p>If <code>HasCycles</code> is <code>true</code>, <code>OrderedComponents</code> is empty — sorting is not possible when an
+Inheritance cycle exists. Type reference cycles are resolved automatically and do not set
+<code>HasCycles</code>.</p>
 <h3 id="3-check-for-circular-dependencies">3. Check for Circular Dependencies<a class="headerlink" href="#3-check-for-circular-dependencies" title="Permanent link">&para;</a></h3>
 <p>Before using the analysis result, always check whether a cycle was detected. The <code>HasCycles</code>
 property indicates a problem; <code>CyclePath</code> names all components involved, with the first
 component repeated at the end to show the closed loop:</p>
-<div class="highlight"><span class="filename">Check for circular dependencies</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$analysis</span><span class="p">.</span><span class="n">HasCycles</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="nb">Write-Error</span> <span class="s2">&quot;Circular dependency detected: </span><span class="p">$(</span><span class="nv">$analysis</span><span class="p">.</span><span class="n">CyclePath</span> <span class="n">-join</span> <span class="s1">&#39; -&gt; &#39;</span><span class="p">)</span><span class="s2">&quot;</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="k">return</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="p">}</span>
+<div class="highlight"><span class="filename">Check for circular dependencies</span><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$analysis</span><span class="p">.</span><span class="n">HasCycles</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    <span class="nb">Write-Error</span> <span class="s2">&quot;Circular dependency detected: </span><span class="p">$(</span><span class="nv">$analysis</span><span class="p">.</span><span class="n">CyclePath</span> <span class="n">-join</span> <span class="s1">&#39; -&gt; &#39;</span><span class="p">)</span><span class="s2">&quot;</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    <span class="k">return</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="p">}</span>
 </code></pre></div>
 <p>Example cycle path output:</p>
-<div class="highlight"><span class="filename">Example cycle path</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ServiceA -&gt; ServiceB -&gt; ServiceC -&gt; ServiceA
+<div class="highlight"><span class="filename">Example cycle path</span><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>ServiceA -&gt; ServiceB -&gt; ServiceC -&gt; ServiceA
 </code></pre></div>
-<p>A cycle always means the build will fail. It must be resolved in the source code before
-PSScriptBuilder can produce a valid output script.</p>
+<p>Fatal cycles — Inheritance and StaticInitializer — cause the build to fail immediately. Type
+reference cycles are resolved automatically by PSScriptBuilder and do not appear in <code>CyclePath</code>.
+Fatal cycles must be resolved in the source code before PSScriptBuilder can produce a valid output
+script.</p>
 <h3 id="4-check-for-cross-dependencies">4. Check for Cross-Dependencies<a class="headerlink" href="#4-check-for-cross-dependencies" title="Permanent link">&para;</a></h3>
 <p>When classes and functions are interleaved in the topological order, cross-dependencies exist
 and the template must use the configured ordered-components placeholder
 (default: <code>{{ORDERED_COMPONENTS}}</code>) instead of separate per-type placeholders.
 The <code>HasCrossDependencies</code> property reports this condition:</p>
-<div class="highlight"><span class="filename">Check for cross-dependencies</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$analysis</span><span class="p">.</span><span class="n">HasCrossDependencies</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    <span class="nb">Write-Host</span> <span class="s2">&quot;Cross-dependencies detected — template must use the ordered components placeholder&quot;</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    <span class="nb">Write-Host</span> <span class="s2">&quot;Free mode — separate per-type placeholders work fine&quot;</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="p">}</span>
+<div class="highlight"><span class="filename">Check for cross-dependencies</span><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$analysis</span><span class="p">.</span><span class="n">HasCrossDependencies</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    <span class="nb">Write-Host</span> <span class="s2">&quot;Cross-dependencies detected — template must use the ordered components placeholder&quot;</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    <span class="nb">Write-Host</span> <span class="s2">&quot;Free mode — separate per-type placeholders work fine&quot;</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="p">}</span>
 </code></pre></div>
 <p><code>HasCrossDependencies</code> is always <code>false</code> when <code>HasCycles</code> is <code>true</code>, since no sort is
 performed in that case.</p>
@@ -2496,11 +2635,11 @@ performed in that case.</p>
 <strong>forward</strong> direction answers "what does this component depend on?" — its prerequisites. The
 <strong>reverse</strong> direction answers "what would be affected if this component changed?" — its
 dependents. This is useful for understanding the impact of a change before making it:</p>
-<div class="highlight"><span class="filename">Forward: what does ClassA depend on?</span><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nv">$prerequisites</span> <span class="p">=</span> <span class="nv">$analysis</span><span class="p">.</span><span class="n">DependencyGraph</span><span class="p">.</span><span class="n">GetDependencies</span><span class="p">(</span><span class="s2">&quot;ClassA&quot;</span><span class="p">)</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nb">Write-Host</span> <span class="s2">&quot;ClassA depends on: </span><span class="p">$(</span><span class="nv">$prerequisites</span> <span class="n">-join</span> <span class="s1">&#39;, &#39;</span><span class="p">)</span><span class="s2">&quot;</span>
+<div class="highlight"><span class="filename">Forward: what does ClassA depend on?</span><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nv">$prerequisites</span> <span class="p">=</span> <span class="nv">$analysis</span><span class="p">.</span><span class="n">DependencyGraph</span><span class="p">.</span><span class="n">GetDependencies</span><span class="p">(</span><span class="s2">&quot;ClassA&quot;</span><span class="p">)</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nb">Write-Host</span> <span class="s2">&quot;ClassA depends on: </span><span class="p">$(</span><span class="nv">$prerequisites</span> <span class="n">-join</span> <span class="s1">&#39;, &#39;</span><span class="p">)</span><span class="s2">&quot;</span>
 </code></pre></div>
-<div class="highlight"><span class="filename">Reverse (impact): what depends on BaseClass?</span><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nv">$dependents</span> <span class="p">=</span> <span class="nv">$analysis</span><span class="p">.</span><span class="n">DependencyGraph</span><span class="p">.</span><span class="n">GetDependents</span><span class="p">(</span><span class="s2">&quot;BaseClass&quot;</span><span class="p">)</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Changing BaseClass affects: </span><span class="p">$(</span><span class="nv">$dependents</span> <span class="n">-join</span> <span class="s1">&#39;, &#39;</span><span class="p">)</span><span class="s2">&quot;</span>
+<div class="highlight"><span class="filename">Reverse (impact): what depends on BaseClass?</span><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nv">$dependents</span> <span class="p">=</span> <span class="nv">$analysis</span><span class="p">.</span><span class="n">DependencyGraph</span><span class="p">.</span><span class="n">GetDependents</span><span class="p">(</span><span class="s2">&quot;BaseClass&quot;</span><span class="p">)</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Changing BaseClass affects: </span><span class="p">$(</span><span class="nv">$dependents</span> <span class="n">-join</span> <span class="s1">&#39;, &#39;</span><span class="p">)</span><span class="s2">&quot;</span>
 </code></pre></div>
 <p>If no dependencies exist for a component — because it has none, or because no other component
 depends on it — the result is an empty array, not an error.</p>
@@ -2508,40 +2647,40 @@ depends on it — the result is an empty array, not an error.</p>
 <p>The <code>ComponentCounts</code> property provides a per-type breakdown of all collected components.
 The <code>TotalComponents</code>, <code>TotalNodes</code>, and <code>TotalEdges</code> properties give a quick overview of the
 size and complexity of the dependency graph:</p>
-<div class="highlight"><span class="filename">Component statistics</span><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nv">$counts</span> <span class="p">=</span> <span class="nv">$analysis</span><span class="p">.</span><span class="n">ComponentCounts</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Using statements: </span><span class="p">$(</span><span class="nv">$counts</span><span class="p">.</span><span class="n">UsingStatements</span><span class="p">)</span><span class="s2">&quot;</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Enums:            </span><span class="p">$(</span><span class="nv">$counts</span><span class="p">.</span><span class="n">EnumDefinitions</span><span class="p">)</span><span class="s2">&quot;</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Classes:          </span><span class="p">$(</span><span class="nv">$counts</span><span class="p">.</span><span class="n">ClassDefinitions</span><span class="p">)</span><span class="s2">&quot;</span>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Functions:        </span><span class="p">$(</span><span class="nv">$counts</span><span class="p">.</span><span class="n">FunctionDefinitions</span><span class="p">)</span><span class="s2">&quot;</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Files:            </span><span class="p">$(</span><span class="nv">$counts</span><span class="p">.</span><span class="n">FileContents</span><span class="p">)</span><span class="s2">&quot;</span>
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Total components: </span><span class="p">$(</span><span class="nv">$analysis</span><span class="p">.</span><span class="n">TotalComponents</span><span class="p">)</span><span class="s2">&quot;</span>
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Graph nodes:      </span><span class="p">$(</span><span class="nv">$analysis</span><span class="p">.</span><span class="n">TotalNodes</span><span class="p">)</span><span class="s2">&quot;</span>
-<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Graph edges:      </span><span class="p">$(</span><span class="nv">$analysis</span><span class="p">.</span><span class="n">TotalEdges</span><span class="p">)</span><span class="s2">&quot;</span>
+<div class="highlight"><span class="filename">Component statistics</span><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nv">$counts</span> <span class="p">=</span> <span class="nv">$analysis</span><span class="p">.</span><span class="n">ComponentCounts</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Using statements: </span><span class="p">$(</span><span class="nv">$counts</span><span class="p">.</span><span class="n">UsingStatements</span><span class="p">)</span><span class="s2">&quot;</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Enums:            </span><span class="p">$(</span><span class="nv">$counts</span><span class="p">.</span><span class="n">EnumDefinitions</span><span class="p">)</span><span class="s2">&quot;</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Classes:          </span><span class="p">$(</span><span class="nv">$counts</span><span class="p">.</span><span class="n">ClassDefinitions</span><span class="p">)</span><span class="s2">&quot;</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Functions:        </span><span class="p">$(</span><span class="nv">$counts</span><span class="p">.</span><span class="n">FunctionDefinitions</span><span class="p">)</span><span class="s2">&quot;</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Files:            </span><span class="p">$(</span><span class="nv">$counts</span><span class="p">.</span><span class="n">FileContents</span><span class="p">)</span><span class="s2">&quot;</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Total components: </span><span class="p">$(</span><span class="nv">$analysis</span><span class="p">.</span><span class="n">TotalComponents</span><span class="p">)</span><span class="s2">&quot;</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Graph nodes:      </span><span class="p">$(</span><span class="nv">$analysis</span><span class="p">.</span><span class="n">TotalNodes</span><span class="p">)</span><span class="s2">&quot;</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Graph edges:      </span><span class="p">$(</span><span class="nv">$analysis</span><span class="p">.</span><span class="n">TotalEdges</span><span class="p">)</span><span class="s2">&quot;</span>
 </code></pre></div>
 <p><code>TotalNodes</code> counts all components that participate in at least one dependency relationship — either as a dependent or as a prerequisite. A base class like <code>Person</code> with no outgoing dependencies is still counted as a node if another component depends on it. <code>TotalEdges</code> counts the number of dependency relationships between components.</p>
 <h3 id="7-pre-build-validation-pattern">7. Pre-Build Validation Pattern<a class="headerlink" href="#7-pre-build-validation-pattern" title="Permanent link">&para;</a></h3>
 <p>Combining dependency analysis with a build call into a single script is the recommended
 pattern for automated builds. Check for cycles first, report cross-dependencies if present,
 then proceed with the build:</p>
-<div class="highlight"><span class="filename">Pre-build validation pattern</span><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nv">$contentCollector</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderContentCollector</span> <span class="p">|</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Class</span>    <span class="n">-IncludePath</span> <span class="s2">&quot;src\Classes&quot;</span> <span class="p">|</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="k">Function</span> <span class="n">-IncludePath</span> <span class="s2">&quot;src\Public&quot;</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="nv">$analysis</span> <span class="p">=</span> <span class="nb">Get-PSScriptBuilderDependencyAnalysis</span> <span class="n">-ContentCollector</span> <span class="nv">$contentCollector</span>
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$analysis</span><span class="p">.</span><span class="n">HasCycles</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>    <span class="nb">Write-Error</span> <span class="s2">&quot;Build aborted — circular dependency: </span><span class="p">$(</span><span class="nv">$analysis</span><span class="p">.</span><span class="n">CyclePath</span> <span class="n">-join</span> <span class="s1">&#39; -&gt; &#39;</span><span class="p">)</span><span class="s2">&quot;</span>
-<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>    <span class="k">return</span>
-<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="p">}</span>
-<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>
-<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$analysis</span><span class="p">.</span><span class="n">HasCrossDependencies</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>    <span class="nb">Write-Warning</span> <span class="s2">&quot;Cross-dependencies detected — ensure template uses {{ORDERED_COMPONENTS}}&quot;</span>
-<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="p">}</span>
-<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>
-<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="nb">Invoke-PSScriptBuilderBuild</span> <span class="n">-ContentCollector</span> <span class="nv">$contentCollector</span> <span class="p">`</span>
-<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>    <span class="n">-TemplatePath</span> <span class="s2">&quot;template.psm1&quot;</span> <span class="p">`</span>
-<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>    <span class="n">-OutputPath</span>   <span class="s2">&quot;output.psm1&quot;</span>
+<div class="highlight"><span class="filename">Pre-build validation pattern</span><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nv">$contentCollector</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderContentCollector</span> <span class="p">|</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Class</span>    <span class="n">-IncludePath</span> <span class="s2">&quot;src\Classes&quot;</span> <span class="p">|</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="k">Function</span> <span class="n">-IncludePath</span> <span class="s2">&quot;src\Public&quot;</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="nv">$analysis</span> <span class="p">=</span> <span class="nb">Get-PSScriptBuilderDependencyAnalysis</span> <span class="n">-ContentCollector</span> <span class="nv">$contentCollector</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$analysis</span><span class="p">.</span><span class="n">HasCycles</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>    <span class="nb">Write-Error</span> <span class="s2">&quot;Build aborted — circular dependency: </span><span class="p">$(</span><span class="nv">$analysis</span><span class="p">.</span><span class="n">CyclePath</span> <span class="n">-join</span> <span class="s1">&#39; -&gt; &#39;</span><span class="p">)</span><span class="s2">&quot;</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>    <span class="k">return</span>
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="p">}</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$analysis</span><span class="p">.</span><span class="n">HasCrossDependencies</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>    <span class="nb">Write-Warning</span> <span class="s2">&quot;Cross-dependencies detected — ensure template uses {{ORDERED_COMPONENTS}}&quot;</span>
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="p">}</span>
+<a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>
+<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a><span class="nb">Invoke-PSScriptBuilderBuild</span> <span class="n">-ContentCollector</span> <span class="nv">$contentCollector</span> <span class="p">`</span>
+<a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>    <span class="n">-TemplatePath</span> <span class="s2">&quot;template.psm1&quot;</span> <span class="p">`</span>
+<a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>    <span class="n">-OutputPath</span>   <span class="s2">&quot;output.psm1&quot;</span>
 </code></pre></div>
 <p>Note that <code>Invoke-PSScriptBuilderBuild</code> runs its own internal dependency analysis and will
 also fail on cycles. The explicit pre-check is optional but recommended — it gives you the

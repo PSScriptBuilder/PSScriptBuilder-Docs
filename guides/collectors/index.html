@@ -2405,7 +2405,7 @@ idempotent — removing a non-existent key produces a warning, not an error:</p>
 <tbody>
 <tr>
 <td><code>Class</code></td>
-<td><code>Name</code>, <code>SourceCode</code>, <code>SourceFile</code>, <code>BaseClass</code>, <code>TypeReferences</code>, <code>CalledFunctions</code></td>
+<td><code>Name</code>, <code>SourceCode</code>, <code>SourceFile</code>, <code>BaseClass</code>, <code>TypeReferences</code>, <code>StaticInitializerReferences</code>, <code>CalledFunctions</code></td>
 </tr>
 <tr>
 <td><code>Function</code></td>
@@ -2483,7 +2483,7 @@ Use distinct keys when registering multiple collectors of the same type.</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Class and Function collectors track dependencies</p>
-<p>The <code>TypeReferences</code> and <code>CalledFunctions</code> properties are populated by the AST engine
+<p>The <code>TypeReferences</code>, <code>StaticInitializerReferences</code>, and <code>CalledFunctions</code> properties are populated by the AST engine
 during collection and are used by the dependency analyzer to determine load order. You do
 not need to configure this — it happens automatically.</p>
 </div>
