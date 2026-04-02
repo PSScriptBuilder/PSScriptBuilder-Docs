@@ -2224,32 +2224,32 @@ collected and <em>from where</em> — the <a href="../templates/">template</a> d
 <tr>
 <td><code>Using</code></td>
 <td><code>using</code> statements</td>
-<td><code>UsingStatements</code></td>
-<td><code>{{UsingStatements}}</code></td>
+<td><code>USING_STATEMENTS</code></td>
+<td><code>{{USING_STATEMENTS}}</code></td>
 </tr>
 <tr>
 <td><code>Enum</code></td>
 <td>Enum definitions</td>
-<td><code>EnumDefinitions</code></td>
-<td><code>{{EnumDefinitions}}</code></td>
+<td><code>ENUM_DEFINITIONS</code></td>
+<td><code>{{ENUM_DEFINITIONS}}</code></td>
 </tr>
 <tr>
 <td><code>Class</code></td>
 <td>Class definitions (with dependency tracking)</td>
-<td><code>ClassDefinitions</code></td>
-<td><code>{{ClassDefinitions}}</code></td>
+<td><code>CLASS_DEFINITIONS</code></td>
+<td><code>{{CLASS_DEFINITIONS}}</code></td>
 </tr>
 <tr>
 <td><code>Function</code></td>
 <td>Standalone function definitions</td>
-<td><code>FunctionDefinitions</code></td>
-<td><code>{{FunctionDefinitions}}</code></td>
+<td><code>FUNCTION_DEFINITIONS</code></td>
+<td><code>{{FUNCTION_DEFINITIONS}}</code></td>
 </tr>
 <tr>
 <td><code>File</code></td>
 <td>Complete file contents as-is</td>
-<td><code>FileContents</code></td>
-<td><code>{{FileContents}}</code></td>
+<td><code>FILE_CONTENTS</code></td>
+<td><code>{{FILE_CONTENTS}}</code></td>
 </tr>
 </tbody>
 </table>
@@ -2278,7 +2278,7 @@ regardless of the order you register them. See <a href="#execution-order">Execut
 Reference section.</p>
 <h3 id="3-custom-collection-keys">3. Custom Collection Keys<a class="headerlink" href="#3-custom-collection-keys" title="Permanent link">&para;</a></h3>
 <p>By default, each collector maps to a <code>{{Token}}</code> in your template using its type's default key
-(e.g. <code>{{ClassDefinitions}}</code>). Use <code>-CollectionKey</code> to assign a custom key — this is required
+(e.g. <code>{{CLASS_DEFINITIONS}}</code>). Use <code>-CollectionKey</code> to assign a custom key — this is required
 when you need multiple collectors of the same type for different source directories:</p>
 <div class="highlight"><span class="filename">Custom keys for multiple collectors of the same type</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">$contentCollector</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderContentCollector</span> <span class="p">|</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Class</span> <span class="n">-CollectionKey</span> <span class="s2">&quot;CORE_CLASSES&quot;</span>   <span class="n">-IncludePath</span> <span class="s2">&quot;src\Core&quot;</span> <span class="p">|</span>
@@ -2316,7 +2316,7 @@ immediate directory only.</p>
 <div class="highlight"><span class="filename">List collectors</span><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">Get-PSScriptBuilderCollector</span> <span class="n">-ContentCollector</span> <span class="nv">$contentCollector</span>
 </code></pre></div>
 <p><strong>Get a specific collector by key:</strong></p>
-<div class="highlight"><span class="filename">Get a specific collector</span><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nv">$classCollector</span> <span class="p">=</span> <span class="nb">Get-PSScriptBuilderCollector</span> <span class="n">-ContentCollector</span> <span class="nv">$contentCollector</span> <span class="n">-CollectionKey</span> <span class="s2">&quot;ClassDefinitions&quot;</span>
+<div class="highlight"><span class="filename">Get a specific collector</span><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nv">$classCollector</span> <span class="p">=</span> <span class="nb">Get-PSScriptBuilderCollector</span> <span class="n">-ContentCollector</span> <span class="nv">$contentCollector</span> <span class="n">-CollectionKey</span> <span class="s2">&quot;CLASS_DEFINITIONS&quot;</span>
 </code></pre></div>
 <p><strong>Inspect the collected data:</strong></p>
 <div class="highlight"><span class="filename">Inspect collected data</span><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nv">$classes</span> <span class="p">=</span> <span class="nb">Get-PSScriptBuilderCollectorContent</span> <span class="n">-Collector</span> <span class="nv">$classCollector</span>

@@ -2235,7 +2235,7 @@ Reloading or switching between examples in the same session can cause type confl
 <hr />
 <h2 id="01-functions-only">01 - Functions Only<a class="headerlink" href="#01-functions-only" title="Permanent link">&para;</a></h2>
 <p>The simplest possible build: a <code>FunctionCollector</code> scans a source folder, extracts all
-function definitions, and replaces the <code>{{FunctionDefinitions}}</code> placeholder in the template.
+function definitions, and replaces the <code>{{FUNCTION_DEFINITIONS}}</code> placeholder in the template.
 No enums, no classes, no configuration file — just the essential build pipeline.</p>
 <p><a href="https://github.com/PSScriptBuilder/PSScriptBuilder/tree/main/examples/01-functions-only"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8 0c4.42 0 8 3.58 8 8a8.01 8.01 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27s-1.36.09-2 .27c-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8"/></svg></span> examples/01-functions-only</a></p>
 <hr />
@@ -2269,7 +2269,7 @@ exactly the component type it is responsible for, regardless of file structure.<
 <hr />
 <h2 id="06-hybrid-mode">06 - Hybrid Mode<a class="headerlink" href="#06-hybrid-mode" title="Permanent link">&para;</a></h2>
 <p>The template uses only the <code>{{ORDERED_COMPONENTS}}</code> placeholder instead of separate
-<code>{{EnumDefinitions}}</code>, <code>{{ClassDefinitions}}</code>, and <code>{{FunctionDefinitions}}</code> placeholders.
+<code>{{ENUM_DEFINITIONS}}</code>, <code>{{CLASS_DEFINITIONS}}</code>, and <code>{{FUNCTION_DEFINITIONS}}</code> placeholders.
 Because no cross-dependencies exist in this project, PSScriptBuilder activates <strong>Hybrid Mode</strong>:
 all components are emitted as a single topologically-sorted block.</p>
 <p><code>Get-PSScriptBuilderTemplateAnalysis</code> is called before the build to make the selected mode visible.</p>
@@ -2278,7 +2278,7 @@ all components are emitted as a single topologically-sorted block.</p>
 <h2 id="07-ordered-mode">07 - Ordered Mode<a class="headerlink" href="#07-ordered-mode" title="Permanent link">&para;</a></h2>
 <p>Some projects have factory functions that depend on a type which is also a base class of other
 classes. In this case the topological sort must interleave classes and functions — separate
-<code>{{ClassDefinitions}}</code> and <code>{{FunctionDefinitions}}</code> placeholders are no longer sufficient.
+<code>{{CLASS_DEFINITIONS}}</code> and <code>{{FUNCTION_DEFINITIONS}}</code> placeholders are no longer sufficient.
 PSScriptBuilder detects this automatically and requires <code>{{ORDERED_COMPONENTS}}</code>, activating
 <strong>Ordered Mode</strong>.</p>
 <p><code>Get-PSScriptBuilderDependencyAnalysis</code> is called before the build to show <code>HasCrossDependencies: True</code>
