@@ -2582,10 +2582,18 @@ The error message (<code>type-not-found</code>) points to <code>BaseClass</code>
 knowing the root cause. PSScriptBuilder emits a build warning when it detects this situation.</p>
 <div class="admonition tip">
 <p class="admonition-title">Avoid cross-collector dependencies when possible</p>
-<p>The simplest way to avoid this problem is to keep related components within a single
-collector. If a base class and all its derived classes — and the functions that use them —
-are collected by the same collector, PSScriptBuilder handles the ordering automatically
-with no template constraints.</p>
+<p>The simplest way to avoid this problem is to consolidate related components into a single
+collector. Instead of splitting base classes and derived classes across two class collectors,
+use one collector that contains all of them — PSScriptBuilder will order them automatically.
+The same applies to functions: if interdependent functions share a single function collector,
+no cross-collector ordering is required.</p>
+<p>When components of <strong>different types</strong> depend on each other — for example, a function that
+uses a class — consolidation is not possible, since classes and functions require separate
+collectors. In this case, ensure that the class collector placeholder appears <strong>before</strong> the
+function collector placeholder in the template.</p>
+<p>Note that this only applies to <strong>Free Mode</strong>:
+in Ordered and Hybrid Mode, the <code>{{ORDERED_COMPONENTS}}</code> placeholder (or your configured key)
+handles the global ordering automatically.</p>
 </div>
 <h2 id="topological-sort">Topological Sort<a class="headerlink" href="#topological-sort" title="Permanent link">&para;</a></h2>
 <p>The sort uses <strong>Kahn's algorithm</strong> and gives the following guarantees:</p>
