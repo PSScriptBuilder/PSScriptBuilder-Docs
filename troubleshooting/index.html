@@ -1955,6 +1955,29 @@ rather than silently producing ambiguous output.</p>
 <p><strong>Fix:</strong> Rename one of the conflicting definitions. Use <code>-Verbose</code> to see which
 files are being scanned.</p>
 </details>
+<details class="question">
+<summary>Generated script fails at load time: type-not-found error for a type that exists in the project</summary>
+<p><strong>Symptom:</strong> The build succeeds but running or importing the generated script fails
+immediately with an error such as:
+<code>Unable to find type [BaseClass]</code> or <code>Cannot convert null to type [BaseClass]</code></p>
+<p><strong>Cause:</strong> The generated script contains a class or function that references a type
+defined later in the file. This happens when multiple collectors of the same type
+are used with custom keys, and the template placeholders are in the wrong order.
+PSScriptBuilder sorts components correctly <strong>within</strong> each placeholder block, but it
+cannot reorder placeholders in your template. If <code>{{DOMAIN_CLASSES}}</code> appears before
+<code>{{CORE_CLASSES}}</code> in the template, and a class in <code>DOMAIN_CLASSES</code> inherits from a
+class in <code>CORE_CLASSES</code>, the generated script is invalid — even though each individual
+collector has the correct internal order.</p>
+<p><strong>Fix:</strong> Reorder the template placeholders so that dependencies appear before the
+components that depend on them. Use <code>Get-PSScriptBuilderDependencyAnalysis</code> to
+identify which components depend on which:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">$result</span> <span class="p">=</span> <span class="nb">Get-PSScriptBuilderDependencyAnalysis</span> <span class="n">-ContentCollector</span> <span class="nv">$contentCollector</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nv">$result</span><span class="p">.</span><span class="n">OrderedComponents</span>  <span class="c"># shows the globally correct dependency order</span>
+</code></pre></div>
+<p>Compare the order of component names against the template placeholder order and adjust
+accordingly. See the <a href="../guides/dependency-analysis/#cross-collector-dependencies">Dependency Analysis Guide</a>
+for a full explanation.</p>
+</details>
 <hr />
 <h2 id="configuration-and-session-errors">Configuration and session errors<a class="headerlink" href="#configuration-and-session-errors" title="Permanent link">&para;</a></h2>
 <details class="question">
@@ -1968,7 +1991,7 @@ called earlier in the same session for a different directory, the cached value
 still points to the previous project.</p>
 <p><strong>Fix:</strong> Always run each project or example in a <strong>fresh PowerShell session</strong>, or
 call <code>Set-PSScriptBuilderProjectRoot</code> explicitly at the start of your script:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">Set-PSScriptBuilderProjectRoot</span> <span class="n">-Path</span> <span class="nv">$PSScriptRoot</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">Set-PSScriptBuilderProjectRoot</span> <span class="n">-Path</span> <span class="nv">$PSScriptRoot</span>
 </code></pre></div>
 </details>
 <details class="question">
@@ -1980,12 +2003,12 @@ call <code>Set-PSScriptBuilderProjectRoot</code> explicitly at the start of your
 but rejects empty strings because a branch or tag name of length zero is not a
 valid value.</p>
 <p><strong>Fix:</strong> Set unused git fields to <code>null</code>, not <code>""</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">&quot;git&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nt">&quot;commit&quot;</span><span class="p">:</span><span class="w">      </span><span class="kc">null</span><span class="p">,</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">&quot;commitShort&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nt">&quot;branch&quot;</span><span class="p">:</span><span class="w">      </span><span class="kc">null</span><span class="p">,</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="nt">&quot;tag&quot;</span><span class="p">:</span><span class="w">         </span><span class="kc">null</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">&quot;git&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nt">&quot;commit&quot;</span><span class="p">:</span><span class="w">      </span><span class="kc">null</span><span class="p">,</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">&quot;commitShort&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nt">&quot;branch&quot;</span><span class="p">:</span><span class="w">      </span><span class="kc">null</span><span class="p">,</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nt">&quot;tag&quot;</span><span class="p">:</span><span class="w">         </span><span class="kc">null</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p">}</span>
 </code></pre></div>
 <p>Git fields are populated automatically when <code>Update-PSScriptBuilderReleaseData
 -UpdateBuildDetails</code> is run in a Git repository.</p>
@@ -2002,7 +2025,7 @@ of any registered collector. Matching is case-sensitive.</p>
 Use <code>Get-PSScriptBuilderTemplateAnalysis</code> or <code>Test-PSScriptBuilderTemplate</code> to list
 all placeholders found in the template and compare them against the registered
 collectors:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">Test-PSScriptBuilderTemplate</span> <span class="n">-TemplatePath</span> <span class="nv">$templatePath</span> <span class="n">-ContentCollector</span> <span class="nv">$contentCollector</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">Test-PSScriptBuilderTemplate</span> <span class="n">-TemplatePath</span> <span class="nv">$templatePath</span> <span class="n">-ContentCollector</span> <span class="nv">$contentCollector</span>
 </code></pre></div>
 </details>
 <details class="question">

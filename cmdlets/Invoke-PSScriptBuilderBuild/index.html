@@ -1248,10 +1248,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#-backupdirectory" class="md-nav__link">
+  <a href="#-backuppath" class="md-nav__link">
     <span class="md-ellipsis">
       
-        -BackupDirectory
+        -BackupPath
       
     </span>
   </a>
@@ -2186,10 +2186,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#-backupdirectory" class="md-nav__link">
+  <a href="#-backuppath" class="md-nav__link">
     <span class="md-ellipsis">
       
-        -BackupDirectory
+        -BackupPath
       
     </span>
   </a>
@@ -2320,7 +2320,7 @@
 <p>Executes the complete PowerShell script build process.</p>
 <h2 id="syntax">SYNTAX<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Invoke-PSScriptBuilderBuild [-ContentCollector] &lt;PSScriptBuilderContentCollector&gt; [-TemplatePath] &lt;String&gt;
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a> [-OutputPath] &lt;String&gt; [[-BackupDirectory] &lt;String&gt;] [[-OrderedComponentsKey] &lt;String&gt;] [-CreateBackup]
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a> [-OutputPath] &lt;String&gt; [[-BackupPath] &lt;String&gt;] [[-OrderedComponentsKey] &lt;String&gt;] [-CreateBackup]
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a> [&lt;CommonParameters&gt;]
 </code></pre></div>
 <h2 id="description">DESCRIPTION<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
@@ -2357,7 +2357,7 @@ version control instead of file-based backups.</p>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>$result = Invoke-PSScriptBuilderBuild -ContentCollector $cc `
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    -TemplatePath $templatePath `
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    -OutputPath $outputPath `
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    -BackupDirectory $config.Build.BackupPath `
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    -BackupPath $config.Build.BackupPath `
 <a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    -CreateBackup:$createBackup
 </code></pre></div>
 <p>Uses configuration file for path resolution and backup control.</p>
@@ -2416,7 +2416,7 @@ Relative paths are resolved using $Global:PSScriptBuilderProjectRoot.</p>
 <a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 <a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 </code></pre></div>
-<h3 id="-backupdirectory">-BackupDirectory<a class="headerlink" href="#-backupdirectory" title="Permanent link">&para;</a></h3>
+<h3 id="-backuppath">-BackupPath<a class="headerlink" href="#-backuppath" title="Permanent link">&para;</a></h3>
 <p>The directory where backup files are stored before overwriting existing output files.
 Can be relative (to project root) or absolute.
 Relative paths are resolved using
@@ -2453,7 +2453,7 @@ Defaults to "ORDERED_COMPONENTS".</p>
 <p>Creates a backup of the existing output file before overwriting it.
 By default, no backup
 is created.
-When enabled, backup files are stored in the BackupDirectory with a timestamped
+When enabled, backup files are stored in the BackupPath directory with a timestamped
 filename (e.g., MyModule.psm1.20260309_153045.bak).</p>
 <p>This parameter can be used in combination with configuration files: load the configuration,
 check the Build.BackupEnabled option, and pass the switch accordingly.</p>

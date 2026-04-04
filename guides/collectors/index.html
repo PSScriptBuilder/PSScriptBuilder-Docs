@@ -702,6 +702,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="3. Custom Collection Keys">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cross-collector-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-collector dependencies
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2048,6 +2065,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="3. Custom Collection Keys">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cross-collector-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-collector dependencies
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2289,6 +2323,19 @@ when you need multiple collectors of the same type for different source director
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="p">{{</span><span class="n">DOMAIN_CLASSES</span><span class="p">}}</span>
 </code></pre></div>
 <p>Custom keys are case-insensitive at match time but preserved as written.</p>
+<h4 id="cross-collector-dependencies">Cross-collector dependencies<a class="headerlink" href="#cross-collector-dependencies" title="Permanent link">&para;</a></h4>
+<p>When components in different collectors depend on each other — through inheritance, static
+initializers, or type references — the <strong>template placeholder order</strong> determines the final load
+sequence. PSScriptBuilder cannot reorder placeholders in your template automatically.</p>
+<div class="admonition warning">
+<p class="admonition-title">Template placeholder order is your responsibility across collector boundaries</p>
+<p>If a class or function in one collector depends on a component in another collector, the
+corresponding template placeholders must appear in the correct order — dependencies first.
+A wrong placeholder order generates a script that fails at runtime with a <code>type-not-found</code>
+error. PSScriptBuilder will emit a build warning when it detects cross-collector dependencies.</p>
+<p>See the <a href="../dependency-analysis/#cross-collector-dependencies">Dependency Analysis Guide</a> for
+a full explanation and examples.</p>
+</div>
 <h3 id="4-filtering-files">4. Filtering Files<a class="headerlink" href="#4-filtering-files" title="Permanent link">&para;</a></h3>
 <p>Control which files each collector processes using filter parameters.</p>
 <p><strong>Exclude specific files by pattern:</strong></p>
