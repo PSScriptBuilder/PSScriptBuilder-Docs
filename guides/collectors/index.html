@@ -2234,8 +2234,8 @@ using the configured template.</p>
 to extract dependency information — base classes, type references, and called functions. This
 allows the build to determine the correct load order and produce a topologically ordered output
 script.</p>
-<p>Collectors process files, not definitions. Every file in the configured path is read and all
-definitions it contains are extracted individually. A single file may contain multiple class
+<p>Collectors scan files, not individual definitions. Every file matching the configured paths and filters
+is read and all definitions of the relevant type it contains are extracted individually. A single file may contain multiple class
 definitions, multiple function definitions, or multiple enum definitions — the collector
 handles all of them transparently. There is no requirement to keep one definition per file.
 A single file may even mix different definition types — a class and a function in the same file

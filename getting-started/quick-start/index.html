@@ -2078,13 +2078,9 @@
 <p>PSScriptBuilder searches for this file starting from the current directory upward, so you only need to place it once at the project root. For the full field reference, see <a href="../installation/#4-add-the-configuration-file">Installation</a>.</p>
 <h3 id="2-create-a-template">2. Create a Template<a class="headerlink" href="#2-create-a-template" title="Permanent link">&para;</a></h3>
 <p>Create <code>build/Templates/MyModule.psm1.template</code>:</p>
-<div class="highlight"><span class="filename">MyModule.psm1.template</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c">#region Classes</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p">{{</span><span class="n">ClassDefinitions</span><span class="p">}}</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c">#endregion Classes</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c">#region Functions</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="p">{{</span><span class="n">FunctionDefinitions</span><span class="p">}}</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c">#endregion Functions</span>
+<div class="highlight"><span class="filename">MyModule.psm1.template</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{{</span><span class="n">CLASS_DEFINITIONS</span><span class="p">}}</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">{{</span><span class="n">FUNCTION_DEFINITIONS</span><span class="p">}}</span>
 </code></pre></div>
 <p>Each <code>{{Token}}</code> placeholder is replaced with the collected and dependency-ordered source code
 of the corresponding collector. The default token per collector type is:</p>
@@ -2098,23 +2094,23 @@ of the corresponding collector. The default token per collector type is:</p>
 <tbody>
 <tr>
 <td><code>Using</code></td>
-<td><code>{{UsingStatements}}</code></td>
+<td><code>{{USING_STATEMENTS}}</code></td>
 </tr>
 <tr>
 <td><code>Enum</code></td>
-<td><code>{{EnumDefinitions}}</code></td>
+<td><code>{{ENUM_DEFINITIONS}}</code></td>
 </tr>
 <tr>
 <td><code>Class</code></td>
-<td><code>{{ClassDefinitions}}</code></td>
+<td><code>{{CLASS_DEFINITIONS}}</code></td>
 </tr>
 <tr>
 <td><code>Function</code></td>
-<td><code>{{FunctionDefinitions}}</code></td>
+<td><code>{{FUNCTION_DEFINITIONS}}</code></td>
 </tr>
 <tr>
 <td><code>File</code></td>
-<td><code>{{FileContents}}</code></td>
+<td><code>{{FILE_CONTENTS}}</code></td>
 </tr>
 </tbody>
 </table>
