@@ -265,7 +265,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../guides/collectors/" class="md-tabs__link">
+        <a href="../../guides/configuration/" class="md-tabs__link">
           
   
   
@@ -576,6 +576,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -1270,10 +1298,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#-createbackup" class="md-nav__link">
+  <a href="#-enablebackup" class="md-nav__link">
     <span class="md-ellipsis">
       
-        -CreateBackup
+        -EnableBackup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-skipsyntaxvalidation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        -SkipSyntaxValidation
       
     </span>
   </a>
@@ -2208,10 +2247,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#-createbackup" class="md-nav__link">
+  <a href="#-enablebackup" class="md-nav__link">
     <span class="md-ellipsis">
       
-        -CreateBackup
+        -EnableBackup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-skipsyntaxvalidation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        -SkipSyntaxValidation
       
     </span>
   </a>
@@ -2320,19 +2370,19 @@
 <p>Executes the complete PowerShell script build process.</p>
 <h2 id="syntax">SYNTAX<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Invoke-PSScriptBuilderBuild [-ContentCollector] &lt;PSScriptBuilderContentCollector&gt; [-TemplatePath] &lt;String&gt;
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a> [-OutputPath] &lt;String&gt; [[-BackupPath] &lt;String&gt;] [[-OrderedComponentsKey] &lt;String&gt;] [-CreateBackup]
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a> [&lt;CommonParameters&gt;]
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a> [-OutputPath] &lt;String&gt; [[-BackupPath] &lt;String&gt;] [[-OrderedComponentsKey] &lt;String&gt;] [-EnableBackup]
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a> [-SkipSyntaxValidation] [&lt;CommonParameters&gt;]
 </code></pre></div>
 <h2 id="description">DESCRIPTION<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
 <p>The Invoke-PSScriptBuilderBuild cmdlet orchestrates the entire build workflow, including:</p>
 <ul>
 <li>Loading the template file</li>
-<li>Creating backups of existing output files (if enabled via -CreateBackup)</li>
 <li>Collecting components from all registered collectors</li>
 <li>Building and analyzing dependency graphs</li>
 <li>Detecting circular dependencies</li>
 <li>Performing topological sorting</li>
 <li>Processing the template with collected components</li>
+<li>Creating backups of existing output files (if enabled via -EnableBackup)</li>
 <li>Writing the final output script</li>
 </ul>
 <p>The cmdlet returns a detailed BuildResult object containing metrics, timings, component counts,
@@ -2340,7 +2390,7 @@ and file information.
 All paths are resolved relative to the project root
 ($Global:PSScriptBuilderProjectRoot) unless absolute paths are provided.</p>
 <p>By default, no backup is created before overwriting the output file.
-Use -CreateBackup to
+Use -EnableBackup to
 enable backup creation.
 This follows modern development practices where Git is used for
 version control instead of file-based backups.</p>
@@ -2351,25 +2401,26 @@ version control instead of file-based backups.</p>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    Add-PSScriptBuilderCollector -Type Function -IncludePath &quot;src\Public&quot; |
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    Invoke-PSScriptBuilderBuild -TemplatePath &quot;template.psm1&quot; -OutputPath &quot;output.psm1&quot;
 </code></pre></div>
-<p>Fluent pipeline build.</p>
+<p>Fluent pipeline build using chained collector registration.</p>
 <h3 id="example-2">EXAMPLE 2<a class="headerlink" href="#example-2" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$createBackup = $config.Build.BackupEnabled  # Read from config
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$config = Get-PSScriptBuilderConfiguration
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>$result = Invoke-PSScriptBuilderBuild -ContentCollector $cc `
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    -TemplatePath $templatePath `
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    -OutputPath $outputPath `
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    -TemplatePath $config.Build.TemplatePath `
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    -OutputPath $config.Build.OutputPath `
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    -BackupPath $config.Build.BackupPath `
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    -CreateBackup:$createBackup
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    -EnableBackup:$config.Build.BackupEnabled
 </code></pre></div>
-<p>Uses configuration file for path resolution and backup control.</p>
+<p>Uses a configuration file for path resolution and backup control.</p>
 <h3 id="example-3">EXAMPLE 3<a class="headerlink" href="#example-3" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$result = Invoke-PSScriptBuilderBuild -ContentCollector $cc `
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    -TemplatePath &quot;template.psm1&quot; `
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    -OutputPath &quot;output.psm1&quot;
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>Write-Host &quot;Build completed in $($result.ExecutionTime.TotalSeconds) seconds&quot;
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>Write-Host &quot;Total components: $($result.TotalComponents)&quot;
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>Write-Host &quot;Has cross-dependencies: $($result.HasCrossDependencies)&quot;
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    -OutputPath &quot;output.psm1&quot; `
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    -SkipSyntaxValidation
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>$result | Format-PSScriptBuilderBuildResult
 </code></pre></div>
-<p>Executes build and displays result information.</p>
+<p>Build without syntax validation, e.g.
+when the output references types from external
+assemblies that are not loaded at build time.</p>
 <h2 id="parameters">PARAMETERS<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
 <h3 id="-contentcollector">-ContentCollector<a class="headerlink" href="#-contentcollector" title="Permanent link">&para;</a></h3>
 <p>The ContentCollector instance containing all registered component collectors.
@@ -2449,12 +2500,12 @@ Defaults to "ORDERED_COMPONENTS".</p>
 <a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 <a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 </code></pre></div>
-<h3 id="-createbackup">-CreateBackup<a class="headerlink" href="#-createbackup" title="Permanent link">&para;</a></h3>
-<p>Creates a backup of the existing output file before overwriting it.
-By default, no backup
-is created.
-When enabled, backup files are stored in the BackupPath directory with a timestamped
-filename (e.g., MyModule.psm1.20260309_153045.bak).</p>
+<h3 id="-enablebackup">-EnableBackup<a class="headerlink" href="#-enablebackup" title="Permanent link">&para;</a></h3>
+<p>Enables backup creation of the existing output file before overwriting it.
+By default, no
+backup is created.
+When enabled, backup files are stored in the BackupPath directory with a
+timestamped filename (e.g., MyModule.psm1.20260309_153045.bak).</p>
 <p>This parameter can be used in combination with configuration files: load the configuration,
 check the Build.BackupEnabled option, and pass the switch accordingly.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SwitchParameter</span>
@@ -2466,6 +2517,24 @@ check the Build.BackupEnabled option, and pass the switch accordingly.</p>
 <a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 <a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 <a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+</code></pre></div>
+<h3 id="-skipsyntaxvalidation">-SkipSyntaxValidation<a class="headerlink" href="#-skipsyntaxvalidation" title="Permanent link">&para;</a></h3>
+<p>Skips the syntax validation step after writing the output file.
+By default, the output file
+is parsed to verify its syntactic correctness.
+TypeNotFound errors caused by external
+assemblies not loaded at build time are automatically filtered and do not fail validation.
+Use this switch only when the output contains syntax that cannot be parsed at all by the
+PowerShell parser.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SwitchParameter</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nt">Parameter Sets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(All)</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="nt">Aliases</span><span class="p">:</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="nt">Required</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="nt">Position</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Named</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="nt">Default value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="nt">Accept pipeline input</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="nt">Accept wildcard characters</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
 </code></pre></div>
 <h3 id="commonparameters">CommonParameters<a class="headerlink" href="#commonparameters" title="Permanent link">&para;</a></h3>
 <p>This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see <a href="http://go.microsoft.com/fwlink/?LinkID=113216">about_CommonParameters</a>.</p>
@@ -2482,7 +2551,7 @@ check the Build.BackupEnabled option, and pass the switch accordingly.</p>
 handled by the Orchestrator and its dependencies.
 This keeps the cmdlet lightweight
 Backups are disabled by default.
-Use -CreateBackup to enable backup creation.
+Use -EnableBackup to enable backup creation.
 This follows
 modern development practices where version control (Git) is preferred over file-based backups.
 The Build.BackupEnabled configuration option can be used to set a project-wide default, which

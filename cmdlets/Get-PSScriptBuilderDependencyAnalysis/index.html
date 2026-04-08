@@ -265,7 +265,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../guides/collectors/" class="md-tabs__link">
+        <a href="../../guides/configuration/" class="md-tabs__link">
           
   
   
@@ -576,6 +576,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -2254,10 +2282,10 @@ input to enable fluent chaining from Add-PSScriptBuilderCollector.</p>
 <p>This cmdlet delegates all analysis to PSScriptBuilderDependencyAnalyzer, which executes all registered
 collectors via ContentCollector.Execute().
 For large codebases, this may take some time.</p>
-<p>If an Inheritance or StaticInitializer cycle is detected, <code>OrderedComponents</code> is empty and the build will fail.
+<p>If an Inheritance or StaticInitializer cycle is detected, the OrderedComponents array will be empty and the build will fail.
 Inheritance and StaticInitializer cycles must be resolved in the source code before building.
 Type reference cycles (classes referencing each other in method bodies or property type annotations)
-are resolved automatically and do not affect <code>HasCycles</code>.</p>
+are resolved automatically and do not affect HasCycles.</p>
 <p>Cross-dependencies occur when component types are intermixed in the sorted order (e.g., a class
 depends on a function that depends on another class).
 While not necessarily an error, this may

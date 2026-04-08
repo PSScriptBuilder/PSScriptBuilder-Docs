@@ -265,7 +265,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../guides/collectors/" class="md-tabs__link">
+        <a href="../../guides/configuration/" class="md-tabs__link">
           
   
   
@@ -576,6 +576,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -1499,10 +1527,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#-projectroot" class="md-nav__link">
+  <a href="#-path" class="md-nav__link">
     <span class="md-ellipsis">
       
-        -ProjectRoot
+        -Path
       
     </span>
   </a>
@@ -2114,10 +2142,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#-projectroot" class="md-nav__link">
+  <a href="#-path" class="md-nav__link">
     <span class="md-ellipsis">
       
-        -ProjectRoot
+        -Path
       
     </span>
   </a>
@@ -2241,8 +2269,8 @@
 <h2 id="synopsis">SYNOPSIS<a class="headerlink" href="#synopsis" title="Permanent link">&para;</a></h2>
 <p>Creates a new PSScriptBuilder configuration file with default values.</p>
 <h2 id="syntax">SYNTAX<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>New-PSScriptBuilderConfiguration [[-ProjectRoot] &lt;String&gt;] [-Force]
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a> [-WhatIf] [-Confirm] [&lt;CommonParameters&gt;]
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>New-PSScriptBuilderConfiguration [[-Path] &lt;String&gt;] [-Force] [-WhatIf]
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a> [-Confirm] [&lt;CommonParameters&gt;]
 </code></pre></div>
 <h2 id="description">DESCRIPTION<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
 <p>The New-PSScriptBuilderConfiguration cmdlet creates a new psscriptbuilder.config.json file
@@ -2260,16 +2288,16 @@ confirmation.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>New-PSScriptBuilderConfiguration
 </code></pre></div>
 <h3 id="example-2">EXAMPLE 2<a class="headerlink" href="#example-2" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>New-PSScriptBuilderConfiguration -ProjectRoot &quot;C:\MyProject&quot;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>New-PSScriptBuilderConfiguration -Path &quot;C:\MyProject&quot;
 </code></pre></div>
 <h3 id="example-3">EXAMPLE 3<a class="headerlink" href="#example-3" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>New-PSScriptBuilderConfiguration -Force
 </code></pre></div>
 <h2 id="parameters">PARAMETERS<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
-<h3 id="-projectroot">-ProjectRoot<a class="headerlink" href="#-projectroot" title="Permanent link">&para;</a></h3>
-<p>The path to the project root directory.
-If not specified, the currently set project root
-or the current working directory is used.</p>
+<h3 id="-path">-Path<a class="headerlink" href="#-path" title="Permanent link">&para;</a></h3>
+<p>The directory in which to create the configuration file.
+If not specified, the currently
+set project root or the current working directory is used.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">String</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nt">Parameter Sets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(All)</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nt">Aliases</span><span class="p">:</span>
