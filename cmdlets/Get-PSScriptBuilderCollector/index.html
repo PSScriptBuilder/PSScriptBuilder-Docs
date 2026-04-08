@@ -2398,7 +2398,7 @@ which reflects their execution order during collection.</p>
 <p>Retrieves only the collector with the key "CLASSES".
 Returns null if not found.</p>
 <h3 id="example-3">EXAMPLE 3<a class="headerlink" href="#example-3" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Get-PSScriptBuilderCollector -ContentCollector $cc -Type Class
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Get-PSScriptBuilderCollector -ContentCollector $cc -Type ClassCollector
 </code></pre></div>
 <p>Retrieves all ClassCollectors from the ContentCollector.
 This includes collectors
@@ -2462,11 +2462,11 @@ The key is case-insensitive.</p>
 Filters collectors by their type.
 Valid values:</p>
 <ul>
-<li>Using: UsingCollector (collects using statements)</li>
-<li>Enum: EnumCollector (collects enumeration definitions)</li>
-<li>Class: ClassCollector (collects class definitions)</li>
-<li>Function: FunctionCollector (collects function definitions)</li>
-<li>File: FileCollector (collects entire file contents)</li>
+<li>UsingCollector: Collects using statements</li>
+<li>EnumCollector: Collects enumeration definitions</li>
+<li>ClassCollector: Collects class definitions</li>
+<li>FunctionCollector: Collects function definitions</li>
+<li>FileCollector: Collects entire file contents</li>
 </ul>
 <p>Returns all collectors of the specified type.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PSScriptBuilderCollectorType</span>
