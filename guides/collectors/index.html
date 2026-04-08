@@ -963,6 +963,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code-analysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Analysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2500,6 +2528,42 @@ idempotent — removing a non-existent key produces a warning, not an error:</p>
 </tr>
 </tbody>
 </table>
+<p><code>Name</code>, <code>SourceCode</code>, and <code>SourceFile</code> are present on all types except <code>Using</code> and <code>File</code> and
+contain the component name, the exact source code as extracted from the file, and the path to
+the file it was collected from. The following properties carry additional dependency and
+structural information:</p>
+<p><strong><code>BaseClass</code></strong> (<code>Class</code> only)</p>
+<p>The name of the class this class inherits from, or an empty string if the class has no base
+class. PSScriptBuilder uses this to add an <code>Inheritance</code> edge in the dependency graph, which
+creates a hard ordering constraint: the base class must appear before the derived class in the
+output script.</p>
+<p><strong><code>TypeReferences</code></strong> (<code>Class</code>, <code>Function</code>)</p>
+<p>All non-built-in types referenced in the component's body. For classes, this includes property
+type annotations, method parameter types, return types, and type casts in method bodies. For
+functions, it includes parameter types, return types, and type casts. Built-in .NET types
+(<code>string</code>, <code>int</code>, <code>bool</code>, <code>System.*</code>, etc.) are automatically excluded. PSScriptBuilder uses
+these references to add <code>TypeReference</code> edges in the dependency graph. Unlike <code>Inheritance</code> and
+<code>StaticInitializer</code> edges, <code>TypeReference</code> edges do not create a hard ordering constraint —
+methods only execute after all types are loaded — but they still influence the topological sort.</p>
+<p><strong><code>StaticInitializerReferences</code></strong> (<code>Class</code> only)</p>
+<p>Types referenced in static property initializer expressions, for example
+<code>static [MyClass] $Default = [MyClass]::new()</code>. PowerShell evaluates static initializers
+immediately when a class definition is loaded, so any type referenced in an initializer must
+already be defined at that point. This creates the same hard ordering constraint as inheritance.
+PSScriptBuilder adds <code>StaticInitializer</code> edges for these references and treats them identically
+to <code>Inheritance</code> edges when detecting fatal cycles.</p>
+<p><strong><code>CalledFunctions</code></strong> (<code>Class</code>, <code>Function</code>)</p>
+<p>Names of other functions called within the component's body. PSScriptBuilder uses these to add
+<code>FunctionCall</code> edges in the dependency graph. These edges do not create a hard ordering
+constraint but can contribute to cross-dependencies when classes and functions reference each
+other.</p>
+<p><strong><code>Statement</code></strong> (<code>Using</code> only)</p>
+<p>The full <code>using namespace</code> or <code>using module</code> statement as a string. <code>SourceFiles</code> contains the
+paths of all files where this statement was found — the Using collector deduplicates identical
+statements across files.</p>
+<p><strong><code>FileName</code></strong>, <strong><code>FullPath</code></strong>, <strong><code>Content</code></strong> (<code>File</code> only)</p>
+<p>The file name, absolute path, and complete raw content of the file. File collectors include
+files as-is without any AST analysis.</p>
 <h3 id="execution-order">Execution Order<a class="headerlink" href="#execution-order" title="Permanent link">&para;</a></h3>
 <p>Collectors always execute in <code>CollectorType</code> enum order, regardless of registration order:</p>
 <table>

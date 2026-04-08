@@ -12,13 +12,13 @@
         <meta name="author" content="PSScriptBuilder">
       
       
-        <link rel="canonical" href="https://docs.psscriptbuilder.com/guides/templates/">
+        <link rel="canonical" href="https://docs.psscriptbuilder.com/guides/code-analysis/">
       
       
-        <link rel="prev" href="../collectors/">
+        <link rel="prev" href="../release-management/">
       
       
-        <link rel="next" href="../dependency-analysis/">
+        <link rel="next" href="../../troubleshooting/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>Templates - PSScriptBuilder Docs</title>
+        <title>Code Analysis - PSScriptBuilder Docs</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#templates" class="md-skip">
+        <a href="#code-analysis" class="md-skip">
           Skip to content
         </a>
       
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Templates
+              Code Analysis
             
           </span>
         </div>
@@ -642,37 +642,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Templates
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../templates/" class="md-nav__link">
         
   
   
@@ -688,181 +661,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#walkthrough" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Walkthrough
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Walkthrough">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-your-first-template" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Your First Template
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-custom-collection-keys" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Custom Collection Keys
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-validate-your-template" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Validate Your Template
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-ordered-mode-and-hybrid-mode" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Ordered Mode and Hybrid Mode
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-combining-with-release-management-tokens" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Combining with Release Management Tokens
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reference" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reference
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Reference">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#placeholder-rules" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Placeholder Rules
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#validation-modes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Validation Modes
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#validation-error-reference" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Validation Error Reference
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#analysis-result-properties" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Analysis Result Properties
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tips" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tips
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#see-also" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        See Also
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -928,10 +726,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../code-analysis/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Analysis
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -947,6 +772,164 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#collector-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Collector Content
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Collector Content">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#find-classes-with-a-base-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Find classes with a base class
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find-all-subclasses-of-a-specific-base-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Find all subclasses of a specific base class
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find-classes-that-reference-a-specific-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Find classes that reference a specific type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validate-that-expected-components-are-present" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validate that expected components are present
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find-classes-with-static-initializer-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Find classes with static initializer references
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find-functions-that-call-other-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Find functions that call other functions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find-public-entry-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Find public entry points
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#count-type-references-per-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Count type references per class
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrieve-the-source-code-of-a-specific-component" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Retrieve the source code of a specific component
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependency-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependency Analysis
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#template-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Template Analysis
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2029,22 +2012,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#walkthrough" class="md-nav__link">
+  <a href="#collector-content" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Walkthrough
+        Collector Content
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Walkthrough">
+    <nav class="md-nav" aria-label="Collector Content">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-your-first-template" class="md-nav__link">
+  <a href="#find-classes-with-a-base-class" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Your First Template
+        Find classes with a base class
       
     </span>
   </a>
@@ -2052,10 +2035,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-custom-collection-keys" class="md-nav__link">
+  <a href="#find-all-subclasses-of-a-specific-base-class" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Custom Collection Keys
+        Find all subclasses of a specific base class
       
     </span>
   </a>
@@ -2063,10 +2046,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-validate-your-template" class="md-nav__link">
+  <a href="#find-classes-that-reference-a-specific-type" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Validate Your Template
+        Find classes that reference a specific type
       
     </span>
   </a>
@@ -2074,10 +2057,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-ordered-mode-and-hybrid-mode" class="md-nav__link">
+  <a href="#validate-that-expected-components-are-present" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Ordered Mode and Hybrid Mode
+        Validate that expected components are present
       
     </span>
   </a>
@@ -2085,10 +2068,54 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#5-combining-with-release-management-tokens" class="md-nav__link">
+  <a href="#find-classes-with-static-initializer-references" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Combining with Release Management Tokens
+        Find classes with static initializer references
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find-functions-that-call-other-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Find functions that call other functions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find-public-entry-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Find public entry points
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#count-type-references-per-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Count type references per class
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#retrieve-the-source-code-of-a-specific-component" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Retrieve the source code of a specific component
       
     </span>
   </a>
@@ -2101,71 +2128,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#reference" class="md-nav__link">
+  <a href="#dependency-analysis" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Reference
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Reference">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#placeholder-rules" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Placeholder Rules
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#validation-modes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Validation Modes
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#validation-error-reference" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Validation Error Reference
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#analysis-result-properties" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Analysis Result Properties
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tips" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tips
+        Dependency Analysis
       
     </span>
   </a>
@@ -2173,10 +2139,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#see-also" class="md-nav__link">
+  <a href="#template-analysis" class="md-nav__link">
     <span class="md-ellipsis">
       
-        See Also
+        Template Analysis
       
     </span>
   </a>
@@ -2203,337 +2169,189 @@
   
 
 
-<h1 id="templates">Templates<a class="headerlink" href="#templates" title="Permanent link">&para;</a></h1>
-<p>A <strong>template</strong> is a plain text file that defines the structure of the generated output script.
-PSScriptBuilder replaces <code>{{Token}}</code> placeholders with the collected and dependency-ordered
-source code from configured collectors. Static text before, between, and after placeholders
-is preserved as-is.</p>
-<p>Placeholders use double curly braces around the collector's <code>CollectionKey</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>{{CollectionKey}}
-</code></pre></div>
-<p>PSScriptBuilder supports three validation modes — <strong>Free Mode</strong>, <strong>Hybrid Mode</strong>, and
-<strong>Ordered Mode</strong> — which determine which placeholders are required or forbidden in the template.
-Free Mode is the default. Ordered Mode is activated automatically when cross-dependencies are
-detected. Hybrid Mode is activated manually by placing the ordered components placeholder
-(default: <code>{{ORDERED_COMPONENTS}}</code>) in a template whose code has no cross-dependencies.</p>
+<h1 id="code-analysis">Code Analysis<a class="headerlink" href="#code-analysis" title="Permanent link">&para;</a></h1>
+<p>PSScriptBuilder's analysis cmdlets let you inspect your project's structure without running a
+build. You can query the raw component data collected from your source files, examine the
+dependency graph, and verify which validation mode your template activates. No output script is
+written — the collectors run, the data is extracted, and you get back strongly-typed result
+objects to work with directly.</p>
+<p>This is useful for debugging dependency issues, understanding how PSScriptBuilder sees your code,
+or building tooling and reports on top of the collected data.</p>
 <hr />
-<h2 id="walkthrough">Walkthrough<a class="headerlink" href="#walkthrough" title="Permanent link">&para;</a></h2>
-<h3 id="1-your-first-template">1. Your First Template<a class="headerlink" href="#1-your-first-template" title="Permanent link">&para;</a></h3>
-<p>The simplest template maps each collector type to a separate placeholder in the expected order:</p>
-<div class="highlight"><span class="filename">MyModule.psm1.template</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{{</span><span class="n">USING_STATEMENTS</span><span class="p">}}</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="p">{{</span><span class="n">ENUM_DEFINITIONS</span><span class="p">}}</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">{{</span><span class="n">CLASS_DEFINITIONS</span><span class="p">}}</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">{{</span><span class="n">FUNCTION_DEFINITIONS</span><span class="p">}}</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">{{</span><span class="n">FILE_CONTENTS</span><span class="p">}}</span>
+<h2 id="collector-content">Collector Content<a class="headerlink" href="#collector-content" title="Permanent link">&para;</a></h2>
+<p><a href="../../cmdlets/Get-PSScriptBuilderCollectorContent/"><code>Get-PSScriptBuilderCollectorContent</code></a>
+returns the raw component data from a collector that has already been executed — one object per
+collected component. Pass a collector instance directly using <code>-Collector</code> or via the pipeline.</p>
+<p>The snippet below creates a Class collector, executes it, and then displays a summary table of
+all collected classes together with their base class — a quick way to verify that PSScriptBuilder
+found every expected class and correctly identified its inheritance:</p>
+<div class="highlight"><span class="filename">Inspect collected class definitions</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nv">$classCollector</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Class</span> <span class="n">-IncludePath</span> <span class="s2">&quot;src\Classes&quot;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nv">$classCollector</span><span class="p">.</span><span class="n">Collect</span><span class="p">()</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nv">$classes</span> <span class="p">=</span> <span class="nv">$classCollector</span> <span class="p">|</span> <span class="nb">Get-PSScriptBuilderCollectorContent</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nv">$classes</span> <span class="p">|</span> <span class="nb">Format-Table</span> <span class="n">Name</span><span class="p">,</span> <span class="n">BaseClass</span>
 </code></pre></div>
-<p>Each placeholder is replaced with the correctly ordered source code collected by the
-corresponding collector. The token names match the default <code>CollectionKey</code> for each collector
-type — see the <a href="../collectors/">Collectors Guide</a> for the full list.</p>
-<h3 id="2-custom-collection-keys">2. Custom Collection Keys<a class="headerlink" href="#2-custom-collection-keys" title="Permanent link">&para;</a></h3>
-<p>When you register a collector with a custom <code>-CollectionKey</code>, the template must use that key
-as the placeholder:</p>
-<div class="highlight"><span class="filename">Register a collector with a custom key</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">$contentCollector</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderContentCollector</span> <span class="p">|</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Class</span> <span class="n">-CollectionKey</span> <span class="s2">&quot;DOMAIN_CLASSES&quot;</span> <span class="n">-IncludePath</span> <span class="s2">&quot;src\Domain&quot;</span>
-</code></pre></div>
-<div class="highlight"><span class="filename">Matching template token</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{{</span><span class="n">DOMAIN_CLASSES</span><span class="p">}}</span>
-</code></pre></div>
-<p>Custom keys are case-insensitive at match time but preserved as written in the template output.</p>
-<h3 id="3-validate-your-template">3. Validate Your Template<a class="headerlink" href="#3-validate-your-template" title="Permanent link">&para;</a></h3>
-<p>Always validate your template before running a build.
-<a href="../../cmdlets/Test-PSScriptBuilderTemplate/"><code>Test-PSScriptBuilderTemplate</code></a> returns <code>$true</code>
-if the template is valid for the current collector configuration:</p>
-<div class="highlight"><span class="filename">Validate before building</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nv">$contentCollector</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderContentCollector</span> <span class="p">|</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Class</span>    <span class="n">-IncludePath</span> <span class="s2">&quot;src\Classes&quot;</span> <span class="p">|</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="k">Function</span> <span class="n">-IncludePath</span> <span class="s2">&quot;src\Public&quot;</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="k">if</span> <span class="p">(</span><span class="nb">Test-PSScriptBuilderTemplate</span> <span class="n">-ContentCollector</span> <span class="nv">$contentCollector</span> <span class="n">-TemplatePath</span> <span class="s2">&quot;template.psm1&quot;</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    <span class="nb">Invoke-PSScriptBuilderBuild</span> <span class="n">-ContentCollector</span> <span class="nv">$contentCollector</span> <span class="p">`</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>        <span class="n">-TemplatePath</span> <span class="s2">&quot;template.psm1&quot;</span> <span class="p">`</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>        <span class="n">-OutputPath</span>   <span class="s2">&quot;output.psm1&quot;</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="p">}</span>
-</code></pre></div>
-<p>Add <code>-Verbose</code> to see detailed validation messages.</p>
-<p>For a full analysis result object, use
-<a href="../../cmdlets/Get-PSScriptBuilderTemplateAnalysis/"><code>Get-PSScriptBuilderTemplateAnalysis</code></a>:</p>
-<div class="highlight"><span class="filename">Analyze template</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nv">$result</span> <span class="p">=</span> <span class="nb">Get-PSScriptBuilderTemplateAnalysis</span> <span class="n">-ContentCollector</span> <span class="nv">$contentCollector</span> <span class="n">-TemplatePath</span> <span class="s2">&quot;template.psm1&quot;</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Valid:   </span><span class="p">$(</span><span class="nv">$result</span><span class="p">.</span><span class="n">IsValid</span><span class="p">)</span><span class="s2">&quot;</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Mode:    </span><span class="p">$(</span><span class="nv">$result</span><span class="p">.</span><span class="n">ValidationMode</span><span class="p">)</span><span class="s2">&quot;</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Found:   </span><span class="p">$(</span><span class="nv">$result</span><span class="p">.</span><span class="n">PlaceholdersFound</span> <span class="n">-join</span> <span class="s1">&#39;, &#39;</span><span class="p">)</span><span class="s2">&quot;</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Missing: </span><span class="p">$(</span><span class="nv">$result</span><span class="p">.</span><span class="n">MissingPlaceholders</span> <span class="n">-join</span> <span class="s1">&#39;, &#39;</span><span class="p">)</span><span class="s2">&quot;</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Unknown: </span><span class="p">$(</span><span class="nv">$result</span><span class="p">.</span><span class="n">UnknownPlaceholders</span> <span class="n">-join</span> <span class="s1">&#39;, &#39;</span><span class="p">)</span><span class="s2">&quot;</span>
-</code></pre></div>
-<h3 id="4-ordered-mode-and-hybrid-mode">4. Ordered Mode and Hybrid Mode<a class="headerlink" href="#4-ordered-mode-and-hybrid-mode" title="Permanent link">&para;</a></h3>
-<p><strong>Ordered Mode</strong> is activated automatically when classes and functions have mutual dependencies
-that require them to be interleaved. <strong>Hybrid Mode</strong> is activated manually — by placing the
-ordered components placeholder (default: <code>{{ORDERED_COMPONENTS}}</code>) in a template whose code
-has no cross-dependencies. Both modes use the same template structure and validation rules:</p>
-<div class="highlight"><span class="filename">Ordered / Hybrid Mode template</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{{</span><span class="n">USING_STATEMENTS</span><span class="p">}}</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="p">{{</span><span class="n">ORDERED_COMPONENTS</span><span class="p">}}</span>
-</code></pre></div>
-<p>All Enum, Class, and Function components are emitted in a single topologically ordered block
-at <code>{{ORDERED_COMPONENTS}}</code>. Per-type placeholders for those collector types are forbidden in
-both modes. <code>Using</code> and <code>File</code> placeholders remain valid and optional, and <code>Using</code> must appear
-before <code>{{ORDERED_COMPONENTS}}</code>.</p>
-<p>Hybrid Mode is useful for mode-agnostic templates: a template using the ordered components
-placeholder remains valid regardless of whether cross-dependencies are introduced later,
-avoiding the need to restructure the template when the codebase grows.</p>
-<div class="admonition tip">
-<p class="admonition-title">Protect Free Mode templates from future breakage</p>
-<p>A Free Mode template will fail validation the moment cross-dependencies are introduced —
-for example, when a new function references a class that also references that function.
-Adding the ordered components placeholder to the template now converts it to Hybrid Mode
-and makes it resilient to such changes without any further restructuring.</p>
-</div>
-<p>The placeholder name defaults to <code>ORDERED_COMPONENTS</code> and can be overridden with
-<code>-OrderedComponentsKey</code> on
-<a href="../../cmdlets/Invoke-PSScriptBuilderBuild/"><code>Invoke-PSScriptBuilderBuild</code></a> and
-<a href="../../cmdlets/Test-PSScriptBuilderTemplate/"><code>Test-PSScriptBuilderTemplate</code></a>. To keep the
-template and the build call in sync, store a custom key in <code>psscriptbuilder.config.json</code>:</p>
-<div class="highlight"><span class="filename">psscriptbuilder.config.json</span><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">{</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="nt">&quot;build&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">        </span><span class="nt">&quot;orderedComponentsKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MY_COMPONENTS&quot;</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="p">}</span>
-</code></pre></div>
-<div class="highlight"><span class="filename">Build with custom key</span><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nv">$config</span> <span class="p">=</span> <span class="nb">Get-PSScriptBuilderConfiguration</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nb">Invoke-PSScriptBuilderBuild</span> <span class="n">-ContentCollector</span> <span class="nv">$contentCollector</span> <span class="p">`</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    <span class="n">-TemplatePath</span> <span class="s2">&quot;template.psm1&quot;</span> <span class="p">`</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    <span class="n">-OutputPath</span>   <span class="s2">&quot;output.psm1&quot;</span> <span class="p">`</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    <span class="n">-OrderedComponentsKey</span> <span class="nv">$config</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">OrderedComponentsKey</span>
-</code></pre></div>
-<h3 id="5-combining-with-release-management-tokens">5. Combining with Release Management Tokens<a class="headerlink" href="#5-combining-with-release-management-tokens" title="Permanent link">&para;</a></h3>
-<p>A build template can also be configured as a bump file in <code>psscriptbuilder.bumpconfig.json</code>.
-This allows release metadata — version numbers, build timestamps, Git commit hashes — to be
-injected directly into the template using the same <code>{{Token}}</code> syntax:</p>
-<div class="highlight"><span class="filename">Template with release tokens</span><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c"># Version {{VERSION}} — built {{BUILD_DATE}}</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="p">{{</span><span class="n">USING_STATEMENTS</span><span class="p">}}</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="p">{{</span><span class="n">CLASS_DEFINITIONS</span><span class="p">}}</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="p">{{</span><span class="n">FUNCTION_DEFINITIONS</span><span class="p">}}</span>
-</code></pre></div>
-<div class="highlight"><span class="filename">psscriptbuilder.bumpconfig.json (excerpt)</span><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">{</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="nt">&quot;bumpFiles&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">        </span><span class="p">{</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">            </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Module template — first run: inject release metadata as {{TOKEN}} placeholders&quot;</span><span class="p">,</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">            </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;build\\Templates\\MyModule.psm1.template&quot;</span><span class="p">,</span>
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">            </span><span class="nt">&quot;tokens&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;VERSION&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;BUILD_DATE&quot;</span><span class="p">]</span>
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">        </span><span class="p">},</span>
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">        </span><span class="p">{</span>
-<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">            </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Module template — subsequent runs: update already-substituted values via regex&quot;</span><span class="p">,</span>
-<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">            </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;build\\Templates\\MyModule.psm1.template&quot;</span><span class="p">,</span>
-<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">            </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="w">                </span><span class="p">{</span>
-<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">                    </span><span class="nt">&quot;pattern&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Version\\s+({REGEX_VERSION})&quot;</span><span class="p">,</span>
-<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="w">                    </span><span class="nt">&quot;tokens&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;VERSION&quot;</span><span class="p">]</span>
-<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="w">                </span><span class="p">},</span>
-<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="w">                </span><span class="p">{</span>
-<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="w">                    </span><span class="nt">&quot;pattern&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;built\\s+({REGEX_BUILD_DATE})&quot;</span><span class="p">,</span>
-<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="w">                    </span><span class="nt">&quot;tokens&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;BUILD_DATE&quot;</span><span class="p">]</span>
-<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="w">                </span><span class="p">}</span>
-<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a><span class="w">            </span><span class="p">]</span>
-<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a><span class="w">    </span><span class="p">]</span>
-<a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a><span class="p">}</span>
-</code></pre></div>
-<p><code>Update-PSScriptBuilderBumpFiles</code> replaces the release tokens <strong>before</strong> the build runs.</p>
-<p><strong>Entry 1</strong> handles the first release: it finds <code>{{VERSION}}</code> and <code>{{BUILD_DATE}}</code> in the
-template and replaces them with the actual values — for example <code>1.2.0</code> and <code>2026-03-24</code>.
-After this step, those placeholders no longer exist in the template file. The build validator
-only sees the remaining collector placeholders and proceeds without error.</p>
-<p><strong>Entry 2</strong> handles all subsequent releases: since the <code>{{TOKEN}}</code> placeholders are gone, the
-simple token mode from Entry 1 has nothing to match. Entry 2 instead uses regex patterns that
-target the already-substituted values — <code>Version 1.2.0</code> or <code>built 2026-03-24</code> — and replaces
-them with the new values on every bump. Both entries target the same file and are applied
-sequentially in the order they appear in <code>bumpFiles</code>.</p>
-<p>See the <a href="../release-management/">Release Management Guide</a> for the full token list and all
-available regex placeholders like <code>{REGEX_VERSION}</code> and <code>{REGEX_BUILD_DATE}</code>.</p>
-<div class="admonition warning">
-<p class="admonition-title">Run bump before build</p>
-<p>If release tokens are still present in the template when <code>Invoke-PSScriptBuilderBuild</code>
-runs, the validator will report them as unknown placeholders and fail. Always call
-<code>Update-PSScriptBuilderBumpFiles</code> before <code>Invoke-PSScriptBuilderBuild</code>.</p>
-</div>
-<hr />
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
-<h3 id="placeholder-rules">Placeholder Rules<a class="headerlink" href="#placeholder-rules" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Keys are <strong>case-insensitive</strong> at match time</li>
-<li><strong>No whitespace</strong> inside the braces — <code>{{ Key }}</code> is invalid and causes a validation error</li>
-<li>Each placeholder may appear <strong>only once</strong> in the template</li>
-<li>Only keys matching a registered collector (or <code>{{ORDERED_COMPONENTS}}</code>) are valid</li>
-</ul>
-<h3 id="validation-modes">Validation Modes<a class="headerlink" href="#validation-modes" title="Permanent link">&para;</a></h3>
+<p>The returned objects are typed data classes — not <code>PSCustomObject</code>. The exact properties
+depend on the collector type:</p>
 <table>
 <thead>
 <tr>
-<th>Mode</th>
-<th>When activated</th>
-<th>Required</th>
-<th>Forbidden</th>
+<th>Collector Type</th>
+<th>Returned Type</th>
+<th>Key Properties</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Free</strong></td>
-<td>No cross-dependencies and no ordered components placeholder in template</td>
-<td>One placeholder per collector</td>
-<td>—</td>
+<td><code>Using</code></td>
+<td><code>PSScriptBuilderUsingData</code></td>
+<td><code>Statement</code></td>
 </tr>
 <tr>
-<td><strong>Hybrid</strong></td>
-<td>No cross-dependencies, but ordered components placeholder present in template</td>
-<td>Ordered components placeholder</td>
-<td>Per-type placeholders for <code>Enum</code>, <code>Class</code>, <code>Function</code></td>
+<td><code>Enum</code></td>
+<td><code>PSScriptBuilderEnumData</code></td>
+<td><code>Name</code>, <code>SourceCode</code></td>
 </tr>
 <tr>
-<td><strong>Ordered</strong></td>
-<td>Classes and functions have mutual dependencies (automatic)</td>
-<td>Ordered components placeholder</td>
-<td>Per-type placeholders for <code>Enum</code>, <code>Class</code>, <code>Function</code></td>
+<td><code>Class</code></td>
+<td><code>PSScriptBuilderClassData</code></td>
+<td><code>Name</code>, <code>SourceCode</code>, <code>BaseClass</code>, <code>TypeReferences</code>, <code>StaticInitializerReferences</code>, <code>CalledFunctions</code></td>
+</tr>
+<tr>
+<td><code>Function</code></td>
+<td><code>PSScriptBuilderFunctionData</code></td>
+<td><code>Name</code>, <code>SourceCode</code>, <code>CalledFunctions</code>, <code>TypeReferences</code></td>
+</tr>
+<tr>
+<td><code>File</code></td>
+<td><code>PSScriptBuilderFileData</code></td>
+<td><code>Name</code>, <code>SourceCode</code></td>
 </tr>
 </tbody>
 </table>
-<p>In Free Mode, two ordering rules are enforced: <code>Using</code> placeholders must appear before all
-others; <code>Enum</code> placeholders must appear before all <code>Class</code> and <code>Function</code> placeholders. The
-position of <code>File</code> placeholders is unrestricted relative to <code>Enum</code>, <code>Class</code>, and <code>Function</code>.</p>
-<p>In Ordered and Hybrid mode, <code>Using</code> placeholders must appear before the ordered components placeholder.</p>
-<h3 id="validation-error-reference">Validation Error Reference<a class="headerlink" href="#validation-error-reference" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Error</th>
-<th>Cause</th>
-<th>Fix</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Whitespace in placeholder</td>
-<td><code>{{ Key }}</code> instead of <code>{{Key}}</code></td>
-<td>Remove whitespace inside braces</td>
-</tr>
-<tr>
-<td>Missing ordered components placeholder</td>
-<td>Ordered or Hybrid mode but placeholder absent</td>
-<td>Add the ordered components placeholder to the template</td>
-</tr>
-<tr>
-<td>Forbidden placeholder in Ordered/Hybrid mode</td>
-<td><code>{{CLASS_DEFINITIONS}}</code> etc. present when the ordered components placeholder is used</td>
-<td>Remove per-type placeholders; use only the ordered components placeholder</td>
-</tr>
-<tr>
-<td>Collector placeholder missing</td>
-<td>A registered collector has no matching placeholder</td>
-<td>Add <code>{{CollectionKey}}</code> for each collector</td>
-</tr>
-<tr>
-<td>Wrong placeholder order (Using)</td>
-<td>A non-<code>Using</code> placeholder appears before <code>{{USING_STATEMENTS}}</code></td>
-<td>Move <code>Using</code> placeholders before all others</td>
-</tr>
-<tr>
-<td>Wrong placeholder order (Enum)</td>
-<td>A <code>Class</code> or <code>Function</code> placeholder appears before <code>{{ENUM_DEFINITIONS}}</code></td>
-<td>Move <code>Enum</code> placeholders before all <code>Class</code> and <code>Function</code> placeholders</td>
-</tr>
-<tr>
-<td>Duplicate placeholder</td>
-<td>Same <code>{{Key}}</code> appears more than once</td>
-<td>Remove the duplicate</td>
-</tr>
-<tr>
-<td>Unknown placeholder</td>
-<td><code>{{UNKNOWN}}</code> has no corresponding collector</td>
-<td>Remove it or register a matching collector</td>
-</tr>
-</tbody>
-</table>
-<h3 id="analysis-result-properties">Analysis Result Properties<a class="headerlink" href="#analysis-result-properties" title="Permanent link">&para;</a></h3>
-<p><code>Get-PSScriptBuilderTemplateAnalysis</code> returns a <code>PSScriptBuilderTemplateAnalysisResult</code> with:</p>
-<table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>IsValid</code></td>
-<td>Whether the template passed all validation rules</td>
-</tr>
-<tr>
-<td><code>ValidationErrors</code></td>
-<td>Array of error messages (empty when valid)</td>
-</tr>
-<tr>
-<td><code>ValidationMode</code></td>
-<td><code>Free</code>, <code>Hybrid</code>, or <code>Ordered</code></td>
-</tr>
-<tr>
-<td><code>OrderedComponentsKey</code></td>
-<td>The placeholder key used for the ordered components block (default: <code>ORDERED_COMPONENTS</code>)</td>
-</tr>
-<tr>
-<td><code>HasCrossDependencies</code></td>
-<td>Whether cross-dependencies were detected</td>
-</tr>
-<tr>
-<td><code>PlaceholdersFound</code></td>
-<td>All <code>{{...}}</code> tokens found in the template (sorted, unique)</td>
-</tr>
-<tr>
-<td><code>PlaceholdersExpected</code></td>
-<td>Tokens expected based on collectors and mode</td>
-</tr>
-<tr>
-<td><code>MissingPlaceholders</code></td>
-<td>Expected but not found in template</td>
-</tr>
-<tr>
-<td><code>UnknownPlaceholders</code></td>
-<td>Found in template but not matching any collector</td>
-</tr>
-<tr>
-<td><code>TemplatePath</code></td>
-<td>Resolved absolute path to the template file</td>
-</tr>
-<tr>
-<td><code>TemplateSize</code></td>
-<td>Template character count</td>
-</tr>
-</tbody>
-</table>
+<p>For a full explanation of what each property contains and how it is populated, see
+<a href="../collectors/#collected-data-properties">Collected Data Properties</a> in the Collectors Guide.</p>
+<p>The following examples all assume that <code>$classes</code> was populated as shown above.</p>
+<h3 id="find-classes-with-a-base-class">Find classes with a base class<a class="headerlink" href="#find-classes-with-a-base-class" title="Permanent link">&para;</a></h3>
+<p>Filtering by <code>BaseClass</code> gives you a complete picture of your class hierarchy.
+This is useful when you want to verify that all expected derived classes are present,
+or when you are debugging a dependency error caused by a missing base class:</p>
+<div class="highlight"><span class="filename">List all derived classes</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">$classes</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">BaseClass</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">Name</span><span class="p">,</span> <span class="n">BaseClass</span>
+</code></pre></div>
+<h3 id="find-all-subclasses-of-a-specific-base-class">Find all subclasses of a specific base class<a class="headerlink" href="#find-all-subclasses-of-a-specific-base-class" title="Permanent link">&para;</a></h3>
+<p>The reverse of the previous query — instead of asking "which classes have a base class?",
+this asks "which classes inherit from a specific type?". Useful when you want to verify a
+concrete class hierarchy or understand the full extent of a base class:</p>
+<div class="highlight"><span class="filename">Find subclasses of a specific base class</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">$classes</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">BaseClass</span> <span class="o">-eq</span> <span class="s2">&quot;MyBaseClass&quot;</span> <span class="p">}</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">Name</span>
+</code></pre></div>
+<h3 id="find-classes-that-reference-a-specific-type">Find classes that reference a specific type<a class="headerlink" href="#find-classes-that-reference-a-specific-type" title="Permanent link">&para;</a></h3>
+<p>When you are about to change a class, this query shows which other classes depend on it
+directly — a lightweight impact analysis without running a full dependency graph:</p>
+<div class="highlight"><span class="filename">Find classes that reference a specific type</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">$classes</span> <span class="p">|</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">TypeReferences</span> <span class="o">-contains</span> <span class="s2">&quot;MyService&quot;</span> <span class="p">}</span> <span class="p">|</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="nb">Select-Object</span> <span class="n">Name</span>
+</code></pre></div>
+<h3 id="validate-that-expected-components-are-present">Validate that expected components are present<a class="headerlink" href="#validate-that-expected-components-are-present" title="Permanent link">&para;</a></h3>
+<p>Use this pattern in a CI pipeline or pre-build script to assert that all required
+components were collected. If a file is missing, misconfigured, or excluded by a filter,
+the check will catch it before the build fails with a harder-to-diagnose error:</p>
+<div class="highlight"><span class="filename">Assert expected classes are present</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nv">$expected</span> <span class="p">=</span> <span class="p">@(</span><span class="s2">&quot;ServiceA&quot;</span><span class="p">,</span> <span class="s2">&quot;ServiceB&quot;</span><span class="p">,</span> <span class="s2">&quot;RepositoryBase&quot;</span><span class="p">)</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nv">$missing</span>  <span class="p">=</span> <span class="nv">$expected</span> <span class="p">|</span> <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span> <span class="n">-notin</span> <span class="nv">$classes</span><span class="p">.</span><span class="n">Name</span> <span class="p">}</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$missing</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="nb">Write-Error</span> <span class="s2">&quot;Missing classes: </span><span class="p">$(</span><span class="nv">$missing</span> <span class="n">-join</span> <span class="s1">&#39;, &#39;</span><span class="p">)</span><span class="s2">&quot;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="find-classes-with-static-initializer-references">Find classes with static initializer references<a class="headerlink" href="#find-classes-with-static-initializer-references" title="Permanent link">&para;</a></h3>
+<p>Static initializer references are types used in static property initializer expressions — for
+example <code>static [MyClass] $Default = [MyClass]::new()</code>. These create the same
+hard ordering constraint as inheritance: the referenced type must already be defined when
+PowerShell loads the class. See the <a href="../dependency-analysis/">Dependency Analysis Guide</a> for
+details.</p>
+<p>Use this query to identify classes that carry this constraint. If the referenced type is not a
+project-internal type — for example a .NET framework type — PSScriptBuilder will skip it when
+building the dependency graph, which is expected and correct:</p>
+<div class="highlight"><span class="filename">Find classes with static initializer references</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nv">$classes</span> <span class="p">|</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">StaticInitializerReferences</span><span class="p">.</span><span class="n">Count</span> <span class="o">-gt</span> <span class="n">0</span> <span class="p">}</span> <span class="p">|</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="nb">Select-Object</span> <span class="n">Name</span><span class="p">,</span> <span class="n">StaticInitializerReferences</span>
+</code></pre></div>
+<h3 id="find-functions-that-call-other-functions">Find functions that call other functions<a class="headerlink" href="#find-functions-that-call-other-functions" title="Permanent link">&para;</a></h3>
+<p>The Function collector records which other functions each function calls. This information
+is used to determine function call edges in the dependency graph. You can query it directly
+to understand which functions are entry points and which are helpers called by others:</p>
+<div class="highlight"><span class="filename">Find functions with outgoing function calls</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nv">$functionCollector</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="k">Function</span> <span class="n">-IncludePath</span> <span class="s2">&quot;src\Public&quot;</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nv">$functionCollector</span><span class="p">.</span><span class="n">Collect</span><span class="p">()</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="nv">$functions</span> <span class="p">=</span> <span class="nv">$functionCollector</span> <span class="p">|</span> <span class="nb">Get-PSScriptBuilderCollectorContent</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="nv">$functions</span> <span class="p">|</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>    <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">CalledFunctions</span><span class="p">.</span><span class="n">Count</span> <span class="o">-gt</span> <span class="n">0</span> <span class="p">}</span> <span class="p">|</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>    <span class="nb">Select-Object</span> <span class="n">Name</span><span class="p">,</span> <span class="n">CalledFunctions</span>
+</code></pre></div>
+<h3 id="find-public-entry-points">Find public entry points<a class="headerlink" href="#find-public-entry-points" title="Permanent link">&para;</a></h3>
+<p>Functions that are never called by other functions are likely public entry points — the
+top-level cmdlets or commands that users invoke directly. This query builds a set of all
+internally called function names and filters them out, leaving only the uncalled ones:</p>
+<div class="highlight"><span class="filename">Find functions not called by any other function</span><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nv">$calledFunctions</span> <span class="p">=</span> <span class="nv">$functions</span><span class="p">.</span><span class="n">CalledFunctions</span> <span class="p">|</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span> <span class="nv">$_</span> <span class="p">}</span> <span class="p">|</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    <span class="nb">Sort-Object</span> <span class="n">-Unique</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="nv">$functions</span> <span class="p">|</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    <span class="nb">Where-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">Name</span> <span class="n">-notin</span> <span class="nv">$calledFunctions</span> <span class="p">}</span> <span class="p">|</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>    <span class="nb">Select-Object</span> <span class="n">Name</span>
+</code></pre></div>
+<h3 id="count-type-references-per-class">Count type references per class<a class="headerlink" href="#count-type-references-per-class" title="Permanent link">&para;</a></h3>
+<p><code>TypeReferences</code> contains all non-built-in types referenced in a class — in property
+declarations, method parameters, return types, and method bodies. The count gives you a
+rough measure of how many other components a class depends on. Classes with a high count
+tend to be orchestrators or aggregators that depend on many other types:</p>
+<div class="highlight"><span class="filename">Rank classes by number of dependencies</span><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nv">$classes</span> <span class="p">|</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    <span class="nb">Select-Object</span> <span class="n">Name</span><span class="p">,</span> <span class="p">@{</span> <span class="n">Name</span> <span class="p">=</span> <span class="s1">&#39;Dependencies&#39;</span><span class="p">;</span> <span class="n">Expression</span> <span class="p">=</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">TypeReferences</span><span class="p">.</span><span class="n">Count</span> <span class="p">}</span> <span class="p">}</span> <span class="p">|</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    <span class="nb">Sort-Object</span> <span class="n">Dependencies</span> <span class="n">-Descending</span>
+</code></pre></div>
+<h3 id="retrieve-the-source-code-of-a-specific-component">Retrieve the source code of a specific component<a class="headerlink" href="#retrieve-the-source-code-of-a-specific-component" title="Permanent link">&para;</a></h3>
+<p>When debugging a build or inspecting what PSScriptBuilder extracted, you can retrieve the
+exact source code that will end up in the generated output script. This is especially useful
+when the generated script contains unexpected content and you want to trace it back to the
+source:</p>
+<div class="highlight"><span class="filename">Get source code of a single class</span><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nv">$data</span> <span class="p">=</span> <span class="nb">Get-PSScriptBuilderCollectorContent</span> <span class="n">-Collector</span> <span class="nv">$classCollector</span> <span class="n">-ItemName</span> <span class="s2">&quot;MyBaseClass&quot;</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nb">Write-Host</span> <span class="nv">$data</span><span class="p">.</span><span class="n">SourceCode</span>
+</code></pre></div>
 <hr />
-<h2 id="tips">Tips<a class="headerlink" href="#tips" title="Permanent link">&para;</a></h2>
-<div class="admonition tip">
-<p class="admonition-title">Always validate before building</p>
-<p>Use <code>Test-PSScriptBuilderTemplate</code> in your build script to catch configuration mismatches
-early. A validation failure here is far easier to diagnose than a malformed output script.</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Use <code>-Verbose</code> during development</p>
-<p>Both <code>Test-PSScriptBuilderTemplate</code> and <code>Get-PSScriptBuilderTemplateAnalysis</code> emit verbose
-messages that show exactly which placeholders were found, expected, and missing.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Custom <code>OrderedComponentsKey</code> must match in template and build call</p>
-<p>If you override the default <code>ORDERED_COMPONENTS</code> key, the placeholder in the template and
-the <code>-OrderedComponentsKey</code> argument must use the same value. Storing it in
-<code>psscriptbuilder.config.json</code> is the safest way to keep them in sync.</p>
-</div>
+<h2 id="dependency-analysis">Dependency Analysis<a class="headerlink" href="#dependency-analysis" title="Permanent link">&para;</a></h2>
+<p><a href="../../cmdlets/Get-PSScriptBuilderDependencyAnalysis/"><code>Get-PSScriptBuilderDependencyAnalysis</code></a>
+executes all collectors, builds the full dependency graph, runs cycle detection, and returns a
+<code>PSScriptBuilderDependencyAnalysisResult</code> containing the complete analysis. There is no need to
+run the collectors separately — the cmdlet handles that internally.</p>
+<div class="highlight"><span class="filename">Run dependency analysis</span><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nv">$analysis</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderContentCollector</span> <span class="p">|</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Class</span>    <span class="n">-IncludePath</span> <span class="s2">&quot;src\Classes&quot;</span> <span class="p">|</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="k">Function</span> <span class="n">-IncludePath</span> <span class="s2">&quot;src\Public&quot;</span>  <span class="p">|</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    <span class="nb">Get-PSScriptBuilderDependencyAnalysis</span>
+</code></pre></div>
+<p>The result object gives you access to <code>HasCrossDependencies</code>, <code>TopologicalOrder</code>,
+<code>HasCycles</code>, <code>CyclePath</code>, <code>ComponentCounts</code>, and the full <code>DependencyGraph</code> — including
+<code>GetDependencies()</code> (what a component depends on) and <code>GetDependents()</code> (what would be
+affected by a change). See the <a href="../dependency-analysis/">Dependency Analysis Guide</a> for a
+complete walkthrough of all result properties and use cases.</p>
 <hr />
-<h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="../collectors/">Collectors Guide</a> — configure collectors and custom collection keys</li>
-<li><a href="../dependency-analysis/">Dependency Analysis Guide</a> — how cross-dependencies are detected</li>
-<li><a href="../release-management/">Release Management Guide</a> — version tokens and bump file configuration</li>
-</ul>
+<h2 id="template-analysis">Template Analysis<a class="headerlink" href="#template-analysis" title="Permanent link">&para;</a></h2>
+<p><a href="../../cmdlets/Get-PSScriptBuilderTemplateAnalysis/"><code>Get-PSScriptBuilderTemplateAnalysis</code></a>
+extends the dependency analysis with template-specific results: which validation mode is
+active, which placeholders were found, and whether any are missing or unknown. This is the
+right cmdlet when a build fails with a template validation error and you need to understand
+exactly which placeholders are present, expected, or unknown:</p>
+<div class="highlight"><span class="filename">Analyse template placeholders</span><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nv">$analysis</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderContentCollector</span> <span class="p">|</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Class</span> <span class="n">-IncludePath</span> <span class="s2">&quot;src\Classes&quot;</span> <span class="p">|</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    <span class="nb">Get-PSScriptBuilderTemplateAnalysis</span> <span class="n">-TemplatePath</span> <span class="s2">&quot;.\build\Templates\MyModule.psm1.template&quot;</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="nv">$analysis</span><span class="p">.</span><span class="n">ValidationMode</span>       <span class="c"># Free, Hybrid, or Ordered</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="nv">$analysis</span><span class="p">.</span><span class="n">IsValid</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="nv">$analysis</span><span class="p">.</span><span class="n">MissingPlaceholders</span>  <span class="c"># expected but not found in template</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="nv">$analysis</span><span class="p">.</span><span class="n">UnknownPlaceholders</span>  <span class="c"># found in template but not expected</span>
+</code></pre></div>
+<p>See the <a href="../templates/">Templates Guide</a> for a full explanation of validation modes, placeholder
+rules, and all analysis result properties.</p>
 
 
 
@@ -2569,7 +2387,7 @@ the <code>-OrderedComponentsKey</code> argument must use the same value. Storing
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../collectors/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Collectors">
+          <a href="../release-management/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Release Management">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -2579,20 +2397,20 @@ the <code>-OrderedComponentsKey</code> argument must use the same value. Storing
                 Previous
               </span>
               <div class="md-ellipsis">
-                Collectors
+                Release Management
               </div>
             </div>
           </a>
         
         
           
-          <a href="../dependency-analysis/" class="md-footer__link md-footer__link--next" aria-label="Next: Dependency Analysis">
+          <a href="../../troubleshooting/" class="md-footer__link md-footer__link--next" aria-label="Next: Troubleshooting">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Dependency Analysis
+                Troubleshooting
               </div>
             </div>
             <div class="md-footer__button md-icon">
