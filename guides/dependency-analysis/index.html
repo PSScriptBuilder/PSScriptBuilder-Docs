@@ -2750,56 +2750,135 @@ The <code>HasCrossDependencies</code> property reports this condition:</p>
 <p><code>HasCrossDependencies</code> is always <code>false</code> when <code>HasCycles</code> is <code>true</code>, since no sort is
 performed in that case.</p>
 <h3 id="5-inspect-the-dependency-graph">5. Inspect the Dependency Graph<a class="headerlink" href="#5-inspect-the-dependency-graph" title="Permanent link">&para;</a></h3>
-<p>The <code>DependencyGraph</code> property on the result object exposes two directional queries. The
-<strong>forward</strong> direction answers "what does this component depend on?" — its prerequisites. The
-<strong>reverse</strong> direction answers "what would be affected if this component changed?" — its
-dependents. This is useful for understanding the impact of a change before making it:</p>
-<div class="highlight"><span class="filename">Forward: what does ClassA depend on?</span><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nv">$prerequisites</span> <span class="p">=</span> <span class="nv">$analysis</span><span class="p">.</span><span class="n">DependencyGraph</span><span class="p">.</span><span class="n">GetDependencies</span><span class="p">(</span><span class="s2">&quot;ClassA&quot;</span><span class="p">)</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nb">Write-Host</span> <span class="s2">&quot;ClassA depends on: </span><span class="p">$(</span><span class="nv">$prerequisites</span> <span class="n">-join</span> <span class="s1">&#39;, &#39;</span><span class="p">)</span><span class="s2">&quot;</span>
+<p>The <code>DependencyGraph</code> property on the result object exposes the following methods:</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Returns</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GetDependencies(componentName)</code></td>
+<td><code>HashSet[string]</code></td>
+<td>All components the given component depends on (all edge types)</td>
+</tr>
+<tr>
+<td><code>GetDependencies(componentName, edgeType)</code></td>
+<td><code>HashSet[string]</code></td>
+<td>Dependencies filtered to a specific edge type</td>
+</tr>
+<tr>
+<td><code>GetDependents(componentName)</code></td>
+<td><code>HashSet[string]</code></td>
+<td>All components that depend on the given component</td>
+</tr>
+<tr>
+<td><code>GetAllNodes()</code></td>
+<td><code>HashSet[string]</code></td>
+<td>All component names in the graph</td>
+</tr>
+<tr>
+<td><code>HasNode(componentName)</code></td>
+<td><code>bool</code></td>
+<td>Whether a component exists in the graph</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>PSScriptBuilderDependencyEdgeType</code> enum used with the filtered overload has three values:</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+<th>Fatal cycle?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Inheritance</code></td>
+<td><code>class A : B</code> — class inherits from another class</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>StaticInitializer</code></td>
+<td>Static property initializer references another type at load time</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><code>TypeReference</code></td>
+<td>Type used in a method body or property type annotation</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>Assign the graph to a local variable first — this keeps subsequent calls concise and reflects
+how you would use it in a real script:</p>
+<div class="highlight"><span class="filename">Assign the graph to a variable</span><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nv">$graph</span> <span class="p">=</span> <span class="nv">$analysis</span><span class="p">.</span><span class="n">DependencyGraph</span>
 </code></pre></div>
-<div class="highlight"><span class="filename">Reverse (impact): what depends on BaseClass?</span><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nv">$dependents</span> <span class="p">=</span> <span class="nv">$analysis</span><span class="p">.</span><span class="n">DependencyGraph</span><span class="p">.</span><span class="n">GetDependents</span><span class="p">(</span><span class="s2">&quot;BaseClass&quot;</span><span class="p">)</span>
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Changing BaseClass affects: </span><span class="p">$(</span><span class="nv">$dependents</span> <span class="n">-join</span> <span class="s1">&#39;, &#39;</span><span class="p">)</span><span class="s2">&quot;</span>
+<p><strong>Forward direction</strong> — "what does this component depend on?":</p>
+<div class="highlight"><span class="filename">Forward: what does ClassA depend on?</span><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nv">$prerequisites</span> <span class="p">=</span> <span class="nv">$graph</span><span class="p">.</span><span class="n">GetDependencies</span><span class="p">(</span><span class="s2">&quot;ClassA&quot;</span><span class="p">)</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="nb">Write-Host</span> <span class="s2">&quot;ClassA depends on: </span><span class="p">$(</span><span class="nv">$prerequisites</span> <span class="n">-join</span> <span class="s1">&#39;, &#39;</span><span class="p">)</span><span class="s2">&quot;</span>
 </code></pre></div>
-<p>If no dependencies exist for a component — because it has none, or because no other component
-depends on it — the result is an empty array, not an error.</p>
+<p><strong>Filtered by edge type</strong> — useful for isolating inheritance relationships:</p>
+<div class="highlight"><span class="filename">Filtered: which classes does ClassA inherit from?</span><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nv">$bases</span> <span class="p">=</span> <span class="nv">$graph</span><span class="p">.</span><span class="n">GetDependencies</span><span class="p">(</span><span class="s2">&quot;ClassA&quot;</span><span class="p">,</span> <span class="no">[PSScriptBuilderDependencyEdgeType]</span><span class="p">::</span><span class="n">Inheritance</span><span class="p">)</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="nb">Write-Host</span> <span class="s2">&quot;ClassA inherits from: </span><span class="p">$(</span><span class="nv">$bases</span> <span class="n">-join</span> <span class="s1">&#39;, &#39;</span><span class="p">)</span><span class="s2">&quot;</span>
+</code></pre></div>
+<p><strong>Reverse direction</strong> — "what would be affected if this component changed?":</p>
+<div class="highlight"><span class="filename">Reverse (impact): what depends on BaseClass?</span><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nv">$dependents</span> <span class="p">=</span> <span class="nv">$graph</span><span class="p">.</span><span class="n">GetDependents</span><span class="p">(</span><span class="s2">&quot;BaseClass&quot;</span><span class="p">)</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Changing BaseClass affects: </span><span class="p">$(</span><span class="nv">$dependents</span> <span class="n">-join</span> <span class="s1">&#39;, &#39;</span><span class="p">)</span><span class="s2">&quot;</span>
+</code></pre></div>
+<p><strong>Enumerate all nodes or check for a specific component:</strong></p>
+<div class="highlight"><span class="filename">All nodes / existence check</span><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nv">$all</span> <span class="p">=</span> <span class="nv">$graph</span><span class="p">.</span><span class="n">GetAllNodes</span><span class="p">()</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="nb">Write-Host</span> <span class="s2">&quot;All components in graph: </span><span class="p">$(</span><span class="nv">$all</span> <span class="n">-join</span> <span class="s1">&#39;, &#39;</span><span class="p">)</span><span class="s2">&quot;</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$graph</span><span class="p">.</span><span class="n">HasNode</span><span class="p">(</span><span class="s2">&quot;BaseClass&quot;</span><span class="p">))</span> <span class="p">{</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>    <span class="nb">Write-Host</span> <span class="s2">&quot;BaseClass is part of the dependency graph&quot;</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="p">}</span>
+</code></pre></div>
+<p>All methods return a <code>HashSet[string]</code>. In PowerShell this behaves like any other collection —
+it can be iterated with <code>ForEach-Object</code>, tested with <code>.Count</code>, or joined with <code>-join</code>.
+If no dependencies exist for a component, the result is an empty collection, not an error.</p>
 <h3 id="6-component-statistics">6. Component Statistics<a class="headerlink" href="#6-component-statistics" title="Permanent link">&para;</a></h3>
 <p>The <code>ComponentCounts</code> property provides a per-type breakdown of all collected components.
 The <code>TotalComponents</code>, <code>TotalNodes</code>, and <code>TotalEdges</code> properties give a quick overview of the
 size and complexity of the dependency graph:</p>
-<div class="highlight"><span class="filename">Component statistics</span><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nv">$counts</span> <span class="p">=</span> <span class="nv">$analysis</span><span class="p">.</span><span class="n">ComponentCounts</span>
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
-<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Using statements: </span><span class="p">$(</span><span class="nv">$counts</span><span class="p">.</span><span class="n">UsingStatements</span><span class="p">)</span><span class="s2">&quot;</span>
-<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Enums:            </span><span class="p">$(</span><span class="nv">$counts</span><span class="p">.</span><span class="n">EnumDefinitions</span><span class="p">)</span><span class="s2">&quot;</span>
-<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Classes:          </span><span class="p">$(</span><span class="nv">$counts</span><span class="p">.</span><span class="n">ClassDefinitions</span><span class="p">)</span><span class="s2">&quot;</span>
-<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Functions:        </span><span class="p">$(</span><span class="nv">$counts</span><span class="p">.</span><span class="n">FunctionDefinitions</span><span class="p">)</span><span class="s2">&quot;</span>
-<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Files:            </span><span class="p">$(</span><span class="nv">$counts</span><span class="p">.</span><span class="n">FileContents</span><span class="p">)</span><span class="s2">&quot;</span>
-<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Total components: </span><span class="p">$(</span><span class="nv">$analysis</span><span class="p">.</span><span class="n">TotalComponents</span><span class="p">)</span><span class="s2">&quot;</span>
-<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Graph nodes:      </span><span class="p">$(</span><span class="nv">$analysis</span><span class="p">.</span><span class="n">TotalNodes</span><span class="p">)</span><span class="s2">&quot;</span>
-<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Graph edges:      </span><span class="p">$(</span><span class="nv">$analysis</span><span class="p">.</span><span class="n">TotalEdges</span><span class="p">)</span><span class="s2">&quot;</span>
+<div class="highlight"><span class="filename">Component statistics</span><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nv">$counts</span> <span class="p">=</span> <span class="nv">$analysis</span><span class="p">.</span><span class="n">ComponentCounts</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Using statements: </span><span class="p">$(</span><span class="nv">$counts</span><span class="p">.</span><span class="n">UsingStatements</span><span class="p">)</span><span class="s2">&quot;</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Enums:            </span><span class="p">$(</span><span class="nv">$counts</span><span class="p">.</span><span class="n">EnumDefinitions</span><span class="p">)</span><span class="s2">&quot;</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Classes:          </span><span class="p">$(</span><span class="nv">$counts</span><span class="p">.</span><span class="n">ClassDefinitions</span><span class="p">)</span><span class="s2">&quot;</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Functions:        </span><span class="p">$(</span><span class="nv">$counts</span><span class="p">.</span><span class="n">FunctionDefinitions</span><span class="p">)</span><span class="s2">&quot;</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Files:            </span><span class="p">$(</span><span class="nv">$counts</span><span class="p">.</span><span class="n">FileContents</span><span class="p">)</span><span class="s2">&quot;</span>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Total components: </span><span class="p">$(</span><span class="nv">$analysis</span><span class="p">.</span><span class="n">TotalComponents</span><span class="p">)</span><span class="s2">&quot;</span>
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Graph nodes:      </span><span class="p">$(</span><span class="nv">$analysis</span><span class="p">.</span><span class="n">TotalNodes</span><span class="p">)</span><span class="s2">&quot;</span>
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Graph edges:      </span><span class="p">$(</span><span class="nv">$analysis</span><span class="p">.</span><span class="n">TotalEdges</span><span class="p">)</span><span class="s2">&quot;</span>
 </code></pre></div>
 <p><code>TotalNodes</code> counts all components that participate in at least one dependency relationship — either as a dependent or as a prerequisite. A base class like <code>Person</code> with no outgoing dependencies is still counted as a node if another component depends on it. <code>TotalEdges</code> counts the number of dependency relationships between components.</p>
 <h3 id="7-pre-build-validation-pattern">7. Pre-Build Validation Pattern<a class="headerlink" href="#7-pre-build-validation-pattern" title="Permanent link">&para;</a></h3>
 <p>Combining dependency analysis with a build call into a single script is the recommended
 pattern for automated builds. Check for cycles first, report cross-dependencies if present,
 then proceed with the build:</p>
-<div class="highlight"><span class="filename">Pre-build validation pattern</span><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nv">$contentCollector</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderContentCollector</span> <span class="p">|</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Class</span>    <span class="n">-IncludePath</span> <span class="s2">&quot;src\Classes&quot;</span> <span class="p">|</span>
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="k">Function</span> <span class="n">-IncludePath</span> <span class="s2">&quot;src\Public&quot;</span>
-<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
-<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="nv">$analysis</span> <span class="p">=</span> <span class="nb">Get-PSScriptBuilderDependencyAnalysis</span> <span class="n">-ContentCollector</span> <span class="nv">$contentCollector</span>
-<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>
-<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$analysis</span><span class="p">.</span><span class="n">HasCycles</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>    <span class="nb">Write-Error</span> <span class="s2">&quot;Build aborted — circular dependency: </span><span class="p">$(</span><span class="nv">$analysis</span><span class="p">.</span><span class="n">CyclePath</span> <span class="n">-join</span> <span class="s1">&#39; -&gt; &#39;</span><span class="p">)</span><span class="s2">&quot;</span>
-<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>    <span class="k">return</span>
-<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="p">}</span>
-<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>
-<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$analysis</span><span class="p">.</span><span class="n">HasCrossDependencies</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>    <span class="nb">Write-Warning</span> <span class="s2">&quot;Cross-dependencies detected — ensure template uses {{ORDERED_COMPONENTS}}&quot;</span>
-<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="p">}</span>
-<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a>
-<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a><span class="nb">Invoke-PSScriptBuilderBuild</span> <span class="n">-ContentCollector</span> <span class="nv">$contentCollector</span> <span class="p">`</span>
-<a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a>    <span class="n">-TemplatePath</span> <span class="s2">&quot;template.psm1&quot;</span> <span class="p">`</span>
-<a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a>    <span class="n">-OutputPath</span>   <span class="s2">&quot;output.psm1&quot;</span>
+<div class="highlight"><span class="filename">Pre-build validation pattern</span><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nv">$contentCollector</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderContentCollector</span> <span class="p">|</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Class</span>    <span class="n">-IncludePath</span> <span class="s2">&quot;src\Classes&quot;</span> <span class="p">|</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="k">Function</span> <span class="n">-IncludePath</span> <span class="s2">&quot;src\Public&quot;</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="nv">$analysis</span> <span class="p">=</span> <span class="nb">Get-PSScriptBuilderDependencyAnalysis</span> <span class="n">-ContentCollector</span> <span class="nv">$contentCollector</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$analysis</span><span class="p">.</span><span class="n">HasCycles</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>    <span class="nb">Write-Error</span> <span class="s2">&quot;Build aborted — circular dependency: </span><span class="p">$(</span><span class="nv">$analysis</span><span class="p">.</span><span class="n">CyclePath</span> <span class="n">-join</span> <span class="s1">&#39; -&gt; &#39;</span><span class="p">)</span><span class="s2">&quot;</span>
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>    <span class="k">return</span>
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="p">}</span>
+<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>
+<a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$analysis</span><span class="p">.</span><span class="n">HasCrossDependencies</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a>    <span class="nb">Write-Warning</span> <span class="s2">&quot;Cross-dependencies detected — ensure template uses {{ORDERED_COMPONENTS}}&quot;</span>
+<a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a><span class="p">}</span>
+<a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a>
+<a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a><span class="nb">Invoke-PSScriptBuilderBuild</span> <span class="n">-ContentCollector</span> <span class="nv">$contentCollector</span> <span class="p">`</span>
+<a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a>    <span class="n">-TemplatePath</span> <span class="s2">&quot;template.psm1&quot;</span> <span class="p">`</span>
+<a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a>    <span class="n">-OutputPath</span>   <span class="s2">&quot;output.psm1&quot;</span>
 </code></pre></div>
 <p>Note that <code>Invoke-PSScriptBuilderBuild</code> runs its own internal dependency analysis and will
 also fail on cycles. The explicit pre-check is optional but recommended — it gives you the
