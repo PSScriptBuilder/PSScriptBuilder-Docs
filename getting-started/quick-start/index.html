@@ -18,7 +18,7 @@
         <link rel="prev" href="../installation/">
       
       
-        <link rel="next" href="../../guides/configuration/">
+        <link rel="next" href="../../tutorials/">
       
       
         
@@ -247,9 +247,11 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../installation/" class="md-tabs__link">
+        <a href="../" class="md-tabs__link">
           
   
+  
+    
   
   Getting Started
 
@@ -267,9 +269,33 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../guides/configuration/" class="md-tabs__link">
+        <a href="../../tutorials/" class="md-tabs__link">
           
   
+  
+    
+  
+  Tutorials
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../guides/" class="md-tabs__link">
+          
+  
+  
+    
   
   Guides
 
@@ -284,17 +310,20 @@
   
   
   
-    <li class="md-tabs__item">
-      <a href="../../troubleshooting/" class="md-tabs__link">
-        
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../cmdlets/" class="md-tabs__link">
+          
   
   
     
   
-  Troubleshooting
+  Cmdlet Reference
 
-      </a>
-    </li>
+        </a>
+      </li>
+    
   
 
       
@@ -322,18 +351,17 @@
   
   
   
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../cmdlets/" class="md-tabs__link">
-          
+    <li class="md-tabs__item">
+      <a href="../../troubleshooting/" class="md-tabs__link">
+        
   
   
-  Cmdlet Reference
+    
+  
+  Troubleshooting
 
-        </a>
-      </li>
-    
+      </a>
+    </li>
   
 
       
@@ -424,6 +452,16 @@
   
     
     
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
     
     
       
@@ -440,8 +478,9 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -455,8 +494,14 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
@@ -468,6 +513,8 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
             
               
                 
@@ -564,10 +611,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
+  <a href="#step-1-scaffold-a-new-project" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Prerequisites
+        Step 1 — Scaffold a New Project
       
     </span>
   </a>
@@ -575,10 +622,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-project-structure" class="md-nav__link">
+  <a href="#step-2-run-the-build" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example Project Structure
+        Step 2 — Run the Build
       
     </span>
   </a>
@@ -586,71 +633,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#walkthrough" class="md-nav__link">
+  <a href="#step-3-run-the-generated-script" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Walkthrough
+        Step 3 — Run the Generated Script
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Walkthrough">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-add-the-configuration-file" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Add the Configuration File
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-create-a-template" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Create a Template
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-run-a-build-script" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Run a Build Script
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-check-the-output" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Check the Output
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#tips" class="md-nav__link">
+  <a href="#what-gets-created" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Tips
+        What Gets Created
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#with-release-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        With Release Management
       
     </span>
   </a>
@@ -692,6 +700,18 @@
   
     
     
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
@@ -705,8 +725,171 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <div class="md-nav__link md-nav__container">
+            <a href="../../tutorials/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorials
+  
+
+    
+  </span>
+  
+  
+
+            </a>
             
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tutorials
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/building-your-first-project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building Your First Project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/migrating-to-psscriptbuilder/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Migrating to PSScriptBuilder
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/setting-up-release-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setting Up Release Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../guides/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
@@ -720,15 +903,83 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
   
     Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Building
   
 
           </label>
@@ -825,14 +1076,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/dependency-analysis/" class="md-nav__link">
+      <a href="../../guides/build/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Dependency Analysis
+    Build
   
 
     
@@ -846,6 +1097,70 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analysis
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Analysis
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
               
                 
   
@@ -853,14 +1168,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../guides/release-management/" class="md-nav__link">
+      <a href="../../guides/dependency-analysis/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Release Management
+    Dependency Analysis
   
 
     
@@ -908,68 +1223,21 @@
     </li>
   
 
+              
+            
+              
+                
+  
+  
+  
+  
+    
     
       
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../troubleshooting/" class="md-nav__link">
         
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Troubleshooting
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
       
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../examples/" class="md-nav__link">
         
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Examples
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
       
-      
-  
-  
-  
-  
-    
     
     
     
@@ -981,17 +1249,17 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
     
   
-    Cmdlet Reference
+    Publishing
   
 
     
@@ -1002,12 +1270,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Cmdlet Reference
+    Publishing
   
 
           </label>
@@ -1020,14 +1288,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../cmdlets/" class="md-nav__link">
+      <a href="../../guides/release-management/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Overview
+    Release Management
   
 
     
@@ -1047,7 +1315,66 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../guides/cicd-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     
+  
+    CI/CD Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1059,10 +1386,179 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           
-          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+          <div class="md-nav__link md-nav__container">
+            <a href="../../cmdlets/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cmdlet Reference
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cmdlet Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scaffolding
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Scaffolding
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmdlets/New-PSScriptBuilderProject/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New-PSScriptBuilderProject
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
             
   
   
@@ -1080,8 +1576,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1315,6 +1811,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmdlets/Compress-PSScriptBuilderScript/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compress-PSScriptBuilderScript
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1331,6 +1855,20 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
@@ -1341,10 +1879,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
         
           
-          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
             
   
   
@@ -1362,8 +1900,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1388,6 +1926,90 @@
     
   
     Get-PSScriptBuilderDependencyAnalysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmdlets/Get-PSScriptBuilderComponentDependency/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get-PSScriptBuilderComponentDependency
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmdlets/ConvertTo-PSScriptBuilderComponentDependencyTree/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ConvertTo-PSScriptBuilderComponentDependencyTree
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmdlets/Export-PSScriptBuilderDependencyGraph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Export-PSScriptBuilderDependencyGraph
   
 
     
@@ -1473,6 +2095,14 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
@@ -1483,10 +2113,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
         
           
-          <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
             
   
   
@@ -1504,8 +2134,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1615,6 +2245,28 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
@@ -1625,10 +2277,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
         
           
-          <label class="md-nav__link" for="__nav_6_5" id="__nav_6_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
             
   
   
@@ -1646,8 +2298,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1952,6 +2604,60 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1979,10 +2685,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
+  <a href="#step-1-scaffold-a-new-project" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Prerequisites
+        Step 1 — Scaffold a New Project
       
     </span>
   </a>
@@ -1990,10 +2696,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-project-structure" class="md-nav__link">
+  <a href="#step-2-run-the-build" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example Project Structure
+        Step 2 — Run the Build
       
     </span>
   </a>
@@ -2001,71 +2707,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#walkthrough" class="md-nav__link">
+  <a href="#step-3-run-the-generated-script" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Walkthrough
+        Step 3 — Run the Generated Script
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Walkthrough">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-add-the-configuration-file" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Add the Configuration File
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-create-a-template" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Create a Template
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-run-a-build-script" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Run a Build Script
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-check-the-output" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Check the Output
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#tips" class="md-nav__link">
+  <a href="#what-gets-created" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Tips
+        What Gets Created
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#with-release-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        With Release Management
       
     </span>
   </a>
@@ -2104,121 +2771,115 @@
 
 
 <h1 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h1>
-<p>This guide walks you through building your first single-file PowerShell script from a multi-file project.</p>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>PSScriptBuilder solves a specific problem: you write your PowerShell classes, enums, and
+functions in separate, focused files — but a deployable script needs everything in a single
+file, in the correct dependency order. PSScriptBuilder handles the assembly automatically.</p>
+<p>This guide gets you from zero to a working, dependency-ordered script in three steps:
+scaffold a project, run the build, and run the generated output.</p>
+<hr />
+<h2 id="step-1-scaffold-a-new-project">Step 1 — Scaffold a New Project<a class="headerlink" href="#step-1-scaffold-a-new-project" title="Permanent link">&para;</a></h2>
+<p>Open a PowerShell session, load the module with <code>using module PSScriptBuilder</code>
+(see <a href="../installation/">Installation</a>), and run:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">New-PSScriptBuilderProject</span> <span class="n">-Name</span> <span class="s2">&quot;MyProject&quot;</span>
+</code></pre></div>
+<p>By default, the project folder is created in the current working directory. To create it
+somewhere else, pass <code>-Path</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">New-PSScriptBuilderProject</span> <span class="n">-Name</span> <span class="s2">&quot;MyProject&quot;</span> <span class="n">-Path</span> <span class="s2">&quot;C:\Projects&quot;</span>
+</code></pre></div>
+<p>Either way, the command creates the complete directory structure, a configuration file, a
+template, and a build script in one step. It also creates three sample source files that are
+deliberately chosen to demonstrate dependency resolution:</p>
 <ul>
-<li>PSScriptBuilder installed — see <a href="../installation/">Installation</a></li>
-<li>A PowerShell project with source files to combine</li>
+<li><code>WorkStatus.ps1</code> — an enum with three values</li>
+<li><code>Employee.ps1</code> — a class that uses <code>WorkStatus</code> as a property type</li>
+<li><code>Get-EmployeeInfo.ps1</code> — a function that accepts an <code>Employee</code> parameter</li>
 </ul>
-<h2 id="example-project-structure">Example Project Structure<a class="headerlink" href="#example-project-structure" title="Permanent link">&para;</a></h2>
-<p>This guide uses a simple project as example:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>MyModule/
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── psscriptbuilder.config.json
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── build/
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│   ├── Templates/
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│   │   └── MyModule.psm1.template
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>│   └── Output/           ← generated files go here
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>└── src/
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    ├── Classes/
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    │   ├── Person.ps1
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    │   └── Employee.ps1
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    └── Public/
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        └── Get-EmployeeInfo.ps1
+<p>These files depend on each other. PSScriptBuilder analyses the dependencies and determines
+the correct output order automatically — regardless of how the files are arranged on disk.
+They are included by default to demonstrate this behaviour. For a real project without sample
+files, pass <code>-NoSampleFiles</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">New-PSScriptBuilderProject</span> <span class="n">-Name</span> <span class="s2">&quot;MyProject&quot;</span> <span class="n">-NoSampleFiles</span>
 </code></pre></div>
 <hr />
-<h2 id="walkthrough">Walkthrough<a class="headerlink" href="#walkthrough" title="Permanent link">&para;</a></h2>
-<h3 id="1-add-the-configuration-file">1. Add the Configuration File<a class="headerlink" href="#1-add-the-configuration-file" title="Permanent link">&para;</a></h3>
-<p>Run the following cmdlet to generate <code>psscriptbuilder.config.json</code> in your project root:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">New-PSScriptBuilderConfiguration</span>
+<h2 id="step-2-run-the-build">Step 2 — Run the Build<a class="headerlink" href="#step-2-run-the-build" title="Permanent link">&para;</a></h2>
+<p><code>Build-MyProject.ps1</code> was generated by the scaffold command. It configures the collectors,
+points them at the source directories, and triggers the build:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">cd </span><span class="n">MyProject</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="p">.\</span><span class="n">Build-MyProject</span><span class="p">.</span><span class="n">ps1</span>
 </code></pre></div>
-<p>PSScriptBuilder searches for this file starting from the current directory upward, so you only need to place it once at the project root. For the full field reference, see <a href="../installation/#4-add-the-configuration-file">Installation</a>.</p>
-<h3 id="2-create-a-template">2. Create a Template<a class="headerlink" href="#2-create-a-template" title="Permanent link">&para;</a></h3>
-<p>Create <code>build/Templates/MyModule.psm1.template</code>:</p>
-<div class="highlight"><span class="filename">MyModule.psm1.template</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{{</span><span class="n">CLASS_DEFINITIONS</span><span class="p">}}</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">{{</span><span class="n">FUNCTION_DEFINITIONS</span><span class="p">}}</span>
+<p>The build output is written to <code>build\Output\MyProject.ps1</code>.</p>
+<hr />
+<h2 id="step-3-run-the-generated-script">Step 3 — Run the Generated Script<a class="headerlink" href="#step-3-run-the-generated-script" title="Permanent link">&para;</a></h2>
+<p>Open <code>build\Output\MyProject.ps1</code> and you will see <code>WorkStatus</code>, <code>Employee</code>, and
+<code>Get-EmployeeInfo</code> appear in exactly that sequence — resolved from the actual dependencies,
+not from the file names. At the bottom of the generated script you will find a sample
+invocation that was included in the template:</p>
+<div class="highlight"><span class="filename">Sample invocation (inside MyProject.ps1)</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nv">$employee</span> <span class="p">=</span> <span class="no">[Employee]</span><span class="p">::</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="no">[WorkStatus]</span><span class="p">::</span><span class="n">Active</span><span class="p">)</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">Get-EmployeeInfo</span> <span class="n">-Employee</span> <span class="nv">$employee</span>
 </code></pre></div>
-<p>Each <code>{{Token}}</code> placeholder is replaced with the collected and dependency-ordered source code
-of the corresponding collector. The default token per collector type is:</p>
-<table>
-<thead>
-<tr>
-<th>Collector Type</th>
-<th>Default Token</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>Using</code></td>
-<td><code>{{USING_STATEMENTS}}</code></td>
-</tr>
-<tr>
-<td><code>Enum</code></td>
-<td><code>{{ENUM_DEFINITIONS}}</code></td>
-</tr>
-<tr>
-<td><code>Class</code></td>
-<td><code>{{CLASS_DEFINITIONS}}</code></td>
-</tr>
-<tr>
-<td><code>Function</code></td>
-<td><code>{{FUNCTION_DEFINITIONS}}</code></td>
-</tr>
-<tr>
-<td><code>File</code></td>
-<td><code>{{FILE_CONTENTS}}</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="3-run-a-build-script">3. Run a Build Script<a class="headerlink" href="#3-run-a-build-script" title="Permanent link">&para;</a></h3>
-<p>Create a <code>Build-MyModule.ps1</code> at the project root:</p>
-<div class="highlight"><span class="filename">Build-MyModule.ps1</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">using</span> <span class="n">module</span> <span class="n">PSScriptBuilder</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nv">$cc</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderContentCollector</span> <span class="p">|</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Class</span>    <span class="n">-IncludePath</span> <span class="s1">&#39;.\src\Classes&#39;</span> <span class="p">|</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="k">Function</span> <span class="n">-IncludePath</span> <span class="s1">&#39;.\src\Public&#39;</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="nb">Invoke-PSScriptBuilderBuild</span> <span class="p">`</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="n">-ContentCollector</span> <span class="nv">$cc</span> <span class="p">`</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="n">-TemplatePath</span>     <span class="s1">&#39;.\build\Templates\MyModule.psm1.template&#39;</span> <span class="p">`</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    <span class="n">-OutputPath</span>       <span class="s1">&#39;.\build\Output\MyModule.psm1&#39;</span>
+<p>Run the generated script to see it in action:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">.\</span><span class="n">build</span><span class="p">\</span><span class="n">Output</span><span class="p">\</span><span class="n">MyProject</span><span class="p">.</span><span class="n">ps1</span>
 </code></pre></div>
-<p>Run it from your project directory:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">.\</span><span class="n">Build-MyModule</span><span class="p">.</span><span class="n">ps1</span>
+<div class="highlight"><span class="filename">Output</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Alice [Active]
 </code></pre></div>
-<h3 id="4-check-the-output">4. Check the Output<a class="headerlink" href="#4-check-the-output" title="Permanent link">&para;</a></h3>
-<p>The generated <code>build/Output/MyModule.psm1</code> contains all classes (in correct dependency order)
-followed by all functions — ready to deploy as a single file.</p>
-<p>PSScriptBuilder automatically resolves the load order: if <code>Employee</code> inherits from <code>Person</code>,
-<code>Person</code> is always placed before <code>Employee</code> in the output, regardless of file order.</p>
-<h2 id="tips">Tips<a class="headerlink" href="#tips" title="Permanent link">&para;</a></h2>
+<p>That is all it takes to go from source files to a working, dependency-ordered script.</p>
 <div class="admonition tip">
-<p class="admonition-title">Ordered Mode</p>
-<p>When classes reference functions and functions reference classes, PSScriptBuilder detects this
-and switches to <strong>Ordered Mode</strong> automatically. In this mode, use the
-<code>ORDERED_COMPONENTS</code> placeholder instead of separate per-type tokens:</p>
-<div class="highlight"><span class="filename">Ordered Mode template</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{{</span><span class="n">ORDERED_COMPONENTS</span><span class="p">}}</span>
-</code></pre></div>
-<p>The <code>ORDERED_COMPONENTS</code> key is configured in <code>psscriptbuilder.config.json</code> under
-<code>build.orderedComponentsKey</code> (default: <code>"ORDERED_COMPONENTS"</code>).
-See the <a href="../../guides/templates/">Templates Guide</a> for all available placeholder options.</p>
+<p class="admonition-title">Want to understand what's happening under the hood?</p>
+<p>See <a href="../../tutorials/building-your-first-project/">Building Your First Project</a> for a
+step-by-step walkthrough that explains each part of the pipeline.</p>
 </div>
-<div class="admonition tip">
-<p class="admonition-title">Validate the template before building</p>
-<p>Use <code>Test-PSScriptBuilderTemplate</code> to validate your template before building:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nv">$isValid</span> <span class="p">=</span> <span class="nb">Test-PSScriptBuilderTemplate</span> <span class="n">-ContentCollector</span> <span class="nv">$cc</span> <span class="n">-TemplatePath</span> <span class="s1">&#39;.\build\Templates\MyModule.psm1.template&#39;</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$isValid</span><span class="p">)</span> <span class="p">{</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    <span class="nb">Invoke-PSScriptBuilderBuild</span> <span class="n">-ContentCollector</span> <span class="nv">$cc</span> <span class="p">`</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>        <span class="n">-TemplatePath</span> <span class="s1">&#39;.\build\Templates\MyModule.psm1.template&#39;</span> <span class="p">`</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>        <span class="n">-OutputPath</span>   <span class="s1">&#39;.\build\Output\MyModule.psm1&#39;</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="p">}</span>
+<hr />
+<h2 id="what-gets-created">What Gets Created<a class="headerlink" href="#what-gets-created" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>MyProject/
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>├── psscriptbuilder.config.json       ← build and release settings
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>├── Build-MyProject.ps1               ← run this to build
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>├── src/
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>│   ├── Enums/
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>│   │   └── WorkStatus.ps1            ← sample: enum with Active, OnLeave, Terminated
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>│   ├── Classes/
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>│   │   └── Employee.ps1              ← sample: class referencing WorkStatus
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>│   └── Public/
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>│       └── Get-EmployeeInfo.ps1      ← sample: function referencing Employee
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>└── build/
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>    ├── Templates/
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>    │   └── MyProject.ps1.template    ← defines the output structure
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>    └── Output/                       ← generated files go here
 </code></pre></div>
-</div>
+<p>Replace the sample files with your own source files and run <code>Build-MyProject.ps1</code> again.
+PSScriptBuilder will resolve the dependency order of whatever you put there.</p>
+<hr />
+<h2 id="with-release-management">With Release Management<a class="headerlink" href="#with-release-management" title="Permanent link">&para;</a></h2>
+<p>If your project needs version tracking — bumping a version number before each build and
+recording when it was built — add <code>-IncludeReleaseManagement</code> to the scaffold command:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">New-PSScriptBuilderProject</span> <span class="n">-Name</span> <span class="s2">&quot;MyProject&quot;</span> <span class="n">-IncludeReleaseManagement</span>
+</code></pre></div>
+<p>This creates a <code>build\Release\</code> directory with two configuration files, plus a dedicated
+release script in the project root:</p>
+<ul>
+<li><code>build\Release\psscriptbuilder.releasedata.json</code> — stores the current version number and
+  build timestamp. You edit this file (or let PSScriptBuilder update it) when preparing a
+  release.</li>
+<li><code>build\Release\psscriptbuilder.bumpconfig.json</code> — defines which files receive version
+  updates and how. Pre-configured for the generated template.</li>
+<li><code>Release-MyProject.ps1</code> — a dedicated release script that runs the full release workflow in
+  a single command. It accepts <code>-Major</code>, <code>-Minor</code>, or <code>-Patch</code> to bump the version, updates
+  the release data file, replaces the tokens in the template, and then triggers the build:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">.\</span><span class="n">Release-MyProject</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-Minor</span>
+</code></pre></div>
+<p>The generated <code>psscriptbuilder.bumpconfig.json</code> is pre-configured for repeatable releases:
+the first run replaces the <code>{{VERSION}}</code> and <code>{{BUILD_TIMESTAMP}}</code> placeholders in the
+template; every subsequent run uses regex patterns to find and replace the actual values.
+See <a href="../../guides/release-management/">Release Management</a> for the full picture.</p>
+<p>The build script <code>Build-MyProject.ps1</code> remains unchanged — it always produces an output from
+whatever state the template is currently in. The separation keeps the <em>build</em> concern and the
+<em>release</em> concern distinct: you build as often as you like, and you release when you are ready.</p>
+<hr />
 <h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="../../guides/templates/">Templates Guide</a> — advanced template patterns and validation modes</li>
-<li><a href="../../cmdlets/">Cmdlet Reference</a> — full parameter documentation for all cmdlets</li>
+<li><a href="../../cmdlets/New-PSScriptBuilderProject/"><code>New-PSScriptBuilderProject</code></a> — full parameter reference for scaffolding</li>
+<li><a href="../../guides/configuration/">Configuration Guide</a> — customize paths, template keys, and build behavior</li>
+<li><a href="../../guides/release-management/">Release Management</a> — version tracking and release workflow</li>
 </ul>
 
 
@@ -2272,13 +2933,13 @@ See the <a href="../../guides/templates/">Templates Guide</a> for all available 
         
         
           
-          <a href="../../guides/configuration/" class="md-footer__link md-footer__link--next" aria-label="Next: Configuration">
+          <a href="../../tutorials/" class="md-footer__link md-footer__link--next" aria-label="Next: Tutorials">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Configuration
+                Tutorials
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2340,7 +3001,7 @@ See the <a href="../../guides/templates/">Templates Guide</a> for all available 
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.top", "toc.follow", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
