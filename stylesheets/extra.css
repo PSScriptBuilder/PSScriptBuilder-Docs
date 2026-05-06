@@ -75,6 +75,12 @@
   color: var(--md-primary-fg-color);
 }
 
+/* Dark mode: brighter grid card titles and home title for better readability */
+[data-md-color-scheme="slate"] .ps-home__title,
+[data-md-color-scheme="slate"] .md-typeset .grid.cards > ul > li > p:first-child strong {
+  color: var(--md-default-fg-color);
+}
+
 /* Grid card arrow links on home page - muted, not competing with title */
 .md-typeset .grid.cards > ul > li > p:last-child a {
   color: var(--md-default-fg-color--light);
