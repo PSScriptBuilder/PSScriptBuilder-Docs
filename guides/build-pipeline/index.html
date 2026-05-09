@@ -12,13 +12,13 @@
         <meta name="author" content="PSScriptBuilder">
       
       
-        <link rel="canonical" href="https://docs.psscriptbuilder.com/guides/configuration/">
+        <link rel="canonical" href="https://docs.psscriptbuilder.com/guides/build-pipeline/">
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../templates/">
       
       
-        <link rel="next" href="../collectors/">
+        <link rel="next" href="../tool-integrations/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>Configuration - PSScriptBuilder Docs</title>
+        <title>Build Pipeline - PSScriptBuilder Docs</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#configuration" class="md-skip">
+        <a href="#build-pipeline" class="md-skip">
           Skip to content
         </a>
       
@@ -117,7 +117,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Configuration
+              Build Pipeline
             
           </span>
         </div>
@@ -880,37 +880,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Configuration
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../configuration/" class="md-nav__link">
         
   
   
@@ -926,197 +899,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#creating-the-configuration-file" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Creating the Configuration File
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#file-structure" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        File Structure
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#build-options-reference" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Build Options Reference
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Build Options Reference">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#outputpath" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        outputPath
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#backuppath" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        backupPath
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#templatepath" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        templatePath
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#orderedcomponentskey" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        orderedComponentsKey
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#backupenabled" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        backupEnabled
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#syntaxvalidationenabled" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        syntaxValidationEnabled
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#release-options-reference" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Release Options Reference
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#path-resolution" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Path Resolution
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#project-root-discovery" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Project Root Discovery
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reading-the-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reading the Configuration
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#passing-config-values-to-the-build" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Passing Config Values to the Build
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#see-also" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        See Also
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1182,10 +964,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../build-pipeline/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build Pipeline
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1201,6 +1010,298 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#running-a-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running a Build
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Running a Build">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#explicit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Explicit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fluent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-a-configuration-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using a Configuration File
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-scaffolded-build-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Scaffolded Build Script
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Scaffolded Build Script">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#session-guard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session Guard
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interpreting-the-build-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interpreting the Build Result
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#post-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Post-Processing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Post-Processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#available-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Available Operations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error Handling
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Error Handling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#missing-template-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing Template File
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#path-not-found" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Not Found
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#component-name-conflict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Name Conflict
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#circular-dependency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Circular Dependency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syntax-validation-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Syntax Validation Failure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#psscriptbuilderbuildresult" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PSScriptBuilderBuildResult
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#psscriptbuilderbuildcomponentcounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PSScriptBuilderBuildComponentCounts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#psscriptbuilderbuildcomponentdetail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PSScriptBuilderBuildComponentDetail
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        See Also
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2822,44 +2923,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#creating-the-configuration-file" class="md-nav__link">
+  <a href="#running-a-build" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Creating the Configuration File
+        Running a Build
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#file-structure" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        File Structure
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#build-options-reference" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Build Options Reference
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Build Options Reference">
+    <nav class="md-nav" aria-label="Running a Build">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#outputpath" class="md-nav__link">
+  <a href="#explicit" class="md-nav__link">
     <span class="md-ellipsis">
       
-        outputPath
+        Explicit
       
     </span>
   </a>
@@ -2867,10 +2946,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#backuppath" class="md-nav__link">
+  <a href="#pipeline" class="md-nav__link">
     <span class="md-ellipsis">
       
-        backupPath
+        Pipeline
       
     </span>
   </a>
@@ -2878,10 +2957,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#templatepath" class="md-nav__link">
+  <a href="#fluent" class="md-nav__link">
     <span class="md-ellipsis">
       
-        templatePath
+        Fluent
       
     </span>
   </a>
@@ -2889,32 +2968,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#orderedcomponentskey" class="md-nav__link">
+  <a href="#using-a-configuration-file" class="md-nav__link">
     <span class="md-ellipsis">
       
-        orderedComponentsKey
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#backupenabled" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        backupEnabled
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#syntaxvalidationenabled" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        syntaxValidationEnabled
+        Using a Configuration File
       
     </span>
   </a>
@@ -2927,10 +2984,38 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#release-options-reference" class="md-nav__link">
+  <a href="#the-scaffolded-build-script" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Release Options Reference
+        The Scaffolded Build Script
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Scaffolded Build Script">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#session-guard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session Guard
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interpreting-the-build-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interpreting the Build Result
       
     </span>
   </a>
@@ -2938,10 +3023,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#path-resolution" class="md-nav__link">
+  <a href="#backup" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Path Resolution
+        Backup
       
     </span>
   </a>
@@ -2949,35 +3034,152 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#project-root-discovery" class="md-nav__link">
+  <a href="#post-processing" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Project Root Discovery
+        Post-Processing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Post-Processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#available-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Available Operations
       
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#reading-the-configuration" class="md-nav__link">
+  <a href="#error-handling" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Reading the Configuration
+        Error Handling
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Error Handling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#missing-template-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Missing Template File
       
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#passing-config-values-to-the-build" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#path-not-found" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Passing Config Values to the Build
+        Path Not Found
       
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#component-name-conflict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Component Name Conflict
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#circular-dependency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Circular Dependency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syntax-validation-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Syntax Validation Failure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#psscriptbuilderbuildresult" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PSScriptBuilderBuildResult
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#psscriptbuilderbuildcomponentcounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PSScriptBuilderBuildComponentCounts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#psscriptbuilderbuildcomponentdetail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PSScriptBuilderBuildComponentDetail
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3012,263 +3214,428 @@
   
 
 
-<h1 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h1>
-<p>PSScriptBuilder uses a single JSON file — <code>psscriptbuilder.config.json</code> — to centralize all
-build and release settings. Instead of scattering hardcoded paths across your build scripts,
-you define them once and reference them through a typed configuration object: your build script
-uses <code>$config.Build.OutputPath</code> instead of a literal path, and when the directory changes,
-you update one file instead of every script that references it.</p>
-<p>The configuration file is optional — you can pass all paths directly to
-<a href="../../cmdlets/Invoke-PSScriptBuilderBuild/"><code>Invoke-PSScriptBuilderBuild</code></a> if you prefer.
-See <a href="../../examples/#02-classes-and-enums"><code>Example 02</code></a> for a build without configuration
-and <a href="../../examples/#03-with-configuration"><code>Example 03</code></a> for the same build driven by a
-configuration file.</p>
+<h1 id="build-pipeline">Build Pipeline<a class="headerlink" href="#build-pipeline" title="Permanent link">&para;</a></h1>
+<p>The build pipeline takes your source files, collectors, and a template and produces a single
+deployable PowerShell script. This guide covers running a build, interpreting the result,
+protecting existing output with backups, post-processing the script for deployment, and
+understanding build errors.</p>
 <hr />
-<h2 id="creating-the-configuration-file">Creating the Configuration File<a class="headerlink" href="#creating-the-configuration-file" title="Permanent link">&para;</a></h2>
-<p>Run <a href="../../cmdlets/New-PSScriptBuilderConfiguration/"><code>New-PSScriptBuilderConfiguration</code></a> in
-your project root to generate the file with all required fields pre-filled:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">New-PSScriptBuilderConfiguration</span>
+<h2 id="running-a-build">Running a Build<a class="headerlink" href="#running-a-build" title="Permanent link">&para;</a></h2>
+<p><a href="../../cmdlets/Invoke-PSScriptBuilderBuild/"><code>Invoke-PSScriptBuilderBuild</code></a> orchestrates the
+complete build pipeline in a single call:</p>
+<ol>
+<li>Loads the template file</li>
+<li>Runs all registered collectors</li>
+<li>Builds and analyzes the dependency graph</li>
+<li>Detects circular dependencies (fails with a detailed error message)</li>
+<li>Performs topological sorting</li>
+<li>Replaces template placeholders with collected and dependency-resolved components</li>
+<li>Optionally backs up the existing output file</li>
+<li>Writes the final output script</li>
+</ol>
+<p>The examples below use the same <code>MyModule</code> project from the
+<a href="../../getting-started/quick-start/">Quick Start</a> — if you haven't read it yet, start there.
+All paths are relative to the project root (<code>$Global:PSScriptBuilderProjectRoot</code>), see
+<a href="../configuration/">Configuration</a> for setup.</p>
+<p>PSScriptBuilder supports multiple styles for setting up a build — choose based on how much
+control and readability you need:</p>
+<ul>
+<li><strong>Explicit</strong> — each collector and parameter is a named variable; easy to follow, easy to extend</li>
+<li><strong>Pipeline</strong> — collectors are chained inline; build parameters are passed as a variable</li>
+<li><strong>Fluent</strong> — the entire build is a single pipeline expression; most concise, best for stable scripts</li>
+</ul>
+<h3 id="explicit">Explicit<a class="headerlink" href="#explicit" title="Permanent link">&para;</a></h3>
+<p>Each collector and build parameter is a named variable. This makes it easy to follow what
+happens at each step and to add conditional logic if needed:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nv">$classCollector</span>    <span class="p">=</span> <span class="nb">New-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Class</span>    <span class="n">-IncludePath</span> <span class="s1">&#39;src\Classes&#39;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nv">$functionCollector</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="k">Function</span> <span class="n">-IncludePath</span> <span class="s1">&#39;src\Public&#39;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nv">$collectors</span> <span class="p">=</span> <span class="nv">$classCollector</span><span class="p">,</span> <span class="nv">$functionCollector</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nv">$contentCollector</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderContentCollector</span> <span class="n">-Collector</span> <span class="nv">$collectors</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="nv">$result</span> <span class="p">=</span> <span class="nb">Invoke-PSScriptBuilderBuild</span> <span class="p">`</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="n">-ContentCollector</span> <span class="nv">$contentCollector</span> <span class="p">`</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="n">-TemplatePath</span>     <span class="s1">&#39;build\Templates\MyModule.psm1.template&#39;</span> <span class="p">`</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="n">-OutputPath</span>       <span class="s1">&#39;build\Output\MyModule.psm1&#39;</span>
 </code></pre></div>
-<p>To overwrite an existing file:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">New-PSScriptBuilderConfiguration</span> <span class="n">-Force</span>
+<p>The explicit style also makes it straightforward to register multiple collectors of the same
+type — for example, Domain and Utils classes that should be ordered separately, each with a
+unique <code>-CollectionKey</code>. See <a href="../../examples/#10-multiple-collectors">Example 10</a> for a
+complete walkthrough.</p>
+<h3 id="pipeline">Pipeline<a class="headerlink" href="#pipeline" title="Permanent link">&para;</a></h3>
+<p><a href="../../cmdlets/Add-PSScriptBuilderCollector/"><code>Add-PSScriptBuilderCollector</code></a> is an alternative
+to <code>New-PSScriptBuilderCollector</code> that creates and registers a collector in one step. Instead
+of creating collectors separately and passing them via <code>-Collector</code>, you chain
+<code>Add-PSScriptBuilderCollector</code> directly onto <code>New-PSScriptBuilderContentCollector</code> in a
+pipeline. Use this form when each collector has a straightforward configuration and you don't
+need to reference them individually afterward:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">$contentCollector</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderContentCollector</span> <span class="p">|</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Class</span>    <span class="n">-IncludePath</span> <span class="s1">&#39;src\Classes&#39;</span> <span class="p">|</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="k">Function</span> <span class="n">-IncludePath</span> <span class="s1">&#39;src\Public&#39;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nv">$result</span> <span class="p">=</span> <span class="nb">Invoke-PSScriptBuilderBuild</span> <span class="p">`</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="n">-ContentCollector</span> <span class="nv">$contentCollector</span> <span class="p">`</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="n">-TemplatePath</span>     <span class="s1">&#39;build\Templates\MyModule.psm1.template&#39;</span> <span class="p">`</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="n">-OutputPath</span>       <span class="s1">&#39;build\Output\MyModule.psm1&#39;</span>
 </code></pre></div>
-<p>To create the file in a specific directory:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">New-PSScriptBuilderConfiguration</span> <span class="n">-Path</span> <span class="s2">&quot;C:\Projects\MyModule&quot;</span>
+<h3 id="fluent">Fluent<a class="headerlink" href="#fluent" title="Permanent link">&para;</a></h3>
+<p>The most concise form — all steps in a single pipeline expression. Best suited for simple,
+stable build scripts where no intermediate variables are needed and parameters don't change:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">$result</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderContentCollector</span> <span class="p">|</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Class</span>    <span class="n">-IncludePath</span> <span class="s1">&#39;src\Classes&#39;</span> <span class="p">|</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="k">Function</span> <span class="n">-IncludePath</span> <span class="s1">&#39;src\Public&#39;</span>  <span class="p">|</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="nb">Invoke-PSScriptBuilderBuild</span> <span class="p">`</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        <span class="n">-TemplatePath</span> <span class="s1">&#39;build\Templates\MyModule.psm1.template&#39;</span> <span class="p">`</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        <span class="n">-OutputPath</span>   <span class="s1">&#39;build\Output\MyModule.psm1&#39;</span>
+</code></pre></div>
+<h3 id="using-a-configuration-file">Using a Configuration File<a class="headerlink" href="#using-a-configuration-file" title="Permanent link">&para;</a></h3>
+<p>The previous examples hardcode paths like <code>'build\Templates\MyModule.psm1.template'</code> directly
+in the build script. That works for simple projects, but as soon as you use the same build
+script in multiple environments — or want to change paths without touching the script — it
+becomes a maintenance problem.</p>
+<p><a href="../../cmdlets/Get-PSScriptBuilderConfiguration/"><code>Get-PSScriptBuilderConfiguration</code></a> reads
+<code>psscriptbuilder.config.json</code> from the project root and exposes all build settings as typed
+properties. Paths, backup settings, and output locations are defined once in the configuration
+file and referenced in code via <code>$config.Build.*</code>. Splatting keeps the
+<code>Invoke-PSScriptBuilderBuild</code> call clean — no long backtick-continuation lines:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">$config</span> <span class="p">=</span> <span class="nb">Get-PSScriptBuilderConfiguration</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nv">$contentCollector</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderContentCollector</span> <span class="p">|</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Class</span>    <span class="n">-IncludePath</span> <span class="s1">&#39;src\Classes&#39;</span> <span class="p">|</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="k">Function</span> <span class="n">-IncludePath</span> <span class="s1">&#39;src\Public&#39;</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="nv">$buildParams</span> <span class="p">=</span> <span class="p">@{</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="n">ContentCollector</span> <span class="p">=</span> <span class="nv">$contentCollector</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="n">TemplatePath</span>     <span class="p">=</span> <span class="nb">Join-Path</span> <span class="nv">$config</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">TemplatePath</span> <span class="s1">&#39;MyModule.psm1.template&#39;</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    <span class="n">OutputPath</span>       <span class="p">=</span> <span class="nb">Join-Path</span> <span class="nv">$config</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">OutputPath</span>   <span class="s1">&#39;MyModule.psm1&#39;</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>    <span class="n">BackupPath</span>       <span class="p">=</span> <span class="nv">$config</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">BackupPath</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>    <span class="n">EnableBackup</span>     <span class="p">=</span> <span class="nv">$config</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">BackupEnabled</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="p">}</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="nv">$result</span> <span class="p">=</span> <span class="nb">Invoke-PSScriptBuilderBuild</span> <span class="nv">@buildParams</span>
 </code></pre></div>
 <hr />
-<h2 id="file-structure">File Structure<a class="headerlink" href="#file-structure" title="Permanent link">&para;</a></h2>
-<p><code>psscriptbuilder.config.json</code> has two top-level sections: <code>build</code> and <code>release</code>.</p>
-<div class="highlight"><span class="filename">psscriptbuilder.config.json</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nt">&quot;build&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">        </span><span class="nt">&quot;outputPath&quot;</span><span class="p">:</span><span class="w">              </span><span class="s2">&quot;.\\build\\Output&quot;</span><span class="p">,</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">        </span><span class="nt">&quot;backupPath&quot;</span><span class="p">:</span><span class="w">              </span><span class="s2">&quot;.\\build\\Output\\Backup&quot;</span><span class="p">,</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">        </span><span class="nt">&quot;templatePath&quot;</span><span class="p">:</span><span class="w">            </span><span class="s2">&quot;.\\build\\Templates&quot;</span><span class="p">,</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">        </span><span class="nt">&quot;orderedComponentsKey&quot;</span><span class="p">:</span><span class="w">    </span><span class="s2">&quot;ORDERED_COMPONENTS&quot;</span><span class="p">,</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">        </span><span class="nt">&quot;backupEnabled&quot;</span><span class="p">:</span><span class="w">           </span><span class="kc">false</span><span class="p">,</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">        </span><span class="nt">&quot;syntaxValidationEnabled&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="p">},</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="nt">&quot;release&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">        </span><span class="nt">&quot;dataFile&quot;</span><span class="p">:</span><span class="w">       </span><span class="s2">&quot;.\\build\\Release\\psscriptbuilder.releasedata.json&quot;</span><span class="p">,</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">        </span><span class="nt">&quot;bumpConfigFile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;.\\build\\Release\\psscriptbuilder.bumpconfig.json&quot;</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="p">}</span>
+<h2 id="the-scaffolded-build-script">The Scaffolded Build Script<a class="headerlink" href="#the-scaffolded-build-script" title="Permanent link">&para;</a></h2>
+<p><a href="../../cmdlets/New-PSScriptBuilderProject/"><code>New-PSScriptBuilderProject</code></a> generates a ready-to-run
+build script (<code>Build-&lt;Name&gt;.ps1</code>) in the project root. The script wires up collectors, template
+path, and output path, and calls <code>Invoke-PSScriptBuilderBuild</code> in one place. You can run it
+directly or use it as a starting point to customize.</p>
+<h3 id="session-guard">Session Guard<a class="headerlink" href="#session-guard" title="Permanent link">&para;</a></h3>
+<p>The generated build script begins with a session guard:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$Global:MyProjectBuildExecuted</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="nb">Write-Warning</span> <span class="s2">&quot;Build-MyProject.ps1 has already been executed in this session. Start a new PowerShell session to run it again.&quot;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="k">return</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="p">}</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="nv">$Global:MyProjectBuildExecuted</span> <span class="p">=</span> <span class="nv">$true</span>
 </code></pre></div>
-<div class="admonition warning">
-<p class="admonition-title">All fields are required</p>
-<p>Every field must be present. The validator rejects unknown fields and reports missing
-required fields with a clear error message — including the exact key that is missing or
-unexpected.</p>
-</div>
+<p><strong>Why this exists:</strong><br />
+The build script starts with <code>using module PSScriptBuilder</code>. PowerShell 5.1 loads all
+module types into the current session when this statement is first encountered. Once loaded,
+classes cannot be unloaded or updated within the same process. Running the script a second
+time in the same session would silently continue using the old type definitions — even after
+a <code>build.ps1</code> run that refreshed the module on disk. The guard makes this limitation
+explicit rather than letting a stale module version produce unexpected results.</p>
+<p><strong>In practice:</strong> Start a new PowerShell session before each build run. This is not a
+concern in CI/CD pipelines — each pipeline job runs in a fresh process.</p>
 <hr />
-<h2 id="build-options-reference">Build Options Reference<a class="headerlink" href="#build-options-reference" title="Permanent link">&para;</a></h2>
+<h2 id="interpreting-the-build-result">Interpreting the Build Result<a class="headerlink" href="#interpreting-the-build-result" title="Permanent link">&para;</a></h2>
+<p><code>Invoke-PSScriptBuilderBuild</code> returns a <code>PSScriptBuilderBuildResult</code> object that summarizes
+what was collected, how long the build took, and where the output was written. Use
+<a href="../../cmdlets/Format-PSScriptBuilderBuildResult/"><code>Format-PSScriptBuilderBuildResult</code></a> for a
+quick human-readable summary, or access the properties directly when integrating into scripts
+or CI pipelines:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nv">$result</span> <span class="p">|</span> <span class="nb">Format-PSScriptBuilderBuildResult</span>
+</code></pre></div>
+<p>Output:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Build Summary
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>  Output : C:\MyProject\build\Output\MyModule.psm1
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>  Size   : 42.3 KB
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>  Time   : 312 ms
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>Components
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>  Classes   : 12
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>  Functions :  8
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>  Total     : 20
+</code></pre></div>
+<p>Add <code>-Detailed</code> to include all processed source files and component dependencies:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nv">$result</span> <span class="p">|</span> <span class="nb">Format-PSScriptBuilderBuildResult</span> <span class="n">-Detailed</span>
+</code></pre></div>
+<p>For direct property access — for example in CI scripts or custom reporting — the result
+object exposes all details as typed properties:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Built </span><span class="p">$(</span><span class="nv">$result</span><span class="p">.</span><span class="n">TotalComponents</span><span class="p">)</span><span class="s2"> components in </span><span class="p">$(</span><span class="nv">$result</span><span class="p">.</span><span class="n">ExecutionTime</span><span class="p">.</span><span class="n">TotalMilliseconds</span><span class="p">)</span><span class="s2"> ms&quot;</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Output: </span><span class="p">$(</span><span class="nv">$result</span><span class="p">.</span><span class="n">OutputPath</span><span class="p">)</span><span class="s2"> (</span><span class="p">$(</span><span class="nv">$result</span><span class="p">.</span><span class="n">OutputFileSize</span><span class="p">)</span><span class="s2"> bytes)&quot;</span>
+</code></pre></div>
+<p>For a complete property reference see the <a href="#reference">Reference</a> section at the end of this guide.</p>
+<hr />
+<h2 id="backup">Backup<a class="headerlink" href="#backup" title="Permanent link">&para;</a></h2>
+<p>By default no backup is created before overwriting the output file — Git is the recommended
+version control mechanism. A file-based backup can be useful as a local safety net — for
+example, before a risky change you want to undo instantly without a checkout, or in
+environments where the workspace is not a Git repository. Use <code>-EnableBackup</code> together with
+<code>-BackupPath</code> to enable it:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">Invoke-PSScriptBuilderBuild</span> <span class="p">`</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    <span class="n">-ContentCollector</span> <span class="nv">$contentCollector</span> <span class="p">`</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    <span class="n">-TemplatePath</span>     <span class="s1">&#39;build\Templates\MyModule.psm1.template&#39;</span> <span class="p">`</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    <span class="n">-OutputPath</span>       <span class="s1">&#39;build\Output\MyModule.psm1&#39;</span> <span class="p">`</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    <span class="n">-BackupPath</span>       <span class="s1">&#39;build\Backup&#39;</span> <span class="p">`</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    <span class="n">-EnableBackup</span>
+</code></pre></div>
+<p>Backup files are named with a timestamp:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>build\Backup\MyModule.psm1.20260422_103045.bak
+</code></pre></div>
+<p>The backup path is included in the build result (<code>$result.BackupPath</code>) and shown by
+<code>Format-PSScriptBuilderBuildResult</code>.</p>
+<hr />
+<h2 id="post-processing">Post-Processing<a class="headerlink" href="#post-processing" title="Permanent link">&para;</a></h2>
+<p>A PSScriptBuilder build output is readable, well-structured PowerShell source — comments
+intact, blank lines preserved, verbose logging included. That is ideal during development,
+but when deploying to production you may want to reduce file size, strip diagnostic output,
+or produce a leaner script that loads faster.</p>
+<p><a href="../../cmdlets/Compress-PSScriptBuilderScript/"><code>Compress-PSScriptBuilderScript</code></a> handles
+this post-processing step. It operates on an already-built script file and selectively
+removes comments, blank lines, and isolated output statements — independently or in any
+combination. The original build output is never modified unless you explicitly point
+<code>-DestinationPath</code> at the same file; typically you write to a separate deploy location.</p>
+<p><code>Compress-PSScriptBuilderScript</code> accepts pipeline input from <code>Invoke-PSScriptBuilderBuild</code>
+via the <code>OutputPath</code> property, so build and compress can be chained in a single expression:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nb">New-PSScriptBuilderContentCollector</span> <span class="p">|</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Class</span>    <span class="n">-IncludePath</span> <span class="s1">&#39;src\Classes&#39;</span> <span class="p">|</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="k">Function</span> <span class="n">-IncludePath</span> <span class="s1">&#39;src\Public&#39;</span>  <span class="p">|</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    <span class="nb">Invoke-PSScriptBuilderBuild</span> <span class="p">`</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>        <span class="n">-TemplatePath</span> <span class="s1">&#39;build\Templates\MyModule.psm1.template&#39;</span> <span class="p">`</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>        <span class="n">-OutputPath</span>   <span class="s1">&#39;build\Output\MyModule.psm1&#39;</span> <span class="p">|</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>    <span class="nb">Compress-PSScriptBuilderScript</span> <span class="p">`</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>        <span class="n">-RemoveComments</span> <span class="p">`</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>        <span class="n">-RemoveBlankLines</span> <span class="p">`</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>        <span class="n">-DestinationPath</span> <span class="s1">&#39;deploy\MyModule.psm1&#39;</span> <span class="p">`</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>        <span class="n">-Force</span>
+</code></pre></div>
+<h3 id="available-operations">Available Operations<a class="headerlink" href="#available-operations" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
+<th>Parameter</th>
+<th>Effect</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>outputPath</code></td>
-<td>string</td>
-<td>Directory where the built script is written.</td>
+<td><code>-RemoveComments</code></td>
+<td>Removes all comments, including <code>#region</code> / <code>#endregion</code>; preserves <code>#Requires</code></td>
 </tr>
 <tr>
-<td><code>backupPath</code></td>
-<td>string</td>
-<td>Directory where backup files are stored when <code>backupEnabled</code> is <code>true</code>.</td>
+<td><code>-RemoveBlankLines</code></td>
+<td>Removes all blank lines</td>
 </tr>
 <tr>
-<td><code>templatePath</code></td>
-<td>string</td>
-<td>Directory containing the template file(s).</td>
-</tr>
-<tr>
-<td><code>orderedComponentsKey</code></td>
-<td>string</td>
-<td>Template placeholder key for dependency-ordered components. Default is <code>ORDERED_COMPONENTS</code>.</td>
-</tr>
-<tr>
-<td><code>backupEnabled</code></td>
-<td>boolean</td>
-<td>If <code>true</code>, a timestamped backup of the existing output file is created before each build. Default is <code>false</code>.</td>
-</tr>
-<tr>
-<td><code>syntaxValidationEnabled</code></td>
-<td>boolean</td>
-<td>If <code>true</code>, the output file is parsed after the build and a syntax error fails the build. Default is <code>true</code>.</td>
+<td><code>-RemoveOutputStatements</code></td>
+<td>Removes isolated <code>Write-Verbose</code>, <code>Write-Debug</code>, <code>Write-Host</code>, <code>Write-Warning</code>, or <code>Write-Information</code> calls</td>
 </tr>
 </tbody>
 </table>
-<h3 id="outputpath"><code>outputPath</code><a class="headerlink" href="#outputpath" title="Permanent link">&para;</a></h3>
-<p>The directory where the built script is written. The actual output file path is constructed in
-your build script by joining this directory with the desired filename:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nv">$outputPath</span> <span class="p">=</span> <span class="nb">Join-Path</span> <span class="nv">$config</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">OutputPath</span> <span class="s2">&quot;MyModule.ps1&quot;</span>
-</code></pre></div>
-<p>If the output directory does not exist, PSScriptBuilder creates it automatically.</p>
-<h3 id="backuppath"><code>backupPath</code><a class="headerlink" href="#backuppath" title="Permanent link">&para;</a></h3>
-<p>The directory where backup files are stored when <code>backupEnabled</code> is <code>true</code>. Backup files are
-named after the output file with a timestamp appended. If the output file does not yet exist
-when a build runs, no backup is created even if <code>backupEnabled</code> is <code>true</code>.</p>
-<h3 id="templatepath"><code>templatePath</code><a class="headerlink" href="#templatepath" title="Permanent link">&para;</a></h3>
-<p>The directory containing the template file(s). The actual template file path is constructed in
-your build script by joining this directory with the template filename:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nv">$templatePath</span> <span class="p">=</span> <span class="nb">Join-Path</span> <span class="nv">$config</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">TemplatePath</span> <span class="s2">&quot;MyModule.ps1.template&quot;</span>
-</code></pre></div>
-<p>See the <a href="../templates/">Templates guide</a> for details on template syntax and placeholder tokens.</p>
-<h3 id="orderedcomponentskey"><code>orderedComponentsKey</code><a class="headerlink" href="#orderedcomponentskey" title="Permanent link">&para;</a></h3>
-<p>The placeholder key used for dependency-ordered components in Ordered and Hybrid Mode. The
-default is <code>ORDERED_COMPONENTS</code>, which maps to the <code>{{ORDERED_COMPONENTS}}</code> token in the
-template. Change this only if your template already uses <code>ORDERED_COMPONENTS</code> for a different
-purpose.</p>
-<p>See the <a href="../templates/">Templates guide</a> for an explanation of Free Mode, Ordered Mode, and
-Hybrid Mode.</p>
-<h3 id="backupenabled"><code>backupEnabled</code><a class="headerlink" href="#backupenabled" title="Permanent link">&para;</a></h3>
-<p>Controls whether a backup of the existing output file is created before each build. Backup
-files are written to <code>backupPath</code>.</p>
-<div class="admonition tip">
-<p class="admonition-title">Git replaces file-based backups</p>
-<p>Most projects do not need <code>backupEnabled</code>. When the output script is version-controlled,
-Git provides full history and instant rollback — a file backup adds no value and clutters
-the backup directory. Set <code>backupEnabled</code> to <code>false</code> unless you have a specific reason to
-keep file backups.</p>
+<p>Operations are applied in the order: <strong>RemoveComments → RemoveOutputStatements → RemoveBlankLines</strong>,
+regardless of the parameter order you specify. This ensures that removing comments or output
+statements does not leave behind unexpected blank lines.</p>
+<div class="admonition note">
+<p class="admonition-title">Isolated calls only</p>
+<p><code>-RemoveOutputStatements</code> only removes calls that stand alone on their line and are not part
+of a pipeline or control flow expression. Non-isolated calls are skipped silently; use
+<code>-Verbose</code> to see which calls were skipped and why.</p>
 </div>
-<p>The corresponding <a href="../../cmdlets/Invoke-PSScriptBuilderBuild/"><code>Invoke-PSScriptBuilderBuild</code></a>
-parameter is <code>-EnableBackup</code>. When calling the cmdlet directly, use
-<code>-EnableBackup:$config.Build.BackupEnabled</code> to pass the config value:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">Invoke-PSScriptBuilderBuild</span> <span class="p">...</span> <span class="n">-EnableBackup</span><span class="p">:</span><span class="nv">$config</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">BackupEnabled</span>
-</code></pre></div>
-<h3 id="syntaxvalidationenabled"><code>syntaxValidationEnabled</code><a class="headerlink" href="#syntaxvalidationenabled" title="Permanent link">&para;</a></h3>
-<p>Controls whether PSScriptBuilder validates the output file's syntax after writing it. When
-enabled, the output script is parsed using the PowerShell parser. Any syntax error fails the
-build with a clear message identifying the error.</p>
-<p>TypeNotFound errors — which occur when the output script references types from external
-assemblies not loaded during the build — are automatically ignored and do not fail the build.</p>
-<p>The corresponding cmdlet parameter is <code>-SkipSyntaxValidation</code>. When calling the cmdlet directly
-and you want to honour the config value, assign the negation to a variable first:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nv">$skipSyntax</span> <span class="p">=</span> <span class="o">-not</span> <span class="nv">$config</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">SyntaxValidationEnabled</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nb">Invoke-PSScriptBuilderBuild</span> <span class="p">...</span> <span class="n">-SkipSyntaxValidation</span><span class="p">:</span><span class="nv">$skipSyntax</span>
-</code></pre></div>
-<hr />
-<h2 id="release-options-reference">Release Options Reference<a class="headerlink" href="#release-options-reference" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>dataFile</code></td>
-<td>string</td>
-<td>Path to the release data JSON file (<code>psscriptbuilder.releasedata.json</code>).</td>
-</tr>
-<tr>
-<td><code>bumpConfigFile</code></td>
-<td>string</td>
-<td>Path to the bump configuration JSON file (<code>psscriptbuilder.bumpconfig.json</code>).</td>
-</tr>
-</tbody>
-</table>
-<p>These fields are only relevant when using the release management features. See the
-<a href="../release-management/">Release Management guide</a> for details.</p>
-<hr />
-<h2 id="path-resolution">Path Resolution<a class="headerlink" href="#path-resolution" title="Permanent link">&para;</a></h2>
-<p>All paths in <code>psscriptbuilder.config.json</code> are resolved <strong>relative to the project root</strong>. The
-project root is the directory that contains <code>psscriptbuilder.config.json</code>. PSScriptBuilder sets
-it automatically when it discovers the configuration file.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">&quot;outputPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;.\\build\\Output&quot;</span>
-</code></pre></div>
-<p>With a project root of <code>C:\Projects\MyModule</code>, this resolves to
-<code>C:\Projects\MyModule\build\Output</code>. Absolute paths are also accepted and used as-is.</p>
-<hr />
-<h2 id="project-root-discovery">Project Root Discovery<a class="headerlink" href="#project-root-discovery" title="Permanent link">&para;</a></h2>
-<p>PSScriptBuilder discovers the project root automatically by searching upward from the current
-working directory until it finds a directory containing <code>psscriptbuilder.config.json</code>. This
-means you can run build scripts from any subdirectory of your project and PSScriptBuilder will
-find the configuration file.</p>
-<p>If automatic discovery fails — for example in CI environments or when running from an unrelated
-directory — set the project root explicitly:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">Set-PSScriptBuilderProjectRoot</span> <span class="n">-Path</span> <span class="nv">$PSScriptRoot</span>
-</code></pre></div>
-<p>Call this at the top of your build script, before any other PSScriptBuilder cmdlets. <code>$PSScriptRoot</code>
-resolves to the directory of the currently running script, which is usually the correct value.</p>
-<hr />
-<h2 id="reading-the-configuration">Reading the Configuration<a class="headerlink" href="#reading-the-configuration" title="Permanent link">&para;</a></h2>
-<p>Use <a href="../../cmdlets/Get-PSScriptBuilderConfiguration/"><code>Get-PSScriptBuilderConfiguration</code></a> to
-load the configuration into a structured object. The returned object exposes three properties:
-<code>ConfigFileName</code> (the name of the config file), <code>Build</code> (build options), and <code>Release</code>
-(release options):</p>
-<div class="highlight"><span class="filename">Structured output</span><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nv">$config</span> <span class="p">=</span> <span class="nb">Get-PSScriptBuilderConfiguration</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nv">$config</span><span class="p">.</span><span class="n">ConfigFileName</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="n">psscriptbuilder</span><span class="p">.</span><span class="n">config</span><span class="p">.</span><span class="n">json</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="nv">$config</span><span class="p">.</span><span class="n">Build</span> <span class="p">|</span> <span class="nb">Format-List</span>
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="n">OutputPath</span>              <span class="p">:</span> <span class="n">C</span><span class="p">:\</span><span class="n">Projects</span><span class="p">\</span><span class="n">MyModule</span><span class="p">\</span><span class="n">build</span><span class="p">\</span><span class="n">Output</span>
-<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="n">BackupPath</span>              <span class="p">:</span> <span class="n">C</span><span class="p">:\</span><span class="n">Projects</span><span class="p">\</span><span class="n">MyModule</span><span class="p">\</span><span class="n">build</span><span class="p">\</span><span class="n">Output</span><span class="p">\</span><span class="n">Backup</span>
-<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="n">TemplatePath</span>            <span class="p">:</span> <span class="n">C</span><span class="p">:\</span><span class="n">Projects</span><span class="p">\</span><span class="n">MyModule</span><span class="p">\</span><span class="n">build</span><span class="p">\</span><span class="n">Templates</span>
-<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="n">OrderedComponentsKey</span>    <span class="p">:</span> <span class="n">ORDERED_COMPONENTS</span>
-<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="n">BackupEnabled</span>           <span class="p">:</span> <span class="n">False</span>
-<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="n">SyntaxValidationEnabled</span> <span class="p">:</span> <span class="n">True</span>
-<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>
-<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="nv">$config</span><span class="p">.</span><span class="n">Release</span> <span class="p">|</span> <span class="nb">Format-List</span>
-<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>
-<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="n">DataFile</span>       <span class="p">:</span> <span class="n">C</span><span class="p">:\</span><span class="n">Projects</span><span class="p">\</span><span class="n">MyModule</span><span class="p">\</span><span class="n">build</span><span class="p">\</span><span class="n">Release</span><span class="p">\</span><span class="n">psscriptbuilder</span><span class="p">.</span><span class="n">releasedata</span><span class="p">.</span><span class="n">json</span>
-<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="n">BumpConfigFile</span> <span class="p">:</span> <span class="n">C</span><span class="p">:\</span><span class="n">Projects</span><span class="p">\</span><span class="n">MyModule</span><span class="p">\</span><span class="n">build</span><span class="p">\</span><span class="n">Release</span><span class="p">\</span><span class="n">psscriptbuilder</span><span class="p">.</span><span class="n">bumpconfig</span><span class="p">.</span><span class="n">json</span>
-</code></pre></div>
-<p>For a flat single-level structure — useful for tabular display or diagnostic output — use the
-<code>-Flat</code> switch:</p>
-<div class="highlight"><span class="filename">Flat output</span><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nb">Get-PSScriptBuilderConfiguration</span> <span class="n">-Flat</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="n">Name</span>                           <span class="n">Value</span>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="p">----</span>                           <span class="p">-----</span>
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="n">ReleaseDataFile</span>                <span class="n">C</span><span class="p">:\</span><span class="n">Projects</span><span class="p">\</span><span class="n">MyModule</span><span class="p">\</span><span class="n">build</span><span class="p">\</span><span class="n">Release</span><span class="p">\</span><span class="n">psscriptbuilder</span><span class="p">.</span><span class="n">releasedata</span><span class="p">.</span><span class="n">json</span>
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="n">ReleaseBumpConfigFile</span>          <span class="n">C</span><span class="p">:\</span><span class="n">Projects</span><span class="p">\</span><span class="n">MyModule</span><span class="p">\</span><span class="n">build</span><span class="p">\</span><span class="n">Release</span><span class="p">\</span><span class="n">psscriptbuilder</span><span class="p">.</span><span class="n">bumpconfig</span><span class="p">.</span><span class="n">json</span>
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="n">BuildTemplatePath</span>              <span class="n">C</span><span class="p">:\</span><span class="n">Projects</span><span class="p">\</span><span class="n">MyModule</span><span class="p">\</span><span class="n">build</span><span class="p">\</span><span class="n">Templates</span>
-<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="n">BuildOutputPath</span>                <span class="n">C</span><span class="p">:\</span><span class="n">Projects</span><span class="p">\</span><span class="n">MyModule</span><span class="p">\</span><span class="n">build</span><span class="p">\</span><span class="n">Output</span>
-<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="n">BuildBackupPath</span>                <span class="n">C</span><span class="p">:\</span><span class="n">Projects</span><span class="p">\</span><span class="n">MyModule</span><span class="p">\</span><span class="n">build</span><span class="p">\</span><span class="n">Output</span><span class="p">\</span><span class="n">Backup</span>
-<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="n">BuildOrderedComponentsKey</span>      <span class="n">ORDERED_COMPONENTS</span>
-<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="n">BuildBackupEnabled</span>             <span class="n">False</span>
-<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="n">BuildSyntaxValidationEnabled</span>   <span class="n">True</span>
-</code></pre></div>
-<hr />
-<h2 id="passing-config-values-to-the-build">Passing Config Values to the Build<a class="headerlink" href="#passing-config-values-to-the-build" title="Permanent link">&para;</a></h2>
-<p>A typical build script reads the configuration, constructs the file paths from the directory
-values, and passes them to
-<a href="../../cmdlets/Invoke-PSScriptBuilderBuild/"><code>Invoke-PSScriptBuilderBuild</code></a>:</p>
-<div class="highlight"><span class="filename">Build-Module.ps1</span><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">using</span> <span class="n">module</span> <span class="n">PSScriptBuilder</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="nb">Set-PSScriptBuilderProjectRoot</span> <span class="n">-Path</span> <span class="nv">$PSScriptRoot</span>
+<p>Omit <code>-DestinationPath</code> to get the processed content as a string instead of writing to a file —
+useful for inspecting the result, calculating size reductions, or piping into further
+transformations:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nv">$compressed</span> <span class="p">=</span> <span class="nb">Compress-PSScriptBuilderScript</span> <span class="p">`</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>    <span class="n">-Path</span> <span class="s1">&#39;build\Output\MyModule.psm1&#39;</span> <span class="p">`</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    <span class="n">-RemoveComments</span>
 <a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="nv">$config</span> <span class="p">=</span> <span class="nb">Get-PSScriptBuilderConfiguration</span>
-<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
-<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="nv">$contentCollector</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderContentCollector</span> <span class="p">|</span>
-<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Enum</span>     <span class="n">-IncludePath</span> <span class="s2">&quot;src\Enums&quot;</span>   <span class="p">|</span>
-<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Class</span>    <span class="n">-IncludePath</span> <span class="s2">&quot;src\Classes&quot;</span> <span class="p">|</span>
-<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="k">Function</span> <span class="n">-IncludePath</span> <span class="s2">&quot;src\Public&quot;</span>
-<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>
-<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="nv">$buildParams</span> <span class="p">=</span> <span class="p">@{</span>
-<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>    <span class="n">ContentCollector</span>     <span class="p">=</span> <span class="nv">$contentCollector</span>
-<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>    <span class="n">TemplatePath</span>         <span class="p">=</span> <span class="nb">Join-Path</span> <span class="nv">$config</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">TemplatePath</span> <span class="s2">&quot;MyModule.psm1.template&quot;</span>
-<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>    <span class="n">OutputPath</span>           <span class="p">=</span> <span class="nb">Join-Path</span> <span class="nv">$config</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">OutputPath</span>   <span class="s2">&quot;MyModule.psm1&quot;</span>
-<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>    <span class="n">BackupPath</span>           <span class="p">=</span> <span class="nv">$config</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">BackupPath</span>
-<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>    <span class="n">EnableBackup</span>         <span class="p">=</span> <span class="nv">$config</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">BackupEnabled</span>
-<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>    <span class="n">SkipSyntaxValidation</span> <span class="p">=</span> <span class="o">-not</span> <span class="nv">$config</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">SyntaxValidationEnabled</span>
-<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a><span class="p">}</span>
-<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>
-<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a><span class="nb">Invoke-PSScriptBuilderBuild</span> <span class="nv">@buildParams</span> <span class="p">|</span> <span class="nb">Format-PSScriptBuilderBuildResult</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="nv">$compressed</span> <span class="p">|</span> <span class="nb">Measure-Object</span> <span class="n">-Line</span>
 </code></pre></div>
+<hr />
+<h2 id="error-handling">Error Handling<a class="headerlink" href="#error-handling" title="Permanent link">&para;</a></h2>
+<p><code>Invoke-PSScriptBuilderBuild</code> uses a fail-fast strategy — it throws on the first error
+encountered and does not produce partial output. This is intentional: a build that succeeds
+halfway would leave you with a broken output file that is harder to diagnose than a clear
+exception.</p>
+<p>All errors are thrown as typed exceptions with detailed messages that include the affected
+component names and file paths. The sections below describe the five error conditions you
+are most likely to encounter, what causes them, and how to resolve them.</p>
+<h3 id="missing-template-file">Missing Template File<a class="headerlink" href="#missing-template-file" title="Permanent link">&para;</a></h3>
+<p>When the specified template file does not exist:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>FileNotFoundException: Template file not found: &#39;build\Templates\MyModule.psm1.template&#39;
+</code></pre></div>
+<p>Verify the path is correct and relative to the project root.</p>
+<h3 id="path-not-found">Path Not Found<a class="headerlink" href="#path-not-found" title="Permanent link">&para;</a></h3>
+<p>A collector accepts any path at creation time — path validation only happens at runtime,
+when <code>Invoke-PSScriptBuilderBuild</code> triggers collection. If an <code>-IncludePath</code> directory does
+not exist, the build fails with:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>IOException: Path not found: C:\MyProject\src\Classes (original: src\Classes)
+</code></pre></div>
+<p>The message shows both the resolved absolute path and the original value you passed, which
+makes it easy to spot a typo or a missing directory. Verify that the path exists relative
+to the project root and that <code>Set-PSScriptBuilderProjectRoot</code> was called before the build.</p>
+<h3 id="component-name-conflict">Component Name Conflict<a class="headerlink" href="#component-name-conflict" title="Permanent link">&para;</a></h3>
+<p>A class and a function with the same name within the same project are explicitly forbidden.
+PSScriptBuilder uses component names as graph node keys — a collision would cause silent
+incorrect ordering in the build output:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>InvalidOperationException: Component name conflict: &#39;Employee&#39; is defined as both a Class
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>(in &#39;src\Classes\Employee.ps1&#39;) and a Function (in &#39;src\Public\Employee.ps1&#39;).
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>Classes and Functions must have unique names within a PSScriptBuilder project.
+</code></pre></div>
+<p>Rename one of the conflicting components to resolve the conflict.</p>
+<h3 id="circular-dependency">Circular Dependency<a class="headerlink" href="#circular-dependency" title="Permanent link">&para;</a></h3>
+<p>When a circular dependency is detected, the build fails immediately with a detailed error
+message that includes the full cycle path:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>InvalidOperationException: Circular dependency detected: Employee -&gt; Manager -&gt; Employee
+</code></pre></div>
+<p>Resolve the cycle by removing or redirecting one of the dependencies. The
+<a href="../dependency-analysis/">Dependency Analysis Guide</a> explains how to query the dependency
+graph to locate the cycle before running a build.</p>
+<h3 id="syntax-validation-failure">Syntax Validation Failure<a class="headerlink" href="#syntax-validation-failure" title="Permanent link">&para;</a></h3>
+<p>After writing the output file, PSScriptBuilder parses it to verify syntactic correctness.
+If the parse fails, the build throws:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>InvalidOperationException: Output syntax validation failed: &lt;parser error message&gt;
+</code></pre></div>
+<p><code>TypeNotFound</code> errors caused by external assemblies not loaded at build time are automatically
+filtered and do not fail validation. Use <code>-SkipSyntaxValidation</code> only when the output contains
+syntax that cannot be parsed at all by the PowerShell parser.</p>
+<hr />
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
+<h3 id="psscriptbuilderbuildresult">PSScriptBuilderBuildResult<a class="headerlink" href="#psscriptbuilderbuildresult" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>OutputPath</code></td>
+<td><code>string</code></td>
+<td>Absolute path of the generated output file</td>
+</tr>
+<tr>
+<td><code>OutputFileSize</code></td>
+<td><code>long</code></td>
+<td>Output file size in bytes</td>
+</tr>
+<tr>
+<td><code>ExecutionTime</code></td>
+<td><code>TimeSpan</code></td>
+<td>Total build duration</td>
+</tr>
+<tr>
+<td><code>BackupPath</code></td>
+<td><code>string</code></td>
+<td>Path of the backup file; <code>$null</code> if no backup was created</td>
+</tr>
+<tr>
+<td><code>TotalComponents</code></td>
+<td><code>int</code></td>
+<td>Sum of all collected components across all collector types</td>
+</tr>
+<tr>
+<td><code>ComponentCounts</code></td>
+<td><code>PSScriptBuilderBuildComponentCounts</code></td>
+<td>Per-type component counts</td>
+</tr>
+<tr>
+<td><code>ProcessedFiles</code></td>
+<td><code>string[]</code></td>
+<td>Absolute paths of all source files processed during collection</td>
+</tr>
+<tr>
+<td><code>ComponentDetails</code></td>
+<td><code>PSScriptBuilderBuildComponentDetail[]</code></td>
+<td>Detailed info per component; shown by <code>-Detailed</code></td>
+</tr>
+<tr>
+<td><code>SyntaxValid</code></td>
+<td><code>bool</code></td>
+<td><code>$true</code> if the output file passed the syntax parse check</td>
+</tr>
+</tbody>
+</table>
+<h3 id="psscriptbuilderbuildcomponentcounts">PSScriptBuilderBuildComponentCounts<a class="headerlink" href="#psscriptbuilderbuildcomponentcounts" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>UsingStatements</code></td>
+<td><code>int</code></td>
+<td>Number of <code>using</code> statements collected</td>
+</tr>
+<tr>
+<td><code>EnumDefinitions</code></td>
+<td><code>int</code></td>
+<td>Number of enum definitions collected</td>
+</tr>
+<tr>
+<td><code>ClassDefinitions</code></td>
+<td><code>int</code></td>
+<td>Number of class definitions collected</td>
+</tr>
+<tr>
+<td><code>FunctionDefinitions</code></td>
+<td><code>int</code></td>
+<td>Number of function definitions collected</td>
+</tr>
+<tr>
+<td><code>FileContents</code></td>
+<td><code>int</code></td>
+<td>Number of raw file contents collected</td>
+</tr>
+</tbody>
+</table>
+<h3 id="psscriptbuilderbuildcomponentdetail">PSScriptBuilderBuildComponentDetail<a class="headerlink" href="#psscriptbuilderbuildcomponentdetail" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Type</code></td>
+<td><code>PSScriptBuilderCollectorType</code></td>
+<td>Collector type (<code>Enum</code>, <code>Class</code>, <code>Function</code>, etc.)</td>
+</tr>
+<tr>
+<td><code>Name</code></td>
+<td><code>string</code></td>
+<td>Component name as defined in source code</td>
+</tr>
+<tr>
+<td><code>SourceFile</code></td>
+<td><code>string</code></td>
+<td>Absolute path to the file containing the component</td>
+</tr>
+<tr>
+<td><code>Dependencies</code></td>
+<td><code>string[]</code></td>
+<td>Names of components this component depends on</td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="../templates/">Templates Guide</a> — <code>templatePath</code> and collector placeholder keys</li>
-<li><a href="../release-management/">Release Management Guide</a> — release options and bump configuration</li>
+<li><a href="../../getting-started/quick-start/">Quick Start</a> — end-to-end walkthrough of a first build</li>
+<li><a href="../code-analysis/">Code Analysis Guide</a> — inspect templates and dependencies without building</li>
+<li><a href="../../cmdlets/Invoke-PSScriptBuilderBuild/">Cmdlet Reference: Invoke-PSScriptBuilderBuild</a></li>
+<li><a href="../../cmdlets/Format-PSScriptBuilderBuildResult/">Cmdlet Reference: Format-PSScriptBuilderBuildResult</a></li>
+<li><a href="../../cmdlets/Compress-PSScriptBuilderScript/">Cmdlet Reference: Compress-PSScriptBuilderScript</a></li>
 </ul>
 
 
@@ -3305,7 +3672,7 @@ values, and passes them to
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Guides">
+          <a href="../templates/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Templates">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -3315,20 +3682,20 @@ values, and passes them to
                 Previous
               </span>
               <div class="md-ellipsis">
-                Guides
+                Templates
               </div>
             </div>
           </a>
         
         
           
-          <a href="../collectors/" class="md-footer__link md-footer__link--next" aria-label="Next: Collectors">
+          <a href="../tool-integrations/" class="md-footer__link md-footer__link--next" aria-label="Next: Tool Integrations">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Collectors
+                Tool Integrations
               </div>
             </div>
             <div class="md-footer__button md-icon">
