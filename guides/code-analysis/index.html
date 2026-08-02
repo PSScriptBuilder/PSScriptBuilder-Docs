@@ -24,8 +24,8 @@
         
       
       
-      <link rel="icon" href="../../assets/logo.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <link rel="icon" href="../../assets/logo-v2.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -100,7 +100,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="PSScriptBuilder Docs" class="md-header__button md-logo" aria-label="PSScriptBuilder Docs" data-md-component="logo">
       
-  <img src="../../assets/logo.svg" alt="logo">
+  <img src="../../assets/logo-v2.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -395,7 +395,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="PSScriptBuilder Docs" class="md-nav__button md-logo" aria-label="PSScriptBuilder Docs" data-md-component="logo">
       
-  <img src="../../assets/logo.svg" alt="logo">
+  <img src="../../assets/logo-v2.svg" alt="logo">
 
     </a>
     PSScriptBuilder Docs
@@ -1564,6 +1564,8 @@
       
         
       
+        
+      
     
     
     
@@ -1635,6 +1637,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmdlets/New-PSScriptBuilderTemplate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New-PSScriptBuilderTemplate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1651,6 +1681,10 @@
   
     
     
+      
+        
+      
+        
       
         
       
@@ -1916,6 +1950,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../cmdlets/Watch-PSScriptBuilderProject/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Watch-PSScriptBuilderProject
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../cmdlets/Format-PSScriptBuilderBuildResult/" class="md-nav__link">
         
   
@@ -1924,6 +1986,34 @@
     
   
     Format-PSScriptBuilderBuildResult
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmdlets/Export-PSScriptBuilderBuildResult/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Export-PSScriptBuilderBuildResult
   
 
     
@@ -1981,6 +2071,8 @@
   
     
     
+      
+        
       
         
       
@@ -2080,6 +2172,34 @@
     
   
     Get-PSScriptBuilderComponentDependency
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmdlets/Find-PSScriptBuilderUnusedComponent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Find-PSScriptBuilderUnusedComponent
   
 
     
@@ -3159,7 +3279,7 @@ extract the inventory automatically.</p>
 <a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>    <span class="s2">&quot;</span><span class="p">$(</span><span class="nv">$_</span><span class="p">.</span><span class="n">CollectorType</span><span class="p">)</span><span class="s2"> : </span><span class="p">$(</span><span class="nv">$items</span><span class="p">.</span><span class="n">Name</span> <span class="n">-join</span> <span class="s1">&#39;, &#39;</span><span class="p">)</span><span class="s2">&quot;</span>
 <a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="p">}</span>
 </code></pre></div>
-<p>For a monolithic HR module such as the one used in
+<p>For a monolithic HR project such as the one used in
 <a href="../../examples/#02-classes-and-enums">Example 02 — Classes and Enums</a>, this might output:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Enum     : Department, EmploymentStatus
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>Class    : Address, Person, Employee
@@ -3187,6 +3307,19 @@ exporting the graph, see <code>Get-PSScriptBuilderComponentDependency</code>,
 <code>ConvertTo-PSScriptBuilderComponentDependencyTree</code>, and <code>Export-PSScriptBuilderDependencyGraph</code>
 in the <a href="../dependency-analysis/">Dependency Analysis Guide</a>, which also contains a complete
 walkthrough of all result properties and use cases.</p>
+<p>To identify <strong>unused components</strong> — classes, enums, or functions that nothing else depends on
+— use <a href="../../cmdlets/Find-PSScriptBuilderUnusedComponent/"><code>Find-PSScriptBuilderUnusedComponent</code></a>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nv">$unused</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderContentCollector</span> <span class="p">|</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Enum</span>     <span class="n">-IncludePath</span> <span class="s2">&quot;src\Enums&quot;</span>   <span class="p">|</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Class</span>    <span class="n">-IncludePath</span> <span class="s2">&quot;src\Classes&quot;</span> <span class="p">|</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="k">Function</span> <span class="n">-IncludePath</span> <span class="s2">&quot;src\Public&quot;</span>  <span class="p">|</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>    <span class="nb">Find-PSScriptBuilderUnusedComponent</span> <span class="n">-EntryPoint</span> <span class="s2">&quot;*-MyProject*&quot;</span>
+</code></pre></div>
+<p>Use <code>-EntryPoint</code> with a glob pattern matching your public cmdlets to perform a transitive
+reachability analysis: only components not reachable from any matched entry point are returned.
+Without <code>-EntryPoint</code>, all components with no incoming dependency edges are reported —
+including public cmdlets themselves, since they are called externally and have no callers
+within the graph.</p>
 <hr />
 <h2 id="template-analysis">Template Analysis<a class="headerlink" href="#template-analysis" title="Permanent link">&para;</a></h2>
 <p><a href="../../cmdlets/Get-PSScriptBuilderTemplateAnalysis/"><code>Get-PSScriptBuilderTemplateAnalysis</code></a>
@@ -3194,14 +3327,14 @@ extends the dependency analysis with template-specific results: which validation
 active, which placeholders were found, and whether any are missing or unknown. This is the
 right cmdlet when a build fails with a template validation error and you need to understand
 exactly which placeholders are present, expected, or unknown:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nv">$analysis</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderContentCollector</span> <span class="p">|</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Class</span> <span class="n">-IncludePath</span> <span class="s2">&quot;src\Classes&quot;</span> <span class="p">|</span>
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    <span class="nb">Get-PSScriptBuilderTemplateAnalysis</span> <span class="n">-TemplatePath</span> <span class="s2">&quot;.\build\Templates\MyModule.psm1.template&quot;</span>
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="nv">$analysis</span><span class="p">.</span><span class="n">ValidationMode</span>       <span class="c"># Free, Hybrid, or Ordered</span>
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="nv">$analysis</span><span class="p">.</span><span class="n">IsValid</span>
-<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="nv">$analysis</span><span class="p">.</span><span class="n">MissingPlaceholders</span>  <span class="c"># expected but not found in template</span>
-<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="nv">$analysis</span><span class="p">.</span><span class="n">UnknownPlaceholders</span>  <span class="c"># found in template but not expected</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nv">$analysis</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderContentCollector</span> <span class="p">|</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Class</span> <span class="n">-IncludePath</span> <span class="s2">&quot;src\Classes&quot;</span> <span class="p">|</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>    <span class="nb">Get-PSScriptBuilderTemplateAnalysis</span> <span class="n">-TemplatePath</span> <span class="s2">&quot;.\build\Templates\MyScript.ps1.template&quot;</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="nv">$analysis</span><span class="p">.</span><span class="n">ValidationMode</span>       <span class="c"># Free, Hybrid, or Ordered</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="nv">$analysis</span><span class="p">.</span><span class="n">IsValid</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="nv">$analysis</span><span class="p">.</span><span class="n">MissingPlaceholders</span>  <span class="c"># expected but not found in template</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="nv">$analysis</span><span class="p">.</span><span class="n">UnknownPlaceholders</span>  <span class="c"># found in template but not expected</span>
 </code></pre></div>
 <p>See the <a href="../templates/">Templates Guide</a> for a full explanation of validation modes, placeholder
 rules, and all analysis result properties.</p>
@@ -3335,7 +3468,7 @@ rules, and all analysis result properties.</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.top", "toc.follow", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../javascripts/external-links.js"></script>
       

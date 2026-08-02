@@ -18,14 +18,14 @@
         <link rel="prev" href="../Get-PSScriptBuilderDependencyAnalysis/">
       
       
-        <link rel="next" href="../ConvertTo-PSScriptBuilderComponentDependencyTree/">
+        <link rel="next" href="../Find-PSScriptBuilderUnusedComponent/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/logo.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <link rel="icon" href="../../assets/logo-v2.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -100,7 +100,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="PSScriptBuilder Docs" class="md-header__button md-logo" aria-label="PSScriptBuilder Docs" data-md-component="logo">
       
-  <img src="../../assets/logo.svg" alt="logo">
+  <img src="../../assets/logo-v2.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -395,7 +395,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="PSScriptBuilder Docs" class="md-nav__button md-logo" aria-label="PSScriptBuilder Docs" data-md-component="logo">
       
-  <img src="../../assets/logo.svg" alt="logo">
+  <img src="../../assets/logo-v2.svg" alt="logo">
 
     </a>
     PSScriptBuilder Docs
@@ -1355,6 +1355,8 @@
       
         
       
+        
+      
     
     
     
@@ -1426,6 +1428,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../New-PSScriptBuilderTemplate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New-PSScriptBuilderTemplate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1442,6 +1472,10 @@
   
     
     
+      
+        
+      
+        
       
         
       
@@ -1707,6 +1741,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../Watch-PSScriptBuilderProject/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Watch-PSScriptBuilderProject
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../Format-PSScriptBuilderBuildResult/" class="md-nav__link">
         
   
@@ -1715,6 +1777,34 @@
     
   
     Format-PSScriptBuilderBuildResult
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Export-PSScriptBuilderBuildResult/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Export-PSScriptBuilderBuildResult
   
 
     
@@ -1774,6 +1864,8 @@
   
     
     
+      
+        
       
         
       
@@ -2166,6 +2258,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Find-PSScriptBuilderUnusedComponent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Find-PSScriptBuilderUnusedComponent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -3182,12 +3302,12 @@ Useful for impact analysis before modifying a shared base class.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$analysis = New-PSScriptBuilderContentCollector |
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    Add-PSScriptBuilderCollector -Type Class -IncludePath &quot;.\src\Classes&quot; |
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    Get-PSScriptBuilderDependencyAnalysis
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>$analysis | Get-PSScriptBuilderComponentDependency -Name &#39;MyService&#39; |
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    ConvertTo-PSScriptBuilderComponentDependencyTree
 </code></pre></div>
-<p>$analysis | Get-PSScriptBuilderComponentDependency -Name 'MyService' |
-    ConvertTo-PSScriptBuilderComponentDependencyTree</p>
 <p>Fluent pipeline: analyzes dependencies and renders the result as a tree.</p>
 <h3 id="example-4">EXAMPLE 4<a class="headerlink" href="#example-4" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$analysis.DependencyGraph.Dependencies.Keys | ForEach-Object {
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$analysis.DependencyGraph.GetEdgeMap().Keys | ForEach-Object {
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    $deps = $analysis | Get-PSScriptBuilderComponentDependency -Name $_
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    [PSCustomObject]@{ Name = $_; Count = $deps.Count }
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>} | Sort-Object Count -Descending | Select-Object -First 5
@@ -3339,13 +3459,13 @@ it reveals every component that would be affected by a change to the named compo
         
         
           
-          <a href="../ConvertTo-PSScriptBuilderComponentDependencyTree/" class="md-footer__link md-footer__link--next" aria-label="Next: ConvertTo-PSScriptBuilderComponentDependencyTree">
+          <a href="../Find-PSScriptBuilderUnusedComponent/" class="md-footer__link md-footer__link--next" aria-label="Next: Find-PSScriptBuilderUnusedComponent">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                ConvertTo-PSScriptBuilderComponentDependencyTree
+                Find-PSScriptBuilderUnusedComponent
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -3410,7 +3530,7 @@ it reveals every component that would be affected by a change to the named compo
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.top", "toc.follow", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../javascripts/external-links.js"></script>
       

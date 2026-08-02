@@ -24,8 +24,8 @@
         
       
       
-      <link rel="icon" href="../../assets/logo.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <link rel="icon" href="../../assets/logo-v2.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -100,7 +100,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="PSScriptBuilder Docs" class="md-header__button md-logo" aria-label="PSScriptBuilder Docs" data-md-component="logo">
       
-  <img src="../../assets/logo.svg" alt="logo">
+  <img src="../../assets/logo-v2.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -395,7 +395,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="PSScriptBuilder Docs" class="md-nav__button md-logo" aria-label="PSScriptBuilder Docs" data-md-component="logo">
       
-  <img src="../../assets/logo.svg" alt="logo">
+  <img src="../../assets/logo-v2.svg" alt="logo">
 
     </a>
     PSScriptBuilder Docs
@@ -1524,6 +1524,8 @@
       
         
       
+        
+      
     
     
     
@@ -1595,6 +1597,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmdlets/New-PSScriptBuilderTemplate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New-PSScriptBuilderTemplate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1611,6 +1641,10 @@
   
     
     
+      
+        
+      
+        
       
         
       
@@ -1876,6 +1910,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../cmdlets/Watch-PSScriptBuilderProject/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Watch-PSScriptBuilderProject
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../cmdlets/Format-PSScriptBuilderBuildResult/" class="md-nav__link">
         
   
@@ -1884,6 +1946,34 @@
     
   
     Format-PSScriptBuilderBuildResult
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmdlets/Export-PSScriptBuilderBuildResult/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Export-PSScriptBuilderBuildResult
   
 
     
@@ -1941,6 +2031,8 @@
   
     
     
+      
+        
       
         
       
@@ -2040,6 +2132,34 @@
     
   
     Get-PSScriptBuilderComponentDependency
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmdlets/Find-PSScriptBuilderUnusedComponent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Find-PSScriptBuilderUnusedComponent
   
 
     
@@ -2935,7 +3055,7 @@ in the Code Analysis Guide.</p>
 <h3 id="1-identify-the-components">1. Identify the Components<a class="headerlink" href="#1-identify-the-components" title="Permanent link">&para;</a></h3>
 <p>Open your file and identify every component: enums, classes, and functions. A monolithic HR
 module might look like this:</p>
-<div class="highlight"><span class="filename">HRModule.psm1 — before migration</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">enum</span> <span class="n">Department</span> <span class="p">{</span>
+<div class="highlight"><span class="filename">HRTools.ps1 — before migration</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">enum</span> <span class="n">Department</span> <span class="p">{</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="n">Engineering</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="n">HumanResources</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="n">Finance</span>
@@ -3004,9 +3124,9 @@ and <code>EmploymentStatus</code>. PSScriptBuilder will detect all of these auto
 <h3 id="2-plan-the-directory-structure">2. Plan the Directory Structure<a class="headerlink" href="#2-plan-the-directory-structure" title="Permanent link">&para;</a></h3>
 <p>PSScriptBuilder uses separate collectors per component type. The recommended directory layout
 maps directly to those types:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>HRModule/
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>HRTools/
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>├── psscriptbuilder.config.json
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>├── Build-HRModule.ps1
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>├── Build-HRTools.ps1
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>├── src/
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>│   ├── Enums/      ← one file per enum
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>│   ├── Classes/    ← one file per class
@@ -3039,15 +3159,15 @@ suppressed internally — they are expected and not actionable.</p>
 <p>From the project root, generate the configuration file:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">New-PSScriptBuilderConfiguration</span>
 </code></pre></div>
-<p>Create the template at <code>build/Templates/HRModule.psm1.template</code>:</p>
-<div class="highlight"><span class="filename">build/Templates/HRModule.psm1.template</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{{</span><span class="n">ENUM_DEFINITIONS</span><span class="p">}}</span>
+<p>Create the template at <code>build/Templates/HRTools.ps1.template</code>:</p>
+<div class="highlight"><span class="filename">build/Templates/HRTools.ps1.template</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{{</span><span class="n">ENUM_DEFINITIONS</span><span class="p">}}</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="p">{{</span><span class="n">CLASS_DEFINITIONS</span><span class="p">}}</span>
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
 <a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">{{</span><span class="n">FUNCTION_DEFINITIONS</span><span class="p">}}</span>
 </code></pre></div>
 <p>Create the build script at the project root:</p>
-<div class="highlight"><span class="filename">Build-HRModule.ps1</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">using</span> <span class="n">module</span> <span class="n">PSScriptBuilder</span>
+<div class="highlight"><span class="filename">Build-HRTools.ps1</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">using</span> <span class="n">module</span> <span class="n">PSScriptBuilder</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nb">Set-PSScriptBuilderProjectRoot</span> <span class="n">-Path</span> <span class="nv">$PSScriptRoot</span>
 <a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
@@ -3060,8 +3180,8 @@ suppressed internally — they are expected and not actionable.</p>
 <a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
 <a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="nv">$buildParams</span> <span class="p">=</span> <span class="p">@{</span>
 <a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>    <span class="n">ContentCollector</span> <span class="p">=</span> <span class="nv">$contentCollector</span>
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>    <span class="n">TemplatePath</span>     <span class="p">=</span> <span class="nb">Join-Path</span> <span class="nv">$config</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">TemplatePath</span> <span class="s1">&#39;HRModule.psm1.template&#39;</span>
-<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>    <span class="n">OutputPath</span>       <span class="p">=</span> <span class="nb">Join-Path</span> <span class="nv">$config</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">OutputPath</span>   <span class="s1">&#39;HRModule.psm1&#39;</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>    <span class="n">TemplatePath</span>     <span class="p">=</span> <span class="nb">Join-Path</span> <span class="nv">$config</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">TemplatePath</span> <span class="s1">&#39;HRTools.ps1.template&#39;</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>    <span class="n">OutputPath</span>       <span class="p">=</span> <span class="nb">Join-Path</span> <span class="nv">$config</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">OutputPath</span>   <span class="s1">&#39;HRTools.ps1&#39;</span>
 <a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="p">}</span>
 <a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>
 <a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="nb">Invoke-PSScriptBuilderBuild</span> <span class="nv">@buildParams</span> <span class="p">|</span> <span class="nb">Format-PSScriptBuilderBuildResult</span>
@@ -3069,9 +3189,9 @@ suppressed internally — they are expected and not actionable.</p>
 <p>For a detailed walkthrough of each step, see
 <a href="../building-your-first-project/">Building Your First Project</a>.</p>
 <h3 id="5-run-the-first-build-and-verify">5. Run the First Build and Verify<a class="headerlink" href="#5-run-the-first-build-and-verify" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">.\</span><span class="n">Build-HRModule</span><span class="p">.</span><span class="n">ps1</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">.\</span><span class="n">Build-HRTools</span><span class="p">.</span><span class="n">ps1</span>
 </code></pre></div>
-<p>Open <code>build/Output/HRModule.psm1</code> and compare it with your original file. The content should
+<p>Open <code>build/Output/HRTools.ps1</code> and compare it with your original file. The content should
 be equivalent — same components, same logic — but in a PSScriptBuilder-determined load order:
 enums first, then classes in dependency order, then functions.</p>
 <hr />
@@ -3261,7 +3381,7 @@ PSScriptBuilder.</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.top", "toc.follow", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../javascripts/external-links.js"></script>
       

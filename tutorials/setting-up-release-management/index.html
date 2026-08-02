@@ -24,8 +24,8 @@
         
       
       
-      <link rel="icon" href="../../assets/logo.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <link rel="icon" href="../../assets/logo-v2.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -100,7 +100,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="PSScriptBuilder Docs" class="md-header__button md-logo" aria-label="PSScriptBuilder Docs" data-md-component="logo">
       
-  <img src="../../assets/logo.svg" alt="logo">
+  <img src="../../assets/logo-v2.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -395,7 +395,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="PSScriptBuilder Docs" class="md-nav__button md-logo" aria-label="PSScriptBuilder Docs" data-md-component="logo">
       
-  <img src="../../assets/logo.svg" alt="logo">
+  <img src="../../assets/logo-v2.svg" alt="logo">
 
     </a>
     PSScriptBuilder Docs
@@ -1485,6 +1485,8 @@
       
         
       
+        
+      
     
     
     
@@ -1556,6 +1558,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmdlets/New-PSScriptBuilderTemplate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New-PSScriptBuilderTemplate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1572,6 +1602,10 @@
   
     
     
+      
+        
+      
+        
       
         
       
@@ -1837,6 +1871,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../cmdlets/Watch-PSScriptBuilderProject/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Watch-PSScriptBuilderProject
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../cmdlets/Format-PSScriptBuilderBuildResult/" class="md-nav__link">
         
   
@@ -1845,6 +1907,34 @@
     
   
     Format-PSScriptBuilderBuildResult
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmdlets/Export-PSScriptBuilderBuildResult/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Export-PSScriptBuilderBuildResult
   
 
     
@@ -1902,6 +1992,8 @@
   
     
     
+      
+        
       
         
       
@@ -2001,6 +2093,34 @@
     
   
     Get-PSScriptBuilderComponentDependency
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmdlets/Find-PSScriptBuilderUnusedComponent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Find-PSScriptBuilderUnusedComponent
   
 
     
@@ -2846,7 +2966,7 @@ the version, update all registered files, and produce a correctly versioned buil
 <hr />
 <h2 id="1-create-the-release-data-file">1. Create the Release Data File<a class="headerlink" href="#1-create-the-release-data-file" title="Permanent link">&para;</a></h2>
 <p>The release data file (<code>psscriptbuilder.releasedata.json</code>) is the central store for your
-module's current version and release metadata — build timestamp, Git commit hash, branch
+project's current version and release metadata — build timestamp, Git commit hash, branch
 name, and more. All other release management steps read from and write to this file.</p>
 <p>Create it by running:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">New-PSScriptBuilderReleaseData</span>
@@ -2880,15 +3000,15 @@ this entry with an <code>items</code> entry on the same file — as described in
 <div class="highlight"><span class="filename">psscriptbuilder.bumpconfig.json</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nt">&quot;bumpFiles&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">        </span><span class="p">{</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">            </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Module template — inject version and build metadata&quot;</span><span class="p">,</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">            </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;build\\Templates\\HRModule.psm1.template&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">            </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Output template — inject version and build metadata&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">            </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;build\\Templates\\HRTools.ps1.template&quot;</span><span class="p">,</span>
 <a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">            </span><span class="nt">&quot;tokens&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;VERSION&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;BUILD_DATE&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;GIT_COMMIT_SHORT&quot;</span><span class="p">]</span>
 <a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">        </span><span class="p">}</span>
 <a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="p">]</span>
 <a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="p">}</span>
 </code></pre></div>
 <p>The corresponding template file would contain lines like:</p>
-<div class="highlight"><span class="filename">HRModule.psm1.template</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c"># Version: {{VERSION}} — Built: {{BUILD_DATE}} ({{GIT_COMMIT_SHORT}})</span>
+<div class="highlight"><span class="filename">HRTools.ps1.template</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c"># Version: {{VERSION}} — Built: {{BUILD_DATE}} ({{GIT_COMMIT_SHORT}})</span>
 </code></pre></div>
 <h3 id="using-items-for-files-with-a-fixed-format">Using <code>items</code> — for files with a fixed format<a class="headerlink" href="#using-items-for-files-with-a-fixed-format" title="Permanent link">&para;</a></h3>
 <p>If the file format is fixed and you cannot add placeholders — such as a <code>.psd1</code> generated
@@ -2898,7 +3018,7 @@ value and replaces only the version number, leaving the surrounding syntax intac
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nt">&quot;bumpFiles&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">        </span><span class="p">{</span>
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">            </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Module manifest — update version&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">            </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;build\\Output\\HRModule.psd1&quot;</span><span class="p">,</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">            </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;build\\Output\\MyProject.psd1&quot;</span><span class="p">,</span>
 <a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">            </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">                </span><span class="p">{</span>
 <a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">                    </span><span class="nt">&quot;pattern&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ModuleVersion\\s*=\\s*&#39;({REGEX_VERSION})&#39;&quot;</span><span class="p">,</span>
@@ -2923,7 +3043,7 @@ For the full token list with descriptions, see the <a href="../../guides/release
 <p>Open your build script and add a <code>-Release</code> switch with the three version bump options.
 The release logic runs only when <code>-Release</code> is passed — a normal development build skips it
 entirely, so everyday runs remain fast and have no side-effects:</p>
-<div class="highlight"><span class="filename">Build-HRModule.ps1</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">using</span> <span class="n">module</span> <span class="n">PSScriptBuilder</span>
+<div class="highlight"><span class="filename">Build-HRTools.ps1</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">using</span> <span class="n">module</span> <span class="n">PSScriptBuilder</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="p">[</span><span class="k">CmdletBinding</span><span class="p">(</span><span class="n">DefaultParameterSetName</span> <span class="p">=</span> <span class="s1">&#39;None&#39;</span><span class="p">)]</span>
 <a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="k">param</span><span class="p">(</span>
@@ -2960,8 +3080,8 @@ entirely, so everyday runs remain fast and have no side-effects:</p>
 <a id="__codelineno-5-35" name="__codelineno-5-35" href="#__codelineno-5-35"></a>
 <a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a><span class="nv">$buildParams</span> <span class="p">=</span> <span class="p">@{</span>
 <a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a>    <span class="n">ContentCollector</span> <span class="p">=</span> <span class="nv">$contentCollector</span>
-<a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a>    <span class="n">TemplatePath</span>     <span class="p">=</span> <span class="nb">Join-Path</span> <span class="nv">$config</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">TemplatePath</span> <span class="s1">&#39;HRModule.psm1.template&#39;</span>
-<a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a>    <span class="n">OutputPath</span>       <span class="p">=</span> <span class="nb">Join-Path</span> <span class="nv">$config</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">OutputPath</span>   <span class="s1">&#39;HRModule.psm1&#39;</span>
+<a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a>    <span class="n">TemplatePath</span>     <span class="p">=</span> <span class="nb">Join-Path</span> <span class="nv">$config</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">TemplatePath</span> <span class="s1">&#39;HRTools.ps1.template&#39;</span>
+<a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a>    <span class="n">OutputPath</span>       <span class="p">=</span> <span class="nb">Join-Path</span> <span class="nv">$config</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">OutputPath</span>   <span class="s1">&#39;HRTools.ps1&#39;</span>
 <a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a><span class="p">}</span>
 <a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a>
 <a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a><span class="nb">Invoke-PSScriptBuilderBuild</span> <span class="nv">@buildParams</span> <span class="p">|</span> <span class="nb">Format-PSScriptBuilderBuildResult</span>
@@ -2984,7 +3104,7 @@ will cause a validation error.</p>
 <hr />
 <h2 id="4-run-a-release-build">4. Run a Release Build<a class="headerlink" href="#4-run-a-release-build" title="Permanent link">&para;</a></h2>
 <p>For a patch release:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">.\</span><span class="n">Build-HRModule</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-Release</span> <span class="n">-Patch</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">.\</span><span class="n">Build-HRTools</span><span class="p">.</span><span class="n">ps1</span> <span class="n">-Release</span> <span class="n">-Patch</span>
 </code></pre></div>
 <p>Use <code>-Minor</code> for new features and <code>-Major</code> for breaking changes.</p>
 <p>You will see three blocks of output:</p>
@@ -3131,7 +3251,7 @@ updates all registered files, and produces a correctly versioned build output.</
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.top", "toc.follow", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../javascripts/external-links.js"></script>
       

@@ -22,8 +22,8 @@
         
       
       
-      <link rel="icon" href="../assets/logo.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <link rel="icon" href="../assets/logo-v2.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -98,7 +98,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="PSScriptBuilder Docs" class="md-header__button md-logo" aria-label="PSScriptBuilder Docs" data-md-component="logo">
       
-  <img src="../assets/logo.svg" alt="logo">
+  <img src="../assets/logo-v2.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -393,7 +393,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="PSScriptBuilder Docs" class="md-nav__button md-logo" aria-label="PSScriptBuilder Docs" data-md-component="logo">
       
-  <img src="../assets/logo.svg" alt="logo">
+  <img src="../assets/logo-v2.svg" alt="logo">
 
     </a>
     PSScriptBuilder Docs
@@ -1348,6 +1348,8 @@
       
         
       
+        
+      
     
     
     
@@ -1419,6 +1421,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cmdlets/New-PSScriptBuilderTemplate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New-PSScriptBuilderTemplate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1435,6 +1465,10 @@
   
     
     
+      
+        
+      
+        
       
         
       
@@ -1700,6 +1734,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../cmdlets/Watch-PSScriptBuilderProject/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Watch-PSScriptBuilderProject
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../cmdlets/Format-PSScriptBuilderBuildResult/" class="md-nav__link">
         
   
@@ -1708,6 +1770,34 @@
     
   
     Format-PSScriptBuilderBuildResult
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cmdlets/Export-PSScriptBuilderBuildResult/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Export-PSScriptBuilderBuildResult
   
 
     
@@ -1765,6 +1855,8 @@
   
     
     
+      
+        
       
         
       
@@ -1864,6 +1956,34 @@
     
   
     Get-PSScriptBuilderComponentDependency
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cmdlets/Find-PSScriptBuilderUnusedComponent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Find-PSScriptBuilderUnusedComponent
   
 
     
@@ -2681,17 +2801,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#build-script-warning-has-already-been-executed-in-this-session" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Build script warning: "has already been executed in this session"
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#release-data-validation-fails-gitbranch-or-gittag-too-short" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2875,17 +2984,6 @@
     <span class="md-ellipsis">
       
         Wrong configuration loaded: tokens unreplaced or build path incorrect
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#build-script-warning-has-already-been-executed-in-this-session" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Build script warning: "has already been executed in this session"
       
     </span>
   </a>
@@ -3105,24 +3203,6 @@ Always run each project or example in a <strong>fresh PowerShell session</strong
 call <code>Set-PSScriptBuilderProjectRoot</code> explicitly at the start of your script:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">Set-PSScriptBuilderProjectRoot</span> <span class="n">-Path</span> <span class="nv">$PSScriptRoot</span>
 </code></pre></div>
-<h3 id="build-script-warning-has-already-been-executed-in-this-session">Build script warning: "has already been executed in this session"<a class="headerlink" href="#build-script-warning-has-already-been-executed-in-this-session" title="Permanent link">&para;</a></h3>
-<p><strong>Symptom:</strong><br />
-Running the build script scaffolded by <code>New-PSScriptBuilderProject</code> (<code>Build-MyProject.ps1</code>) a second time in the same
-PowerShell session displays:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>WARNING: Build-MyProject.ps1 has already been executed in this session.
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Start a new PowerShell session to run it again.
-</code></pre></div>
-<p><strong>Cause:</strong><br />
-The build script uses <code>using module PSScriptBuilder</code> to load the module. In PowerShell 5.1,
-module types loaded via <code>using module</code> cannot be unloaded or refreshed within the same
-process. A second run would silently continue using the type definitions from the first
-load — even if <code>build.ps1</code> has since produced a newer module on disk. The session guard
-prevents this silent stale-type scenario.</p>
-<p><strong>Fix:</strong><br />
-Start a new PowerShell session and run the build script again. In CI/CD pipelines this
-is never an issue — each job starts in a fresh process.</p>
-<p>See <a href="../guides/build-pipeline/#the-scaffolded-build-script">The Scaffolded Build Script</a> for a
-full explanation of the session guard.</p>
 <h3 id="release-data-validation-fails-gitbranch-or-gittag-too-short">Release data validation fails: git.branch or git.tag too short<a class="headerlink" href="#release-data-validation-fails-gitbranch-or-gittag-too-short" title="Permanent link">&para;</a></h3>
 <p><strong>Symptom:</strong><br />
 <code>Test-PSScriptBuilderReleaseData</code> reports:
@@ -3134,12 +3214,12 @@ but rejects empty strings because a branch or tag name of length zero is not a
 valid value.</p>
 <p><strong>Fix:</strong><br />
 Set unused git fields to <code>null</code>, not <code>""</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&quot;git&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nt">&quot;commit&quot;</span><span class="p">:</span><span class="w">      </span><span class="kc">null</span><span class="p">,</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">&quot;commitShort&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nt">&quot;branch&quot;</span><span class="p">:</span><span class="w">      </span><span class="kc">null</span><span class="p">,</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="nt">&quot;tag&quot;</span><span class="p">:</span><span class="w">         </span><span class="kc">null</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">&quot;git&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nt">&quot;commit&quot;</span><span class="p">:</span><span class="w">      </span><span class="kc">null</span><span class="p">,</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">&quot;commitShort&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nt">&quot;branch&quot;</span><span class="p">:</span><span class="w">      </span><span class="kc">null</span><span class="p">,</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nt">&quot;tag&quot;</span><span class="p">:</span><span class="w">         </span><span class="kc">null</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p">}</span>
 </code></pre></div>
 <p>Git fields are populated automatically when <code>Update-PSScriptBuilderReleaseData -UpdateGitDetails</code> is run in a Git repository.</p>
 <hr />
@@ -3156,7 +3236,7 @@ Verify that the collector's <code>CollectionKey</code> matches the placeholder e
 Use <code>Get-PSScriptBuilderTemplateAnalysis</code> or <code>Test-PSScriptBuilderTemplate</code> to list
 all placeholders found in the template and compare them against the registered
 collectors:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">Test-PSScriptBuilderTemplate</span> <span class="n">-TemplatePath</span> <span class="nv">$templatePath</span> <span class="n">-ContentCollector</span> <span class="nv">$contentCollector</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">Test-PSScriptBuilderTemplate</span> <span class="n">-TemplatePath</span> <span class="nv">$templatePath</span> <span class="n">-ContentCollector</span> <span class="nv">$contentCollector</span>
 </code></pre></div>
 <h3 id="bump-files-not-updated-version_full-remains-in-template-after-bumping">Bump files not updated: {{VERSION_FULL}} remains in template after bumping<a class="headerlink" href="#bump-files-not-updated-version_full-remains-in-template-after-bumping" title="Permanent link">&para;</a></h3>
 <p><strong>Symptom:</strong><br />
@@ -3175,11 +3255,11 @@ management or bump cmdlets in the same script.</p>
 <p>When reporting a bug or diagnosing unexpected behaviour, it helps to include the
 module version and runtime details. PSScriptBuilder exposes two read-only global
 variables after import:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c"># Module version, build number, Git commit details</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nv">$Global:PSScriptBuilderModuleInfo</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c"># PowerShell version, host application, computer name</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="nv">$Global:PSScriptBuilderRuntimeInfo</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c"># Module version, build number, Git commit details</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nv">$Global:PSScriptBuilderModuleInfo</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c"># PowerShell version, host application, computer name</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="nv">$Global:PSScriptBuilderRuntimeInfo</span>
 </code></pre></div>
 <p>Both variables are populated automatically when <code>using module PSScriptBuilder</code> is
 executed. Do not modify them directly.</p>
@@ -3290,7 +3370,7 @@ executed. Do not modify them directly.</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.top", "toc.follow", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../javascripts/external-links.js"></script>
       

@@ -24,8 +24,8 @@
         
       
       
-      <link rel="icon" href="../../assets/logo.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <link rel="icon" href="../../assets/logo-v2.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -100,7 +100,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../.." title="PSScriptBuilder Docs" class="md-header__button md-logo" aria-label="PSScriptBuilder Docs" data-md-component="logo">
       
-  <img src="../../assets/logo.svg" alt="logo">
+  <img src="../../assets/logo-v2.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -395,7 +395,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="PSScriptBuilder Docs" class="md-nav__button md-logo" aria-label="PSScriptBuilder Docs" data-md-component="logo">
       
-  <img src="../../assets/logo.svg" alt="logo">
+  <img src="../../assets/logo-v2.svg" alt="logo">
 
     </a>
     PSScriptBuilder Docs
@@ -1647,6 +1647,8 @@
       
         
       
+        
+      
     
     
     
@@ -1718,6 +1720,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmdlets/New-PSScriptBuilderTemplate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New-PSScriptBuilderTemplate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1734,6 +1764,10 @@
   
     
     
+      
+        
+      
+        
       
         
       
@@ -1999,6 +2033,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../cmdlets/Watch-PSScriptBuilderProject/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Watch-PSScriptBuilderProject
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../cmdlets/Format-PSScriptBuilderBuildResult/" class="md-nav__link">
         
   
@@ -2007,6 +2069,34 @@
     
   
     Format-PSScriptBuilderBuildResult
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmdlets/Export-PSScriptBuilderBuildResult/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Export-PSScriptBuilderBuildResult
   
 
     
@@ -2064,6 +2154,8 @@
   
     
     
+      
+        
       
         
       
@@ -2163,6 +2255,34 @@
     
   
     Get-PSScriptBuilderComponentDependency
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmdlets/Find-PSScriptBuilderUnusedComponent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Find-PSScriptBuilderUnusedComponent
   
 
     
@@ -3198,7 +3318,7 @@ changelogs in a single step.</p>
 <hr />
 <h2 id="walkthrough">Walkthrough<a class="headerlink" href="#walkthrough" title="Permanent link">&para;</a></h2>
 <h3 id="1-set-up-the-release-data-file">1. Set Up the Release Data File<a class="headerlink" href="#1-set-up-the-release-data-file" title="Permanent link">&para;</a></h3>
-<p>If no release data file exists yet, create one with default values (<code>0.1.0</code>, build number <code>1</code>):</p>
+<p>If no release data file exists yet, create one with default values (<code>0.1.0</code>, build number <code>0</code>):</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">New-PSScriptBuilderReleaseData</span>
 </code></pre></div>
 <p><a href="../../cmdlets/New-PSScriptBuilderReleaseData/"><code>New-PSScriptBuilderReleaseData</code></a> reads the
@@ -3344,15 +3464,15 @@ to see all current token values in a single table:</p>
 is <strong>simple token replacement</strong>: the file contains <code>{{TOKEN}}</code> placeholders, and the <code>tokens</code>
 array lists which ones to replace. PSScriptBuilder substitutes each with the current value
 from <code>psscriptbuilder.releasedata.json</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c"># MyModule.psm1</span>
-<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="nv">$moduleVersion</span> <span class="p">=</span> <span class="s1">&#39;{{VERSION}}&#39;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c"># MyProject.ps1</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="nv">$version</span> <span class="p">=</span> <span class="s1">&#39;{{VERSION}}&#39;</span>
 <a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="nv">$buildTimestamp</span> <span class="p">=</span> <span class="s1">&#39;{{BUILD_TIMESTAMP}}&#39;</span>
 </code></pre></div>
 <div class="highlight"><span class="filename">psscriptbuilder.bumpconfig.json — simple token mode</span><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="p">{</span>
 <a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">    </span><span class="nt">&quot;bumpFiles&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">        </span><span class="p">{</span>
-<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">            </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Module script — inject version and build timestamp&quot;</span><span class="p">,</span>
-<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="w">            </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;src\\MyModule.psm1&quot;</span><span class="p">,</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">            </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Output script — inject version and build timestamp&quot;</span><span class="p">,</span>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="w">            </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;src\\MyProject.ps1&quot;</span><span class="p">,</span>
 <a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="w">            </span><span class="nt">&quot;tokens&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;VERSION&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;BUILD_TIMESTAMP&quot;</span><span class="p">]</span>
 <a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="w">        </span><span class="p">}</span>
 <a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="w">    </span><span class="p">]</span>
@@ -3485,7 +3605,7 @@ validates the structure of <code>bumpconfig.json</code> and checks that all refe
 <h3 id="11-full-release-workflow">11. Full Release Workflow<a class="headerlink" href="#11-full-release-workflow" title="Permanent link">&para;</a></h3>
 <p>A complete release script that combines all steps:</p>
 <div class="highlight"><span class="filename">release.ps1</span><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="c"># 1. Validate</span>
-<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="k">if</span> <span class="p">(</span><span class="o">-not</span> <span class="p">(</span><span class="nb">Test-PSScriptBuilderReleaseData</span><span class="p">))</span>      <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="k">if</span> <span class="p">(</span><span class="o">-not</span> <span class="p">(</span><span class="nb">Test-PSScriptBuilderReleaseData</span><span class="p">))</span>       <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
 <a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="k">if</span> <span class="p">(</span><span class="o">-not</span> <span class="p">(</span><span class="nb">Test-PSScriptBuilderBumpConfiguration</span><span class="p">))</span> <span class="p">{</span> <span class="k">return</span> <span class="p">}</span>
 <a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>
 <a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="c"># 2. Bump version, refresh build and Git metadata</span>
@@ -3501,8 +3621,8 @@ validates the structure of <code>bumpconfig.json</code> and checks that all refe
 <a id="__codelineno-28-15" name="__codelineno-28-15" href="#__codelineno-28-15"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="k">Function</span> <span class="n">-IncludePath</span> <span class="s1">&#39;.\src\Public&#39;</span>
 <a id="__codelineno-28-16" name="__codelineno-28-16" href="#__codelineno-28-16"></a>
 <a id="__codelineno-28-17" name="__codelineno-28-17" href="#__codelineno-28-17"></a><span class="nb">Invoke-PSScriptBuilderBuild</span> <span class="n">-ContentCollector</span> <span class="nv">$contentCollector</span> <span class="p">`</span>
-<a id="__codelineno-28-18" name="__codelineno-28-18" href="#__codelineno-28-18"></a>    <span class="n">-TemplatePath</span> <span class="s1">&#39;.\build\Templates\MyModule.psm1.template&#39;</span> <span class="p">`</span>
-<a id="__codelineno-28-19" name="__codelineno-28-19" href="#__codelineno-28-19"></a>    <span class="n">-OutputPath</span>   <span class="s1">&#39;.\build\Output\MyModule.psm1&#39;</span>
+<a id="__codelineno-28-18" name="__codelineno-28-18" href="#__codelineno-28-18"></a>    <span class="n">-TemplatePath</span> <span class="s1">&#39;.\build\Templates\MyProject.ps1.template&#39;</span> <span class="p">`</span>
+<a id="__codelineno-28-19" name="__codelineno-28-19" href="#__codelineno-28-19"></a>    <span class="n">-OutputPath</span>   <span class="s1">&#39;.\build\Output\MyProject.ps1&#39;</span>
 </code></pre></div>
 <p>The order matters: bump first, then propagate, then build. If the build template is
 configured as a bump file (see the <a href="../templates/#5-combining-with-release-management-tokens">Templates Guide</a>),
@@ -3974,7 +4094,7 @@ not inside a Git repository, the cmdlet throws. In non-Git environments, omit
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.top", "toc.follow", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../../javascripts/external-links.js"></script>
       

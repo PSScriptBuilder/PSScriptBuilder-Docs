@@ -24,8 +24,8 @@
         
       
       
-      <link rel="icon" href="../assets/logo.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <link rel="icon" href="../assets/logo-v2.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -33,7 +33,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -100,7 +100,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="PSScriptBuilder Docs" class="md-header__button md-logo" aria-label="PSScriptBuilder Docs" data-md-component="logo">
       
-  <img src="../assets/logo.svg" alt="logo">
+  <img src="../assets/logo-v2.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -395,7 +395,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="PSScriptBuilder Docs" class="md-nav__button md-logo" aria-label="PSScriptBuilder Docs" data-md-component="logo">
       
-  <img src="../assets/logo.svg" alt="logo">
+  <img src="../assets/logo-v2.svg" alt="logo">
 
     </a>
     PSScriptBuilder Docs
@@ -1350,6 +1350,8 @@
       
         
       
+        
+      
     
     
     
@@ -1421,6 +1423,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cmdlets/New-PSScriptBuilderTemplate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    New-PSScriptBuilderTemplate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1437,6 +1467,10 @@
   
     
     
+      
+        
+      
+        
       
         
       
@@ -1702,6 +1736,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../cmdlets/Watch-PSScriptBuilderProject/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Watch-PSScriptBuilderProject
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../cmdlets/Format-PSScriptBuilderBuildResult/" class="md-nav__link">
         
   
@@ -1710,6 +1772,34 @@
     
   
     Format-PSScriptBuilderBuildResult
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cmdlets/Export-PSScriptBuilderBuildResult/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Export-PSScriptBuilderBuildResult
   
 
     
@@ -1767,6 +1857,8 @@
   
     
     
+      
+        
       
         
       
@@ -1866,6 +1958,34 @@
     
   
     Get-PSScriptBuilderComponentDependency
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cmdlets/Find-PSScriptBuilderUnusedComponent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Find-PSScriptBuilderUnusedComponent
   
 
     
@@ -2758,6 +2878,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#15-watcher" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15 - Watcher
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2995,6 +3126,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#15-watcher" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15 - Watcher
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3016,12 +3158,13 @@
 
 
 <h1 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h1>
-<p>Fourteen standalone, runnable examples cover the complete PSScriptBuilder feature set — designed
+<p>Fifteen standalone, runnable examples cover the complete PSScriptBuilder feature set — designed
 to be read and run in order. Each example introduces one or two new concepts and builds on the
 previous ones, from a minimal function-only build up to a full workflow with release management
 and module output. Examples 01-08 use an HR domain, examples 09-12 use an AppConfig domain.
 Example 13 uses PSScriptBuilder's own source code as the analysis subject.
 Example 14 demonstrates the cold-start scaffolding workflow with <code>New-PSScriptBuilderProject</code>.
+Example 15 demonstrates real-time file watching with <code>Watch-PSScriptBuilderProject</code>.
 The examples are part of the <a href="https://github.com/PSScriptBuilder/PSScriptBuilder/tree/main/examples">PSScriptBuilder repository on GitHub</a>
 and must be cloned locally before running them — see <a href="#prerequisites">Prerequisites</a>.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
@@ -3118,6 +3261,11 @@ Always open a new PowerShell window or terminal tab before running each example.
 <td><a href="#14-scaffolding">14</a></td>
 <td>Scaffolding</td>
 <td>Scaffold a new project with <code>New-PSScriptBuilderProject</code>, set root, bump, build</td>
+</tr>
+<tr>
+<td><a href="#15-watcher">15</a></td>
+<td>Watcher</td>
+<td>Real-time file watching: Build mode rebuilds on every change; Script mode invokes a custom script block with the changed file paths</td>
 </tr>
 </tbody>
 </table>
@@ -3272,6 +3420,19 @@ correctly scaffolded directory before the remaining phases execute.</p>
 </ol>
 <p>The <code>MyProject/</code> subdirectory is removed and recreated on each run — no separate reset step needed.</p>
 <p><a href="https://github.com/PSScriptBuilder/PSScriptBuilder/tree/main/examples/14-scaffolding"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8 0c4.42 0 8 3.58 8 8a8.01 8.01 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27s-1.36.09-2 .27c-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8"/></svg></span> examples/14-scaffolding</a></p>
+<hr />
+<h2 id="15-watcher">15 - Watcher<a class="headerlink" href="#15-watcher" title="Permanent link">&para;</a></h2>
+<p>Demonstrates <code>Watch-PSScriptBuilderProject</code> in both operating modes.</p>
+<p><strong>Build mode</strong> (<code>Watch-Build.ps1</code>) monitors the source directories and rebuilds automatically
+on every <code>.ps1</code> change. The optional <code>-Action</code> parameter receives the
+<code>PSScriptBuilderBuildResult</code> after each successful build — useful for running tests or printing
+a summary.</p>
+<p><strong>Script mode</strong> (<code>Watch-Script.ps1</code>) skips the build entirely and passes the changed file
+paths as a <code>string[]</code> to a custom script block. This is useful for invoking an external build
+tool, sending notifications, or simply observing which files are changing.</p>
+<p>Both scripts use the <code>AppConfig</code>/<code>ConfigEntry</code> domain from Example 09. The watcher runs until
+stopped with Ctrl+C. Build failures and script block errors do not stop the watcher.</p>
+<p><a href="https://github.com/PSScriptBuilder/PSScriptBuilder/tree/main/examples/15-watcher"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8 0c4.42 0 8 3.58 8 8a8.01 8.01 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27s-1.36.09-2 .27c-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8"/></svg></span> examples/15-watcher</a></p>
 
 
 
@@ -3395,7 +3556,7 @@ correctly scaffolded directory before the remaining phases execute.</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.top", "toc.follow", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="../javascripts/external-links.js"></script>
       
