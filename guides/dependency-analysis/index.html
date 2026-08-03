@@ -4151,7 +4151,7 @@ assessing the impact of a change, detecting structural problems, and generating 
 <p>The use cases are split into two groups. The first group uses
 <a href="../../examples/#06-hybrid-mode">Example 06 — Hybrid Mode</a> — a small HRM project with short,
 readable component names and concrete, predictable output. The second group uses PSScriptBuilder
-itself — a real project with almost 100 components — to demonstrate scenarios where scale matters.</p>
+itself — a real project with over 110 components — to demonstrate scenarios where scale matters.</p>
 <h3 id="querying-individual-components">Querying Individual Components<a class="headerlink" href="#querying-individual-components" title="Permanent link">&para;</a></h3>
 <p>The following use cases use <a href="../../cmdlets/Get-PSScriptBuilderComponentDependency/"><code>Get-PSScriptBuilderComponentDependency</code></a> and
 <a href="../../cmdlets/ConvertTo-PSScriptBuilderComponentDependencyTree/"><code>ConvertTo-PSScriptBuilderComponentDependencyTree</code></a> to answer questions about specific components.</p>
@@ -4328,22 +4328,22 @@ the more components a class depends on, the more it knows.</p>
 <a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="p">}</span> <span class="p">|</span> <span class="nb">Sort-Object</span> <span class="n">Count</span> <span class="n">-Descending</span> <span class="p">|</span> <span class="nb">Select-Object</span> <span class="n">-First</span> <span class="n">10</span>
 </code></pre></div>
 <p>Output:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>Name                                  Count
-<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>----                                  -----
-<a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a>Invoke-PSScriptBuilderBuild              38
-<a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a>PSScriptBuilderBuildOrchestrator         37
-<a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a>Get-PSScriptBuilderTemplateAnalysis      34
-<a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a>PSScriptBuilderTemplateAnalyzer          33
-<a id="__codelineno-34-7" name="__codelineno-34-7" href="#__codelineno-34-7"></a>Test-PSScriptBuilderTemplate             31
-<a id="__codelineno-34-8" name="__codelineno-34-8" href="#__codelineno-34-8"></a>Get-PSScriptBuilderDependencyAnalysis    28
-<a id="__codelineno-34-9" name="__codelineno-34-9" href="#__codelineno-34-9"></a>PSScriptBuilderDependencyAnalyzer        27
-<a id="__codelineno-34-10" name="__codelineno-34-10" href="#__codelineno-34-10"></a>Get-PSScriptBuilderReleaseDataTokens     22
-<a id="__codelineno-34-11" name="__codelineno-34-11" href="#__codelineno-34-11"></a>Get-PSScriptBuilderReleaseData           22
-<a id="__codelineno-34-12" name="__codelineno-34-12" href="#__codelineno-34-12"></a>Update-PSScriptBuilderBumpFiles          22
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>Name                                Count
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>----                                -----
+<a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a>Watch-PSScriptBuilderProject           43
+<a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a>PSScriptBuilderProjectWatcher          42
+<a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a>Invoke-PSScriptBuilderBuild            39
+<a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a>PSScriptBuilderBuildOrchestrator       38
+<a id="__codelineno-34-7" name="__codelineno-34-7" href="#__codelineno-34-7"></a>Get-PSScriptBuilderTemplateAnalysis    35
+<a id="__codelineno-34-8" name="__codelineno-34-8" href="#__codelineno-34-8"></a>PSScriptBuilderTemplateAnalyzer        34
+<a id="__codelineno-34-9" name="__codelineno-34-9" href="#__codelineno-34-9"></a>New-PSScriptBuilderTemplate            33
+<a id="__codelineno-34-10" name="__codelineno-34-10" href="#__codelineno-34-10"></a>Find-PSScriptBuilderUnusedComponent    33
+<a id="__codelineno-34-11" name="__codelineno-34-11" href="#__codelineno-34-11"></a>Test-PSScriptBuilderTemplate           32
+<a id="__codelineno-34-12" name="__codelineno-34-12" href="#__codelineno-34-12"></a>PSScriptBuilderTemplateGenerator       32
 </code></pre></div>
-<p><code>Invoke-PSScriptBuilderBuild</code> sits at the top with 38 transitive dependencies — it orchestrates
-the entire build pipeline and therefore pulls in nearly half the module. This is expected for a
-top-level entry point. Use the result as a starting point for a structural review — not every
+<p><code>Watch-PSScriptBuilderProject</code> sits at the top with 43 transitive dependencies — as the top-level
+entry point for watch mode, it orchestrates the entire watch and build pipeline and therefore pulls
+in nearly half the module. This is expected for a top-level entry point. Use the result as a starting point for a structural review — not every
 high-count component is a problem, but components that score significantly higher than their
 peers are worth investigating.</p>
 <h4 id="architecture-overview-for-code-review">Architecture Overview for Code Review<a class="headerlink" href="#architecture-overview-for-code-review" title="Permanent link">&para;</a></h4>
