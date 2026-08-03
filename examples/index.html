@@ -3424,9 +3424,10 @@ correctly scaffolded directory before the remaining phases execute.</p>
 <h2 id="15-watcher">15 - Watcher<a class="headerlink" href="#15-watcher" title="Permanent link">&para;</a></h2>
 <p>Demonstrates <code>Watch-PSScriptBuilderProject</code> in both operating modes.</p>
 <p><strong>Build mode</strong> (<code>Watch-Build.ps1</code>) monitors the source directories and rebuilds automatically
-on every <code>.ps1</code> change. The optional <code>-Action</code> parameter receives the
-<code>PSScriptBuilderBuildResult</code> after each successful build — useful for running tests or printing
-a summary.</p>
+on every <code>.ps1</code> change. The optional <code>-OnSuccess</code> parameter accepts a custom script block that
+receives a <code>PSScriptBuilderBuildResult</code> after each successful build — useful for running tests
+or printing a summary. The optional <code>-OnError</code> parameter accepts a custom script block that
+receives a <code>PSScriptBuilderWatchBuildErrorResult</code> when a build fails.</p>
 <p><strong>Script mode</strong> (<code>Watch-Script.ps1</code>) skips the build entirely and passes the changed file
 paths as a <code>string[]</code> to a custom script block. This is useful for invoking an external build
 tool, sending notifications, or simply observing which files are changing.</p>

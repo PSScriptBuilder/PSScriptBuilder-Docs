@@ -3605,7 +3605,7 @@ manual build:</p>
 <a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>                             <span class="n">-TemplatePath</span>     <span class="s1">&#39;build\Templates\MyScript.ps1.template&#39;</span> <span class="p">`</span>
 <a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>                             <span class="n">-OutputPath</span>       <span class="s1">&#39;build\Output\MyScript.ps1&#39;</span>
 </code></pre></div>
-<p>Use <code>-Action</code> to run a script block after each successful build. The build result is passed
+<p>Use <code>-OnSuccess</code> to run a script block after each successful build. The build result is passed
 as the first argument via <code>param</code>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nv">$postBuildAction</span> <span class="p">=</span> <span class="p">{</span>
 <a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>    <span class="k">param</span><span class="p">(</span><span class="nv">$buildResult</span><span class="p">)</span>
@@ -3616,18 +3616,32 @@ as the first argument via <code>param</code>:</p>
 <a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="nb">Watch-PSScriptBuilderProject</span> <span class="n">-ContentCollector</span> <span class="nv">$contentCollector</span> <span class="p">`</span>
 <a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>                             <span class="n">-TemplatePath</span>     <span class="s1">&#39;build\Templates\MyScript.ps1.template&#39;</span> <span class="p">`</span>
 <a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>                             <span class="n">-OutputPath</span>       <span class="s1">&#39;build\Output\MyScript.ps1&#39;</span> <span class="p">`</span>
-<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>                             <span class="n">-Action</span>           <span class="nv">$postBuildAction</span>
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>                             <span class="n">-OnSuccess</span>        <span class="nv">$postBuildAction</span>
+</code></pre></div>
+<p>Use <code>-OnError</code> to react to build failures. The script block receives a
+<code>PSScriptBuilderWatchBuildErrorResult</code> with <code>Exception</code>, <code>ChangedFiles</code>, and <code>Timestamp</code>
+properties:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nv">$onBuildError</span> <span class="p">=</span> <span class="p">{</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>    <span class="k">param</span><span class="p">(</span><span class="nv">$result</span><span class="p">)</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>    <span class="nv">$logEntry</span> <span class="p">=</span> <span class="s2">&quot;[{0}] Build failed. Triggered by: {1}&quot;</span> <span class="o">-f</span> <span class="nv">$result</span><span class="p">.</span><span class="n">Timestamp</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="s1">&#39;HH:mm:ss&#39;</span><span class="p">),</span> <span class="p">(</span><span class="nv">$result</span><span class="p">.</span><span class="n">ChangedFiles</span> <span class="n">-join</span> <span class="s1">&#39;, &#39;</span><span class="p">)</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>    <span class="nb">Add-Content</span> <span class="n">-Path</span> <span class="s1">&#39;build\build-errors.log&#39;</span> <span class="n">-Value</span> <span class="nv">$logEntry</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="p">}</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="nb">Watch-PSScriptBuilderProject</span> <span class="n">-ContentCollector</span> <span class="nv">$contentCollector</span> <span class="p">`</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>                             <span class="n">-TemplatePath</span>     <span class="s1">&#39;build\Templates\MyScript.ps1.template&#39;</span> <span class="p">`</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>                             <span class="n">-OutputPath</span>       <span class="s1">&#39;build\Output\MyScript.ps1&#39;</span> <span class="p">`</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>                             <span class="n">-OnError</span>          <span class="nv">$onBuildError</span>
 </code></pre></div>
 <p>For complete control over what happens on change, use <code>-ScriptBlock</code> instead of building.
 No build is triggered — PSScriptBuilder only handles the file watching and debouncing. The
 script block receives the changed file paths as a <code>string[]</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nv">$lintScript</span> <span class="p">=</span> <span class="p">{</span>
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>    <span class="k">param</span><span class="p">(</span><span class="no">[string[]]</span> <span class="nv">$changedFiles</span><span class="p">)</span>
-<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>    <span class="nb">Invoke-ScriptAnalyzer</span> <span class="n">-Path</span> <span class="nv">$changedFiles</span> <span class="n">-Severity</span> <span class="n">Warning</span><span class="p">,</span> <span class="n">Error</span>
-<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="p">}</span>
-<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>
-<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="nb">Watch-PSScriptBuilderProject</span> <span class="n">-ContentCollector</span> <span class="nv">$contentCollector</span> <span class="p">`</span>
-<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>                             <span class="n">-ScriptBlock</span> <span class="nv">$lintScript</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nv">$lintScript</span> <span class="p">=</span> <span class="p">{</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>    <span class="k">param</span><span class="p">(</span><span class="no">[string[]]</span> <span class="nv">$changedFiles</span><span class="p">)</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>    <span class="nb">Invoke-ScriptAnalyzer</span> <span class="n">-Path</span> <span class="nv">$changedFiles</span> <span class="n">-Severity</span> <span class="n">Warning</span><span class="p">,</span> <span class="n">Error</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="p">}</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="nb">Watch-PSScriptBuilderProject</span> <span class="n">-ContentCollector</span> <span class="nv">$contentCollector</span> <span class="p">`</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>                             <span class="n">-ScriptBlock</span> <span class="nv">$lintScript</span>
 </code></pre></div>
 <p>See the <a href="../../cmdlets/Watch-PSScriptBuilderProject/">Cmdlet Reference</a> for the full parameter reference.</p>
 <hr />
@@ -3641,14 +3655,14 @@ component names and file paths. The sections below describe the five error condi
 are most likely to encounter, what causes them, and how to resolve them.</p>
 <h3 id="missing-template-file">Missing Template File<a class="headerlink" href="#missing-template-file" title="Permanent link">&para;</a></h3>
 <p>When the specified template file does not exist:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>FileNotFoundException: Template file not found: &#39;build\Templates\MyProject.ps1.template&#39;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>FileNotFoundException: Template file not found: &#39;build\Templates\MyProject.ps1.template&#39;
 </code></pre></div>
 <p>Verify the path is correct and relative to the project root.</p>
 <h3 id="path-not-found">Path Not Found<a class="headerlink" href="#path-not-found" title="Permanent link">&para;</a></h3>
 <p>A collector accepts any path at creation time — path validation only happens at runtime,
 when <code>Invoke-PSScriptBuilderBuild</code> triggers collection. If an <code>-IncludePath</code> directory does
 not exist, the build fails with:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>IOException: Path not found: C:\MyProject\src\Classes (original: src\Classes)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>IOException: Path not found: C:\MyProject\src\Classes (original: src\Classes)
 </code></pre></div>
 <p>The message shows both the resolved absolute path and the original value you passed, which
 makes it easy to spot a typo or a missing directory. Verify that the path exists relative
@@ -3657,15 +3671,15 @@ to the project root and that <code>Set-PSScriptBuilderProjectRoot</code> was cal
 <p>A class and a function with the same name within the same project are explicitly forbidden.
 PSScriptBuilder uses component names as graph node keys — a collision would cause silent
 incorrect ordering in the build output:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>InvalidOperationException: Component name conflict: &#39;Employee&#39; is defined as both a Class
-<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>(in &#39;src\Classes\Employee.ps1&#39;) and a Function (in &#39;src\Public\Employee.ps1&#39;).
-<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>Classes and Functions must have unique names within a PSScriptBuilder project.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>InvalidOperationException: Component name conflict: &#39;Employee&#39; is defined as both a Class
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>(in &#39;src\Classes\Employee.ps1&#39;) and a Function (in &#39;src\Public\Employee.ps1&#39;).
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>Classes and Functions must have unique names within a PSScriptBuilder project.
 </code></pre></div>
 <p>Rename one of the conflicting components to resolve the conflict.</p>
 <h3 id="circular-dependency">Circular Dependency<a class="headerlink" href="#circular-dependency" title="Permanent link">&para;</a></h3>
 <p>When a circular dependency is detected, the build fails immediately with a detailed error
 message that includes the full cycle path:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>InvalidOperationException: Circular dependency detected: Employee -&gt; Manager -&gt; Employee
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>InvalidOperationException: Circular dependency detected: Employee -&gt; Manager -&gt; Employee
 </code></pre></div>
 <p>Resolve the cycle by removing or redirecting one of the dependencies. The
 <a href="../dependency-analysis/">Dependency Analysis Guide</a> explains how to query the dependency
@@ -3673,7 +3687,7 @@ graph to locate the cycle before running a build.</p>
 <h3 id="syntax-validation-failure">Syntax Validation Failure<a class="headerlink" href="#syntax-validation-failure" title="Permanent link">&para;</a></h3>
 <p>After writing the output file, PSScriptBuilder parses it to verify syntactic correctness.
 If the parse fails, the build throws:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>InvalidOperationException: Output syntax validation failed: &lt;parser error message&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>InvalidOperationException: Output syntax validation failed: &lt;parser error message&gt;
 </code></pre></div>
 <p><code>TypeNotFound</code> errors caused by external assemblies not loaded at build time are automatically
 filtered and do not fail validation. Use <code>-SkipSyntaxValidation</code> only when the output contains
