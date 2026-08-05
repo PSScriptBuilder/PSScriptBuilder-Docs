@@ -2,218 +2,222 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.psscriptbuilder.com/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/examples/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.psscriptbuilder.com/limitations/</loc>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/troubleshooting/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/cmdlets/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/cmdlets/Add-PSScriptBuilderCollector/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/cmdlets/Compress-PSScriptBuilderScript/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/cmdlets/ConvertTo-PSScriptBuilderComponentDependencyTree/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/cmdlets/Export-PSScriptBuilderBuildResult/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/cmdlets/Export-PSScriptBuilderDependencyGraph/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/cmdlets/Find-PSScriptBuilderUnusedComponent/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/cmdlets/Format-PSScriptBuilderBuildResult/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/cmdlets/Format-PSScriptBuilderBumpResult/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/cmdlets/Format-PSScriptBuilderReleaseDataResult/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/cmdlets/Get-PSScriptBuilderBumpConfiguration/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/cmdlets/Get-PSScriptBuilderCollector/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/cmdlets/Get-PSScriptBuilderCollectorContent/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/cmdlets/Get-PSScriptBuilderComponentDependency/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/cmdlets/Get-PSScriptBuilderConfiguration/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/cmdlets/Get-PSScriptBuilderDependencyAnalysis/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/cmdlets/Get-PSScriptBuilderReleaseData/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/cmdlets/Get-PSScriptBuilderReleaseDataTokens/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/cmdlets/Get-PSScriptBuilderTemplateAnalysis/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/cmdlets/Invoke-PSScriptBuilderBuild/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/cmdlets/New-PSScriptBuilderCollector/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/cmdlets/New-PSScriptBuilderConfiguration/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/cmdlets/New-PSScriptBuilderContentCollector/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/cmdlets/New-PSScriptBuilderProject/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/cmdlets/New-PSScriptBuilderReleaseData/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/cmdlets/New-PSScriptBuilderTemplate/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/cmdlets/Remove-PSScriptBuilderCollector/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/cmdlets/Set-PSScriptBuilderProjectRoot/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/cmdlets/Test-PSScriptBuilderBumpConfiguration/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/cmdlets/Test-PSScriptBuilderReleaseData/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/cmdlets/Test-PSScriptBuilderTemplate/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/cmdlets/Update-PSScriptBuilderBumpFiles/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/cmdlets/Update-PSScriptBuilderReleaseData/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/cmdlets/Watch-PSScriptBuilderProject/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/getting-started/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/getting-started/installation/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/getting-started/quick-start/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/guides/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/guides/build-pipeline/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/guides/cicd-integration/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/guides/code-analysis/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/guides/collectors/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/guides/configuration/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/guides/dependency-analysis/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/guides/release-management/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/guides/templates/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/guides/tool-integrations/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/tutorials/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/tutorials/building-your-first-project/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/tutorials/migrating-to-psscriptbuilder/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
     <url>
          <loc>https://docs.psscriptbuilder.com/tutorials/setting-up-release-management/</loc>
-         <lastmod>2026-08-03</lastmod>
+         <lastmod>2026-08-05</lastmod>
     </url>
 </urlset>

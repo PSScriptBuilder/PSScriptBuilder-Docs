@@ -365,6 +365,25 @@
   
 
       
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../limitations/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Known Limitations
+
+      </a>
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -3188,6 +3207,33 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../limitations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Known Limitations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -4089,8 +4135,8 @@ then proceed with the build:</p>
 <a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a><span class="p">}</span>
 <a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a>
 <a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a><span class="nb">Invoke-PSScriptBuilderBuild</span> <span class="n">-ContentCollector</span> <span class="nv">$contentCollector</span> <span class="p">`</span>
-<a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a>    <span class="n">-TemplatePath</span> <span class="s2">&quot;template.psm1&quot;</span> <span class="p">`</span>
-<a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a>    <span class="n">-OutputPath</span>   <span class="s2">&quot;output.psm1&quot;</span>
+<a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a>    <span class="n">-TemplatePath</span> <span class="s1">&#39;build\Templates\MyProject.ps1.template&#39;</span> <span class="p">`</span>
+<a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a>    <span class="n">-OutputPath</span>   <span class="s1">&#39;build\Output\MyProject.ps1&#39;</span>
 </code></pre></div>
 <p>Note that <code>Invoke-PSScriptBuilderBuild</code> runs its own internal dependency analysis and will
 also fail on cycles. The explicit pre-check is optional but recommended — it gives you the

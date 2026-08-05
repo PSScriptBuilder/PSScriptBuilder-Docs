@@ -365,6 +365,25 @@
   
 
       
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../limitations/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Known Limitations
+
+      </a>
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -2899,6 +2918,33 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../limitations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Known Limitations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -3167,16 +3213,16 @@ edit the template file:</p>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Class</span>    <span class="n">-IncludePath</span> <span class="s2">&quot;src\Classes&quot;</span> <span class="p">|</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="k">Function</span> <span class="n">-IncludePath</span> <span class="s2">&quot;src\Public&quot;</span>
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="k">if</span> <span class="p">(</span><span class="nb">Test-PSScriptBuilderTemplate</span> <span class="n">-ContentCollector</span> <span class="nv">$contentCollector</span> <span class="n">-TemplatePath</span> <span class="s2">&quot;template.psm1&quot;</span><span class="p">)</span> <span class="p">{</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="k">if</span> <span class="p">(</span><span class="nb">Test-PSScriptBuilderTemplate</span> <span class="n">-ContentCollector</span> <span class="nv">$contentCollector</span> <span class="n">-TemplatePath</span> <span class="s1">&#39;build\Templates\MyProject.ps1.template&#39;</span><span class="p">)</span> <span class="p">{</span>
 <a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    <span class="nb">Invoke-PSScriptBuilderBuild</span> <span class="n">-ContentCollector</span> <span class="nv">$contentCollector</span> <span class="p">`</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>        <span class="n">-TemplatePath</span> <span class="s2">&quot;template.psm1&quot;</span> <span class="p">`</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>        <span class="n">-OutputPath</span>   <span class="s2">&quot;output.psm1&quot;</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>        <span class="n">-TemplatePath</span> <span class="s1">&#39;build\Templates\MyProject.ps1.template&#39;</span> <span class="p">`</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>        <span class="n">-OutputPath</span>   <span class="s1">&#39;build\Output\MyProject.ps1&#39;</span>
 <a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="p">}</span>
 </code></pre></div>
 <p>Add <code>-Verbose</code> to see detailed validation messages.</p>
 <p>For a full analysis result object, use
 <a href="../../cmdlets/Get-PSScriptBuilderTemplateAnalysis/"><code>Get-PSScriptBuilderTemplateAnalysis</code></a>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nv">$analysis</span> <span class="p">=</span> <span class="nb">Get-PSScriptBuilderTemplateAnalysis</span> <span class="n">-ContentCollector</span> <span class="nv">$contentCollector</span> <span class="n">-TemplatePath</span> <span class="s2">&quot;template.psm1&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nv">$analysis</span> <span class="p">=</span> <span class="nb">Get-PSScriptBuilderTemplateAnalysis</span> <span class="n">-ContentCollector</span> <span class="nv">$contentCollector</span> <span class="n">-TemplatePath</span> <span class="s1">&#39;build\Templates\MyProject.ps1.template&#39;</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Valid:   </span><span class="p">$(</span><span class="nv">$analysis</span><span class="p">.</span><span class="n">IsValid</span><span class="p">)</span><span class="s2">&quot;</span>
 <a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="nb">Write-Host</span> <span class="s2">&quot;Mode:    </span><span class="p">$(</span><span class="nv">$analysis</span><span class="p">.</span><span class="n">ValidationMode</span><span class="p">)</span><span class="s2">&quot;</span>
@@ -3237,8 +3283,8 @@ template and the build call in sync, store a custom key in <code>psscriptbuilder
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nv">$config</span> <span class="p">=</span> <span class="nb">Get-PSScriptBuilderConfiguration</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nb">Invoke-PSScriptBuilderBuild</span> <span class="n">-ContentCollector</span> <span class="nv">$contentCollector</span> <span class="p">`</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    <span class="n">-TemplatePath</span> <span class="s2">&quot;template.psm1&quot;</span> <span class="p">`</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    <span class="n">-OutputPath</span>   <span class="s2">&quot;output.psm1&quot;</span> <span class="p">`</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    <span class="n">-TemplatePath</span> <span class="s1">&#39;build\Templates\MyProject.ps1.template&#39;</span> <span class="p">`</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    <span class="n">-OutputPath</span>   <span class="s1">&#39;build\Output\MyProject.ps1&#39;</span> <span class="p">`</span>
 <a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    <span class="n">-OrderedComponentsKey</span> <span class="nv">$config</span><span class="p">.</span><span class="n">Build</span><span class="p">.</span><span class="n">OrderedComponentsKey</span>
 </code></pre></div>
 <h3 id="5-combining-with-release-management-tokens">5. Combining with Release Management Tokens<a class="headerlink" href="#5-combining-with-release-management-tokens" title="Permanent link">&para;</a></h3>
