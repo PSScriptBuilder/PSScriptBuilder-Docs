@@ -313,13 +313,13 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../cmdlets/" class="md-tabs__link">
+        <a href="../../reference/" class="md-tabs__link">
           
   
   
     
   
-  Cmdlet Reference
+  Reference
 
         </a>
       </li>
@@ -776,6 +776,8 @@
       
         
       
+        
+      
     
     
     
@@ -848,10 +850,6 @@
       
         
       
-        
-      
-        
-      
     
     
     
@@ -873,7 +871,7 @@
   <span class="md-ellipsis">
     
   
-    Building
+    Core Concepts
   
 
     
@@ -889,7 +887,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Building
+    Core Concepts
   
 
           </label>
@@ -998,6 +996,78 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Collector Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enum
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Class
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Function
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#default-keys-and-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default Keys and Tokens
+      
+    </span>
+  </a>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1013,10 +1083,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-your-first-collector" class="md-nav__link">
+  <a href="#1-create-a-standalone-collector" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Your First Collector
+        1. Create a Standalone Collector
       
     </span>
   </a>
@@ -1024,10 +1094,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-combining-collectors" class="md-nav__link">
+  <a href="#2-create-a-contentcollector" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Combining Collectors
+        2. Create a ContentCollector
       
     </span>
   </a>
@@ -1035,30 +1105,13 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-custom-collection-keys" class="md-nav__link">
+  <a href="#3-collection-keys" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Custom Collection Keys
+        3. Collection Keys
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="3. Custom Collection Keys">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cross-collector-dependencies" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cross-collector dependencies
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1071,6 +1124,67 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="4. Filtering Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exclude-specific-files-by-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exclude Specific Files by Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exclude-entire-subdirectories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exclude Entire Subdirectories
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scan-additional-file-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scan Additional File Extensions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scan-only-the-top-level-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scan Only the Top-Level Directory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#include-specific-files-explicitly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Include Specific Files Explicitly
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1081,6 +1195,56 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="5. Inspecting Results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-all-registered-collectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List All Registered Collectors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-a-collector-by-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Get a Collector by Key
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#look-up-a-specific-item-by-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Look Up a Specific Item by Name
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#look-up-multiple-items-efficiently" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Look Up Multiple Items Efficiently
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1097,6 +1261,28 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-collector-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-Collector Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stale-data-after-modification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stale Data After Modification
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1156,30 +1342,8 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#contentcollector-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ContentCollector Methods
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tips" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tips
-      
-    </span>
-  </a>
   
 </li>
       
@@ -1230,6 +1394,72 @@
   
 
               
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Building
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Building
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -1287,6 +1517,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file-watching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    File Watching
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1308,6 +1566,8 @@
       
         
       
+        
+      
     
     
     
@@ -1319,10 +1579,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
         
           
-          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
             
   
   
@@ -1340,8 +1600,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1407,6 +1667,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../source-maps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Source Maps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1439,10 +1727,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
         
           
-          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
             
   
   
@@ -1460,8 +1748,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1559,12 +1847,6 @@
       
         
       
-        
-      
-        
-      
-        
-      
     
     
     
@@ -1580,14 +1862,14 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../cmdlets/" class="md-nav__link ">
+            <a href="../../reference/" class="md-nav__link ">
               
   
   
   <span class="md-ellipsis">
     
   
-    Cmdlet Reference
+    Reference
   
 
     
@@ -1609,7 +1891,82 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Cmdlet Reference
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../cmdlets/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cmdlets
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cmdlets
   
 
           </label>
@@ -1641,10 +1998,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_2" >
         
           
-          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_2_2" id="__nav_5_2_2_label" tabindex="0">
             
   
   
@@ -1662,8 +2019,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_2">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_2">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1768,6 +2125,12 @@
       
         
       
+        
+      
+        
+      
+        
+      
     
     
     
@@ -1779,10 +2142,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_3" >
         
           
-          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_2_3" id="__nav_5_2_3_label" tabindex="0">
             
   
   
@@ -1800,8 +2163,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_3">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_3">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2098,6 +2461,90 @@
   
   
     <li class="md-nav__item">
+      <a href="../../cmdlets/Resolve-PSScriptBuilderSourceLocation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resolve-PSScriptBuilderSourceLocation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmdlets/Get-PSScriptBuilderSourceCoverage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get-PSScriptBuilderSourceCoverage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmdlets/Format-PSScriptBuilderSourceCoverage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Format-PSScriptBuilderSourceCoverage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../cmdlets/Compress-PSScriptBuilderScript/" class="md-nav__link">
         
   
@@ -2150,6 +2597,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -2161,10 +2612,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_4" >
         
           
-          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_2_4" id="__nav_5_2_4_label" tabindex="0">
             
   
   
@@ -2182,8 +2633,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_4">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2208,6 +2659,34 @@
     
   
     Get-PSScriptBuilderDependencyAnalysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cmdlets/Format-PSScriptBuilderDependencyAnalysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Format-PSScriptBuilderDependencyAnalysis
   
 
     
@@ -2368,6 +2847,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../cmdlets/Format-PSScriptBuilderTemplateAnalysis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Format-PSScriptBuilderTemplateAnalysis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../cmdlets/Test-PSScriptBuilderTemplate/" class="md-nav__link">
         
   
@@ -2423,10 +2930,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_5" >
         
           
-          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_2_5" id="__nav_5_2_5_label" tabindex="0">
             
   
   
@@ -2444,8 +2951,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_5">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_5">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2587,10 +3094,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_6" >
         
           
-          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_5_2_6" id="__nav_5_2_6_label" tabindex="0">
             
   
   
@@ -2608,8 +3115,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_6">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_6">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2913,6 +3420,42 @@
     </li>
   
 
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
     
       
       
@@ -3030,6 +3573,78 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Collector Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enum
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Class
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Function
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#default-keys-and-tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default Keys and Tokens
+      
+    </span>
+  </a>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3045,10 +3660,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-your-first-collector" class="md-nav__link">
+  <a href="#1-create-a-standalone-collector" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Your First Collector
+        1. Create a Standalone Collector
       
     </span>
   </a>
@@ -3056,10 +3671,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-combining-collectors" class="md-nav__link">
+  <a href="#2-create-a-contentcollector" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Combining Collectors
+        2. Create a ContentCollector
       
     </span>
   </a>
@@ -3067,30 +3682,13 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-custom-collection-keys" class="md-nav__link">
+  <a href="#3-collection-keys" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Custom Collection Keys
+        3. Collection Keys
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="3. Custom Collection Keys">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cross-collector-dependencies" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cross-collector dependencies
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -3103,6 +3701,67 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="4. Filtering Files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exclude-specific-files-by-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exclude Specific Files by Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exclude-entire-subdirectories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exclude Entire Subdirectories
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scan-additional-file-extensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scan Additional File Extensions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scan-only-the-top-level-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scan Only the Top-Level Directory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#include-specific-files-explicitly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Include Specific Files Explicitly
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -3113,6 +3772,56 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="5. Inspecting Results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-all-registered-collectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List All Registered Collectors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-a-collector-by-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Get a Collector by Key
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#look-up-a-specific-item-by-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Look Up a Specific Item by Name
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#look-up-multiple-items-efficiently" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Look Up Multiple Items Efficiently
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -3129,6 +3838,28 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-collector-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-Collector Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stale-data-after-modification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stale Data After Modification
+      
+    </span>
+  </a>
   
 </li>
       
@@ -3188,30 +3919,8 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#contentcollector-methods" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ContentCollector Methods
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tips" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tips
-      
-    </span>
-  </a>
   
 </li>
       
@@ -3248,29 +3957,70 @@
 
 <h1 id="collectors">Collectors<a class="headerlink" href="#collectors" title="Permanent link">&para;</a></h1>
 <p>A <strong>collector</strong> is responsible for scanning source files and extracting a specific type of
-PowerShell component — classes, functions, enums, using statements, or raw file contents. Each
-collector feeds its results into the build pipeline, which assembles the final output script
-using the configured template.</p>
-<p>The <strong>Class</strong> and <strong>Function</strong> collectors go a step further: they use PowerShell AST analysis
-to extract dependency information — base classes, type references, and called functions. This
-allows the build to determine the correct load order and produce a topologically ordered output
-script.</p>
+PowerShell component — classes, functions, enums, using statements, or raw file contents. It
+can be used standalone, or combined with others and fed into a build, which assembles the
+final output script using the configured template.</p>
 <p>Collectors scan files, not individual definitions. Every file matching the configured paths and
-filters is read and all definitions of the relevant type it contains are extracted individually.
-A single file may contain multiple class definitions, multiple function definitions, or multiple
-enum definitions — the collector handles all of them transparently. There is no requirement to
-keep one definition per file. A file may even mix definition types — a class and a function in
-the same file are each picked up by their respective collectors. See
-<a href="../../examples/#04-flexible-file-structure">Example 04</a> for a demonstration.</p>
-<p>Every build starts by configuring one or more collectors. The collectors define <em>what</em> gets
-collected and <em>from where</em> — the <a href="../templates/">template</a> defines <em>how</em> it is assembled.</p>
+filters is read and all definitions of the relevant type it contains are extracted individually:</p>
+<ul>
+<li>A single file may contain multiple class definitions, multiple function definitions, or
+  multiple enum definitions — the collector handles all of them transparently.</li>
+<li>A file may even mix definition types — a class and a function in the same file are each
+  picked up by their respective collectors.</li>
+</ul>
+<p>Even so, one definition per file is recommended: it's easier to navigate and version-control.</p>
+<p>The <strong>Class</strong> and <strong>Function</strong> collectors go a step further: they parse each file into an
+<a href="https://learn.microsoft.com/en-us/dotnet/api/system.management.automation.language.ast?view=powershellsdk-1.1.0">AST</a>
+— PowerShell's internal, structured representation of the code — to extract dependency
+information without executing anything: base classes, type references, and called functions.
+This allows the build to determine the correct load order and produce a topologically ordered
+output script.</p>
+<p>The collectors define <em>what</em> gets collected and <em>from where</em> — the
+<a href="../templates/">template</a> defines <em>how</em> it is assembled.</p>
 <h2 id="collector-types">Collector Types<a class="headerlink" href="#collector-types" title="Permanent link">&para;</a></h2>
-<p>PSScriptBuilder provides five collector types:</p>
+<p>PSScriptBuilder provides five collector types, each responsible for exactly one kind of
+component:</p>
+<h3 id="using">Using<a class="headerlink" href="#using" title="Permanent link">&para;</a></h3>
+<p>A <code>Using</code> collector collects <code>using</code> statements — <code>using namespace</code>, <code>using module</code>, and
+<code>using assembly</code> — deduplicating identical statements found across multiple files.</p>
+<p>All registered <code>Using</code> collectors' statements are consolidated into a single, globally
+deduplicated block, in every mode (Free, Ordered, and Hybrid) — registering multiple <code>Using</code>
+collectors (e.g. with different <code>-ExcludeFile</code> rules per group) is fine, but exactly one <code>Using</code>
+placeholder may appear in the template, and it receives everything. A second Using placeholder,
+or none at all when Using collectors are registered, fails validation before the build runs
+(see <a href="../templates/#the-combined-placeholder">Templates</a>).</p>
+<h3 id="enum">Enum<a class="headerlink" href="#enum" title="Permanent link">&para;</a></h3>
+<p>An <code>Enum</code> collector collects enum definitions. Enums cannot reference other project types, so
+they carry no dependency information — PSScriptBuilder cannot determine their position relative
+to classes or functions in the template automatically, which is why <a href="../templates/#validation-modes">Free
+Mode</a> requires Enum placeholders to appear before Class and
+Function placeholders.</p>
+<h3 id="class">Class<a class="headerlink" href="#class" title="Permanent link">&para;</a></h3>
+<p>A <code>Class</code> collector collects class definitions and tracks their dependencies — base classes, type
+references, and called functions — so PSScriptBuilder can determine the correct load order.</p>
+<h3 id="function">Function<a class="headerlink" href="#function" title="Permanent link">&para;</a></h3>
+<p>A <code>Function</code> collector collects standalone function definitions — top-level <code>function</code> blocks
+only, not methods defined inside a class — with the same dependency tracking as classes.</p>
+<h3 id="file">File<a class="headerlink" href="#file" title="Permanent link">&para;</a></h3>
+<p>A <code>File</code> collector collects entire files as raw text, without any parsing. This can include
+PowerShell code — it just won't be processed by the AST engine, so no dependency tracking happens
+for it. Typical uses include headers, footers, or non-PowerShell files.</p>
+<h2 id="default-keys-and-tokens">Default Keys and Tokens<a class="headerlink" href="#default-keys-and-tokens" title="Permanent link">&para;</a></h2>
+<p>Each collector also has a collection key and template token, with defaults that depend on its
+type:</p>
+<ul>
+<li>The <strong>collection key</strong> is the identifier used internally to manage and distinguish this
+  collector when it's combined with others, overridable via <code>-CollectionKey</code> (see
+  <a href="#3-collection-keys">Collection Keys</a>).</li>
+<li>The <strong>template token</strong> is the literal placeholder — written as <code>{{TOKEN}}</code> — that the
+  <a href="../templates/">template</a> uses to mark where that collector's content should appear in the
+  output script.</li>
+</ul>
+<p>The default key and token for each type:</p>
 <table>
 <thead>
 <tr>
 <th>Type</th>
-<th>Collects</th>
 <th>Default Key</th>
 <th>Default Token</th>
 </tr>
@@ -3278,31 +4028,26 @@ collected and <em>from where</em> — the <a href="../templates/">template</a> d
 <tbody>
 <tr>
 <td><code>Using</code></td>
-<td><code>using</code> statements</td>
 <td><code>USING_STATEMENTS</code></td>
 <td><code>{{USING_STATEMENTS}}</code></td>
 </tr>
 <tr>
 <td><code>Enum</code></td>
-<td>Enum definitions</td>
 <td><code>ENUM_DEFINITIONS</code></td>
 <td><code>{{ENUM_DEFINITIONS}}</code></td>
 </tr>
 <tr>
 <td><code>Class</code></td>
-<td>Class definitions (with dependency tracking)</td>
 <td><code>CLASS_DEFINITIONS</code></td>
 <td><code>{{CLASS_DEFINITIONS}}</code></td>
 </tr>
 <tr>
 <td><code>Function</code></td>
-<td>Standalone function definitions</td>
 <td><code>FUNCTION_DEFINITIONS</code></td>
 <td><code>{{FUNCTION_DEFINITIONS}}</code></td>
 </tr>
 <tr>
 <td><code>File</code></td>
-<td>Complete file contents as-is</td>
 <td><code>FILE_CONTENTS</code></td>
 <td><code>{{FILE_CONTENTS}}</code></td>
 </tr>
@@ -3310,255 +4055,531 @@ collected and <em>from where</em> — the <a href="../templates/">template</a> d
 </table>
 <hr />
 <h2 id="walkthrough">Walkthrough<a class="headerlink" href="#walkthrough" title="Permanent link">&para;</a></h2>
-<h3 id="1-your-first-collector">1. Your First Collector<a class="headerlink" href="#1-your-first-collector" title="Permanent link">&para;</a></h3>
-<p>Create a <code>ContentCollector</code> and add a collector for your class files:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nv">$contentCollector</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderContentCollector</span> <span class="p">|</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Class</span> <span class="n">-IncludePath</span> <span class="s2">&quot;src\Classes&quot;</span>
+<p>Each step below is a self-contained example illustrating one collector feature, using the paths
+and classes from <a href="../../examples/#02-classes-and-enums">Example 02</a> throughout — get that
+example's source from GitHub to run the commands exactly as shown, or substitute your own
+project's directories. Steps don't build on each other: each one creates its own collector or
+<code>ContentCollector</code> from scratch (most use a throwaway <code>$demoCollector</code> variable for this), so you
+can jump directly to the one relevant to your question without running the others first.</p>
+<h3 id="1-create-a-standalone-collector">1. Create a Standalone Collector<a class="headerlink" href="#1-create-a-standalone-collector" title="Permanent link">&para;</a></h3>
+<p>To scan just one component type, create a single collector directly with
+<code>New-PSScriptBuilderCollector</code>, assigning the result to a variable so it can be inspected
+afterward:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nv">$classCollector</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Class</span> <span class="n">-IncludePath</span> <span class="s2">"src\Classes"</span>
 </code></pre></div>
-<p><a href="../../cmdlets/New-PSScriptBuilderContentCollector/"><code>New-PSScriptBuilderContentCollector</code></a> creates the container. <a href="../../cmdlets/Add-PSScriptBuilderCollector/"><code>Add-PSScriptBuilderCollector</code></a>
-creates a collector and registers it in one fluent step. The result is a <code>ContentCollector</code>
-ready for use in a build or dependency analysis.</p>
-<p>For standalone use without a build — for example to explore collected data interactively —
-use <a href="../../cmdlets/New-PSScriptBuilderCollector/"><code>New-PSScriptBuilderCollector</code></a> directly.</p>
-<h3 id="2-combining-collectors">2. Combining Collectors<a class="headerlink" href="#2-combining-collectors" title="Permanent link">&para;</a></h3>
-<p>Most builds need multiple collectors — using statements, enums, classes, and functions:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">$contentCollector</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderContentCollector</span> <span class="p">|</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Using</span>    <span class="n">-IncludePath</span> <span class="s2">&quot;src&quot;</span> <span class="p">|</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Enum</span>     <span class="n">-IncludePath</span> <span class="s2">&quot;src\Enums&quot;</span> <span class="p">|</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Class</span>    <span class="n">-IncludePath</span> <span class="s2">&quot;src\Classes&quot;</span> <span class="p">|</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="k">Function</span> <span class="n">-IncludePath</span> <span class="s2">&quot;src\Public&quot;</span>
+<p>Creating a collector does not run it — nothing has been scanned yet. To see what it finds, use
+<code>Get-PSScriptBuilderCollectorContent</code>, which runs the collector for you and returns the
+collected data in one step:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">$classes</span> <span class="p">=</span> <span class="nb">Get-PSScriptBuilderCollectorContent</span> <span class="n">-Collector</span> <span class="nv">$classCollector</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nv">$classes</span> <span class="p">|</span> <span class="nb">Format-Table</span> <span class="n">Name</span><span class="p">,</span> <span class="n">BaseClass</span><span class="p">,</span> <span class="n">SourceFile</span>
 </code></pre></div>
-<p>Collectors are always executed in a fixed type order (Using → Enum → Class → Function → File),
-regardless of the order you register them. See <a href="#execution-order">Execution Order</a> in the
-Reference section.</p>
-<h3 id="3-custom-collection-keys">3. Custom Collection Keys<a class="headerlink" href="#3-custom-collection-keys" title="Permanent link">&para;</a></h3>
-<p>By default, each collector maps to a template placeholder using its type's default key
-(e.g. <code>CLASS_DEFINITIONS</code> → <code>{{CLASS_DEFINITIONS}}</code>). Use <code>-CollectionKey</code> to assign a custom key —
-this is required when you need multiple collectors of the same type for different source directories:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">$contentCollector</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderContentCollector</span> <span class="p">|</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Class</span> <span class="n">-CollectionKey</span> <span class="s2">&quot;CORE_CLASSES&quot;</span>   <span class="n">-IncludePath</span> <span class="s2">&quot;src\Core&quot;</span> <span class="p">|</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Class</span> <span class="n">-CollectionKey</span> <span class="s2">&quot;DOMAIN_CLASSES&quot;</span> <span class="n">-IncludePath</span> <span class="s2">&quot;src\Domain&quot;</span>
+<p>Against <a href="../../examples/#02-classes-and-enums">Example 02</a>'s <code>Address</code>, <code>Employee</code>, and <code>Person</code>
+classes, the output looks like this:</p>
+<div class="highlight"><span class="filename">Expected output</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Name     BaseClass SourceFile
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>----     --------- ----------
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Address            ...\src\Classes\Address.ps1
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>Employee Person    ...\src\Classes\Employee.ps1
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>Person             ...\src\Classes\Person.ps1
 </code></pre></div>
-<p>Your template would then reference:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{{</span><span class="n">CORE_CLASSES</span><span class="p">}}</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="p">{{</span><span class="n">DOMAIN_CLASSES</span><span class="p">}}</span>
+<p>This standalone pattern is useful for exploring collected data interactively, or for scenarios
+that only need one component type — without configuring a full build.</p>
+<p>See <a href="#5-inspecting-results">Inspecting Results</a> for additional ways to query a collector's data.</p>
+<h3 id="2-create-a-contentcollector">2. Create a ContentCollector<a class="headerlink" href="#2-create-a-contentcollector" title="Permanent link">&para;</a></h3>
+<p>Most builds need more than one component type at once. Creating each one standalone with
+<code>New-PSScriptBuilderCollector</code>, as in
+<a href="#1-create-a-standalone-collector">Create a Standalone Collector</a>, leaves you with several
+separate variables — but a build (and dependency or template analysis) needs all of them
+handed over as a single object, not several individual collectors.</p>
+<p><code>ContentCollector</code> is that container: it holds several collectors together, so they can be
+configured once and passed on as a single object. Create an empty one with
+<a href="../../cmdlets/New-PSScriptBuilderContentCollector/"><code>New-PSScriptBuilderContentCollector</code></a>.</p>
+<p>Building it up one collector at a time from there — create each with
+<code>New-PSScriptBuilderCollector</code> as before, then register it on the container separately — would
+take two steps per collector.
+<a href="../../cmdlets/Add-PSScriptBuilderCollector/"><code>Add-PSScriptBuilderCollector</code></a> does both in one
+call instead: it uses <code>New-PSScriptBuilderCollector</code> internally, then registers the result on
+the container, so any number of collectors can be chained directly onto it in a single
+pipeline:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">$contentCollector</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderContentCollector</span> <span class="p">|</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Class</span> <span class="n">-IncludePath</span> <span class="s2">"src\Classes"</span>
 </code></pre></div>
-<p>Custom keys are case-insensitive at match time but preserved as written.</p>
-<h4 id="cross-collector-dependencies">Cross-collector dependencies<a class="headerlink" href="#cross-collector-dependencies" title="Permanent link">&para;</a></h4>
-<p>When components in different collectors depend on each other — through inheritance, static
-initializers, or type references — the <strong>template placeholder order</strong> determines the final load
-sequence. PSScriptBuilder cannot reorder placeholders in your template automatically.</p>
-<div class="admonition warning">
-<p class="admonition-title">Template placeholder order is your responsibility across collector boundaries</p>
-<p>If a class or function in one collector depends on a component in another collector, the
-corresponding template placeholders must appear in the correct order — dependencies first.
-A wrong placeholder order generates a script that fails at runtime with a <code>type-not-found</code>
-error. PSScriptBuilder will emit a build warning when it detects cross-collector dependencies.</p>
-<p>See the <a href="../dependency-analysis/#cross-collector-dependencies">Dependency Analysis Guide</a> for
-a full explanation and examples.</p>
-</div>
+<p><code>$contentCollector</code> is a different kind of object than <code>$classCollector</code> from
+<a href="#1-create-a-standalone-collector">Create a Standalone Collector</a>: there, the variable held a
+single collector; here, it holds the container itself — currently managing just the one
+collector registered above, but able to hold any number of collectors, of any type, as more
+are added.</p>
+<p>Add the other component types the same way — using statements, enums, and functions, for
+example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nv">$contentCollector</span> <span class="p">=</span> <span class="nv">$contentCollector</span> <span class="p">|</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Using</span>    <span class="n">-IncludePath</span> <span class="s2">"src"</span>          <span class="p">|</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Enum</span>     <span class="n">-IncludePath</span> <span class="s2">"src\Enums"</span>    <span class="p">|</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="k">Function</span> <span class="n">-IncludePath</span> <span class="s2">"src\Functions"</span>
+</code></pre></div>
+<p>(The reassignment isn't required for <code>Add-PSScriptBuilderCollector</code> to take effect — it just
+keeps the pipeline's return value from printing to the console.)</p>
+<p><code>File</code> collectors combine the same way — the pattern is identical regardless of type.</p>
+<p>The result is ready for use in a build or dependency analysis.</p>
+<h3 id="3-collection-keys">3. Collection Keys<a class="headerlink" href="#3-collection-keys" title="Permanent link">&para;</a></h3>
+<p>Every collector registered on a <code>ContentCollector</code> is stored under a collection key — see
+<a href="#collector-types">Collector Types</a> for the default key each type uses. This key is what the
+<a href="../templates/">template</a>'s <code>{{TOKEN}}</code> placeholder actually looks up, and it must be unique
+across the whole <code>ContentCollector</code>.</p>
+<p><strong>Two names are reserved and cannot be used as a <code>-CollectionKey</code> (or as a custom
+<code>-OrderedComponentsKey</code>), regardless of mode:</strong></p>
+<ul>
+<li><code>ORDERED_COMPONENTS</code> (or whatever key you configured via <code>-OrderedComponentsKey</code>) — reserved
+  for the combined-components placeholder itself; see <a href="../templates/#using-a-custom-combined-placeholder-key">Using a Custom Combined Placeholder
+  Key</a>.</li>
+<li>Any of Release Management's built-in bump-file token names (<code>VERSION</code>, <code>GIT_BRANCH</code>,
+  <code>BUILD_DATE</code>, and the rest) — see the <a href="../release-management/#version-tokens">Release Management
+  Guide</a>'s Version/Build/Git Tokens reference tables for
+  the full list. If the same file is ever bump-managed for that token, Release Management would
+  consume the placeholder before the build ever sees it.</li>
+</ul>
+<p>Both are checked case-insensitively and rejected with a specific error at validation time,
+instead of the generic "collector placeholder missing" error a plain typo would produce.</p>
+<p>The same uniqueness requirement becomes a problem the moment two collectors of the same type
+are needed: both default to the same key, so the second one fails to register. The key is the
+only thing that decides whether registration succeeds — no other parameter changes that
+outcome, <code>-IncludePath</code> included:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nv">$demoCollector</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderContentCollector</span> <span class="p">|</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Class</span> <span class="n">-IncludePath</span> <span class="s2">"src\Core"</span> <span class="p">|</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Class</span> <span class="n">-IncludePath</span> <span class="s2">"src\Domain"</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Expected output</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Add-PSScriptBuilderCollector: A collector with the key 'CLASS_DEFINITIONS' already exists in the collection.
+</code></pre></div>
+<p>To let both collectors coexist, only one of them technically needs a key that differs from the
+default — a collision only happens when two collectors on the same <code>ContentCollector</code> share the
+exact same key.</p>
+<p>Even so, this example gives both an explicit, descriptive key instead of leaving one on
+<code>CLASS_DEFINITIONS</code>. Leaving one at its default would make the template read unevenly:
+<code>{{DOMAIN_CLASSES}}</code> names its content directly, while <code>{{CLASS_DEFINITIONS}}</code> would look like
+it holds every class in the project — even though it only holds the ones under <code>src\Core</code>.
+Naming both keys explicitly keeps that asymmetry out of the template: each placeholder describes
+what it actually contains, so the template alone — without checking the collector setup — tells
+you which classes end up where:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nv">$demoCollector</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderContentCollector</span> <span class="p">|</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="p">`</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>        <span class="n">-Type</span>          <span class="n">Class</span> <span class="p">`</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>        <span class="n">-CollectionKey</span> <span class="s2">"CORE_CLASSES"</span> <span class="p">`</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>        <span class="n">-IncludePath</span>   <span class="s2">"src\Core"</span> <span class="p">|</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="p">`</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>        <span class="n">-Type</span>          <span class="n">Class</span> <span class="p">`</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>        <span class="n">-CollectionKey</span> <span class="s2">"DOMAIN_CLASSES"</span> <span class="p">`</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>        <span class="n">-IncludePath</span>   <span class="s2">"src\Domain"</span>
+</code></pre></div>
+<p>As explained above, the template must now reference these custom keys directly, in place of the
+type's usual <code>{{CLASS_DEFINITIONS}}</code> token:</p>
+<div class="highlight"><span class="filename">MyScript.ps1.template</span><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">{{</span><span class="n">CORE_CLASSES</span><span class="p">}}</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="p">{{</span><span class="n">DOMAIN_CLASSES</span><span class="p">}}</span>
+</code></pre></div>
+<p>They still don't escape the same uniqueness requirement, though — reusing one across two
+collectors hits the identical problem as the default-key collision above, just with a custom
+value instead of the type's default:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nv">$demoCollector</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderContentCollector</span> <span class="p">|</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="p">`</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>        <span class="n">-Type</span>          <span class="n">Class</span> <span class="p">`</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>        <span class="n">-CollectionKey</span> <span class="s2">"CORE_CLASSES"</span> <span class="p">`</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>        <span class="n">-IncludePath</span>   <span class="s2">"src\Core"</span> <span class="p">|</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="p">`</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>        <span class="n">-Type</span>          <span class="n">Class</span> <span class="p">`</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>        <span class="n">-CollectionKey</span> <span class="s2">"CORE_CLASSES"</span> <span class="p">`</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>        <span class="n">-IncludePath</span>   <span class="s2">"src\Domain"</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Expected output</span><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Add-PSScriptBuilderCollector: A collector with the key 'CORE_CLASSES' already exists in the collection.
+</code></pre></div>
+<p>Only reach for multiple collectors and keys like this when you actually want the two sets
+placed separately in the output — for example, keeping <code>{{CORE_CLASSES}}</code> and
+<code>{{DOMAIN_CLASSES}}</code> in different sections of the template.</p>
+<p>This only applies in <strong>Free Mode</strong> — the default mode, where each collector maps to its own
+placeholder in the template, exactly as used throughout this guide. In
+<a href="../templates/#validation-modes">Ordered and Hybrid Mode</a>, per-type placeholders for Class (and
+Enum/Function) collectors are forbidden entirely — every one of them lands in the single
+<code>{{ORDERED_COMPONENTS}}</code> block regardless of <code>CollectionKey</code>, so a custom key no longer controls
+where its content ends up in the template.</p>
+<p>If you just want to gather from several directories into one placeholder — a module's public
+and private functions, for example — a single collector's <code>-IncludePath</code> already accepts
+multiple values:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nb">New-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="k">Function</span> <span class="n">-IncludePath</span> <span class="s2">"src\Public"</span><span class="p">,</span> <span class="s2">"src\Private"</span>
+</code></pre></div>
+<p><code>-IncludePath</code> controls which directories a collector scans — the next section narrows further,
+controlling which individual files within them actually get processed.</p>
 <h3 id="4-filtering-files">4. Filtering Files<a class="headerlink" href="#4-filtering-files" title="Permanent link">&para;</a></h3>
-<p>Control which files each collector processes using filter parameters.</p>
-<p><strong>Exclude specific files by pattern:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nv">$contentCollector</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderContentCollector</span> <span class="p">|</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Class</span> <span class="n">-IncludePath</span> <span class="s2">&quot;src\Classes&quot;</span> <span class="n">-ExcludeFile</span> <span class="s2">&quot;*.Tests.ps1&quot;</span>
+<p>By default, a collector scans every <code>.ps1</code> file under its <code>-IncludePath</code> directories, recursing
+into every subdirectory. That default is usually right, but real projects have exceptions:</p>
+<ul>
+<li>Test files that shouldn't be treated as source</li>
+<li>A legacy subdirectory not yet migrated</li>
+<li>Source files under an extension other than <code>.ps1</code></li>
+<li>A directory whose subdirectories hold entirely unrelated content — docs, build artifacts, or
+  scratch files — that should never be scanned, regardless of how many get added later</li>
+<li>One specific file that needs to be picked up no matter where it lives</li>
+</ul>
+<p>The filter parameters below cover each of these cases:</p>
+<ul>
+<li><strong>Narrowing the default scan</strong> — <code>-ExcludeFile</code>, <code>-ExcludePath</code></li>
+<li><strong>Changing which extensions count as source</strong> — <code>-FileExtension</code></li>
+<li><strong>Limiting how deep it recurses</strong> — <code>-NoRecurse</code></li>
+<li><strong>Guaranteeing a specific file gets processed regardless of the other filters</strong> — <code>-IncludeFile</code></li>
+</ul>
+<p>Each parameter is covered in its own section below.</p>
+<h4 id="exclude-specific-files-by-pattern">Exclude Specific Files by Pattern<a class="headerlink" href="#exclude-specific-files-by-pattern" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nv">$demoCollector</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderContentCollector</span> <span class="p">|</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="p">`</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>        <span class="n">-Type</span>        <span class="n">Class</span> <span class="p">`</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>        <span class="n">-IncludePath</span> <span class="s2">"src\Classes"</span> <span class="p">`</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>        <span class="n">-ExcludeFile</span> <span class="s2">"*.Tests.ps1"</span>
 </code></pre></div>
-<p><strong>Exclude entire subdirectories:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nv">$contentCollector</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderContentCollector</span> <span class="p">|</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Class</span> <span class="n">-IncludePath</span> <span class="s2">&quot;src\Classes&quot;</span> <span class="n">-ExcludePath</span> <span class="s2">&quot;src\Classes\Legacy&quot;</span>
+<p><code>-ExcludeFile</code> matches by file name only — glob patterns (<code>*.Tests.ps1</code>) and exact names
+(<code>Legacy.ps1</code>) are both supported, but never a path. A match excludes every file with that name
+anywhere the scan reaches, regardless of which subdirectory it lives in. Use <code>-ExcludePath</code>
+instead when you need to target one specific directory rather than a name pattern.</p>
+<h4 id="exclude-entire-subdirectories">Exclude Entire Subdirectories<a class="headerlink" href="#exclude-entire-subdirectories" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nv">$demoCollector</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderContentCollector</span> <span class="p">|</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="p">`</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>        <span class="n">-Type</span>        <span class="n">Class</span> <span class="p">`</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>        <span class="n">-IncludePath</span> <span class="s2">"src\Classes"</span> <span class="p">`</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>        <span class="n">-ExcludePath</span> <span class="s2">"src\Classes\Legacy"</span>
 </code></pre></div>
-<p><strong>Scan additional file extensions:</strong></p>
-<p>By default, only <code>.ps1</code> files are scanned. Use <code>-FileExtension</code> to include additional types:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nv">$contentCollector</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderContentCollector</span> <span class="p">|</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Class</span> <span class="n">-IncludePath</span> <span class="s2">&quot;src\Classes&quot;</span> <span class="n">-FileExtension</span> <span class="s2">&quot;.ps1&quot;</span><span class="p">,</span> <span class="s2">&quot;.psm1&quot;</span>
+<p><code>-ExcludePath</code> matches by directory, not by name — excluding a path also excludes every file in
+every subdirectory beneath it. The match respects directory boundaries, so excluding
+<code>src\Classes\Legacy</code> does not also exclude an unrelated sibling like <code>src\Classes\LegacyV2</code>.</p>
+<h4 id="scan-additional-file-extensions">Scan Additional File Extensions<a class="headerlink" href="#scan-additional-file-extensions" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nv">$demoCollector</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderContentCollector</span> <span class="p">|</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="p">`</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>        <span class="n">-Type</span>          <span class="n">Class</span> <span class="p">`</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>        <span class="n">-IncludePath</span>   <span class="s2">"src\Classes"</span> <span class="p">`</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>        <span class="n">-FileExtension</span> <span class="s2">".ps1"</span><span class="p">,</span> <span class="s2">".psm1"</span>
 </code></pre></div>
-<p><code>-FileExtension</code> replaces the default — if specified, only the listed extensions are scanned.
-To keep <code>.ps1</code> alongside additional types, always include it explicitly.</p>
-<p><strong>Scan only the top-level directory (no subdirectories):</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nv">$contentCollector</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderContentCollector</span> <span class="p">|</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Class</span> <span class="n">-IncludePath</span> <span class="s2">&quot;src\Classes&quot;</span> <span class="n">-NoRecurse</span>
+<p><code>-FileExtension</code> replaces the default entirely — if specified, only the listed extensions are
+scanned. To keep <code>.ps1</code> alongside additional types, always include it explicitly.</p>
+<h4 id="scan-only-the-top-level-directory">Scan Only the Top-Level Directory<a class="headerlink" href="#scan-only-the-top-level-directory" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nv">$demoCollector</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderContentCollector</span> <span class="p">|</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="p">`</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>        <span class="n">-Type</span>        <span class="n">Class</span> <span class="p">`</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>        <span class="n">-IncludePath</span> <span class="s2">"src\Classes"</span> <span class="p">`</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>        <span class="n">-NoRecurse</span>
 </code></pre></div>
-<p>By default, collectors scan all <code>.ps1</code> files recursively. <code>-NoRecurse</code> limits scanning to the
-immediate directory only.</p>
-<p><strong>Include specific files explicitly:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nv">$contentCollector</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderContentCollector</span> <span class="p">|</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Class</span> <span class="n">-IncludeFile</span> <span class="s2">&quot;src\Classes\MyClass.ps1&quot;</span><span class="p">,</span> <span class="s2">&quot;src\Classes\BaseClass.ps1&quot;</span>
+<p>Reach for <code>-NoRecurse</code> when an entire directory's subdirectories should never be scanned,
+without having to name each one individually via <code>-ExcludePath</code> — useful for a directory whose
+subdirectories hold unrelated content that may grow over time.</p>
+<h4 id="include-specific-files-explicitly">Include Specific Files Explicitly<a class="headerlink" href="#include-specific-files-explicitly" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nv">$demoCollector</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderContentCollector</span> <span class="p">|</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="p">`</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>        <span class="n">-Type</span>        <span class="n">Class</span> <span class="p">`</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>        <span class="n">-IncludeFile</span> <span class="s2">"src\Classes\MyClass.ps1"</span><span class="p">,</span> <span class="s2">"src\Classes\BaseClass.ps1"</span>
 </code></pre></div>
-<p><code>-IncludeFile</code> bypasses path exclusion filters — explicitly listed files are always processed.</p>
-<div class="admonition warning">
-<p class="admonition-title">-FileExtension does not apply to -IncludeFile</p>
-<p><code>-FileExtension</code> only filters files discovered via <code>-IncludePath</code>. Files specified with
-<code>-IncludeFile</code> are always included regardless of their extension.</p>
-</div>
+<p><code>-IncludeFile</code> bypasses every other filter: <code>-ExcludeFile</code>, <code>-ExcludePath</code>, and <code>-FileExtension</code>
+all only apply to files discovered via <code>-IncludePath</code>. A file listed explicitly with
+<code>-IncludeFile</code> is always processed exactly as given, regardless of any exclusion pattern or
+extension restriction that would otherwise apply to it.</p>
+<p>Prefer <code>-IncludePath</code> over <code>-IncludeFile</code> for directories: <code>-IncludePath</code> picks up new files
+automatically as your project grows, while <code>-IncludeFile</code> requires updating the list by hand.
+Reach for <code>-IncludeFile</code> only when you need precise control over a small, fixed set of files.</p>
 <h3 id="5-inspecting-results">5. Inspecting Results<a class="headerlink" href="#5-inspecting-results" title="Permanent link">&para;</a></h3>
-<p>After a build — or after calling <code>Collect()</code> directly — you can inspect what each collector
-found. This is useful for debugging, verifying filter configurations, or exploring collected
-data interactively before running a full build.</p>
-<p><strong>List all registered collectors:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">Get-PSScriptBuilderCollector</span> <span class="n">-ContentCollector</span> <span class="nv">$contentCollector</span>
+<p>Whether a collector is standalone (see <a href="#1-create-a-standalone-collector">Create a Standalone
+Collector</a>) or registered on a <code>ContentCollector</code>, you can
+inspect it directly — which collectors are registered, what they found, and specific items by
+name. This is useful for debugging, verifying filter configurations, or exploring collected data
+before running a full build. The examples below use this <code>ContentCollector</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nv">$demoCollector</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderContentCollector</span> <span class="p">|</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Using</span>    <span class="n">-IncludePath</span> <span class="s2">"src"</span>          <span class="p">|</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Enum</span>     <span class="n">-IncludePath</span> <span class="s2">"src\Enums"</span>    <span class="p">|</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Class</span>    <span class="n">-IncludePath</span> <span class="s2">"src\Classes"</span>  <span class="p">|</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="k">Function</span> <span class="n">-IncludePath</span> <span class="s2">"src\Functions"</span>
 </code></pre></div>
-<p><strong>Get a specific collector by key:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nv">$classCollector</span> <span class="p">=</span> <span class="nb">Get-PSScriptBuilderCollector</span> <span class="n">-ContentCollector</span> <span class="nv">$contentCollector</span> <span class="n">-CollectionKey</span> <span class="s2">&quot;CLASS_DEFINITIONS&quot;</span>
+<h4 id="list-all-registered-collectors">List All Registered Collectors<a class="headerlink" href="#list-all-registered-collectors" title="Permanent link">&para;</a></h4>
+<p>To confirm what's currently registered on a <code>ContentCollector</code> — useful before a build, or when
+debugging an unexpected result — list every collector at once:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nb">Get-PSScriptBuilderCollector</span> <span class="n">-ContentCollector</span> <span class="nv">$demoCollector</span> <span class="p">|</span> <span class="nb">Format-Table</span> <span class="n">CollectionKey</span>
 </code></pre></div>
-<p><a href="../../cmdlets/Get-PSScriptBuilderCollectorContent/"><code>Get-PSScriptBuilderCollectorContent</code></a>
-returns the collected data items for a given collector. Each item is a typed data object
-whose properties depend on the collector type — see <a href="#collected-data-properties">Collected Data Properties</a>
-in the Reference section:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nv">$classes</span> <span class="p">=</span> <span class="nb">Get-PSScriptBuilderCollectorContent</span> <span class="n">-Collector</span> <span class="nv">$classCollector</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="c"># Show name, base class, and source file for each collected class</span>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="nv">$classes</span> <span class="p">|</span> <span class="nb">Format-Table</span> <span class="n">Name</span><span class="p">,</span> <span class="n">BaseClass</span><span class="p">,</span> <span class="n">SourceFile</span>
+<div class="highlight"><span class="filename">Expected output</span><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>CollectionKey
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>-------------
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>USING_STATEMENTS
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>ENUM_DEFINITIONS
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>CLASS_DEFINITIONS
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>FUNCTION_DEFINITIONS
 </code></pre></div>
-<p><strong>Get a single item by name:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nv">$data</span> <span class="p">=</span> <span class="nb">Get-PSScriptBuilderCollectorContent</span> <span class="n">-Collector</span> <span class="nv">$classCollector</span> <span class="n">-ItemName</span> <span class="s2">&quot;MyBaseClass&quot;</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nb">Write-Host</span> <span class="nv">$data</span><span class="p">.</span><span class="n">SourceCode</span>
+<h4 id="get-a-collector-by-key">Get a Collector by Key<a class="headerlink" href="#get-a-collector-by-key" title="Permanent link">&para;</a></h4>
+<p>Once you know which collector you need — from the list above, or from its default key
+documented in <a href="#collector-types">Collector Types</a> — retrieve it directly by key instead of
+picking it out of the full list:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nv">$classCollector</span> <span class="p">=</span> <span class="nb">Get-PSScriptBuilderCollector</span> <span class="p">`</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>    <span class="n">-ContentCollector</span> <span class="nv">$demoCollector</span> <span class="p">`</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>    <span class="n">-CollectionKey</span>    <span class="s2">"CLASS_DEFINITIONS"</span>
+</code></pre></div>
+<p>From here, <code>Get-PSScriptBuilderCollectorContent</code> works exactly as in
+<a href="#1-create-a-standalone-collector">Create a Standalone Collector</a> — it does not matter whether
+the collector came from a <code>ContentCollector</code> or was created standalone. Each item it returns is
+a typed data object whose properties depend on the collector type — see
+<a href="#collected-data-properties">Collected Data Properties</a> in the Reference section.</p>
+<h4 id="look-up-a-specific-item-by-name">Look Up a Specific Item by Name<a class="headerlink" href="#look-up-a-specific-item-by-name" title="Permanent link">&para;</a></h4>
+<p>With a specific collector in hand, retrieve one specific item directly by name instead of
+iterating through everything it collected:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nv">$data</span> <span class="p">=</span> <span class="nb">Get-PSScriptBuilderCollectorContent</span> <span class="n">-Collector</span> <span class="nv">$classCollector</span> <span class="n">-ItemName</span> <span class="s2">"Employee"</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="nv">$data</span><span class="p">.</span><span class="n">SourceCode</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Expected output</span><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>class Employee : Person {
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>    [Address]          $Address
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>    [Department]       $Department
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>    [EmploymentStatus] $Status
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>    [DateTime]         $HireDate
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>    [decimal]          $Salary
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>    Employee(
+<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>        [string]           $firstName,
+<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a>        [string]           $lastName,
+<a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a>        [Address]          $address,
+<a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a>        [Department]       $department,
+<a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a>        [DateTime]         $hireDate,
+<a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a>        [decimal]          $salary
+<a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a>    ) : base($firstName, $lastName) {
+<a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a>        $this.Address    = $address
+<a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a>        $this.Department = $department
+<a id="__codelineno-22-18" name="__codelineno-22-18" href="#__codelineno-22-18"></a>        $this.Status     = [EmploymentStatus]::Active
+<a id="__codelineno-22-19" name="__codelineno-22-19" href="#__codelineno-22-19"></a>        $this.HireDate   = $hireDate
+<a id="__codelineno-22-20" name="__codelineno-22-20" href="#__codelineno-22-20"></a>        $this.Salary     = $salary
+<a id="__codelineno-22-21" name="__codelineno-22-21" href="#__codelineno-22-21"></a>    }
+<a id="__codelineno-22-22" name="__codelineno-22-22" href="#__codelineno-22-22"></a>}
+</code></pre></div>
+<p>What counts as a name depends on the collector type: a class, function, or enum name for those
+collectors; a file's name for a <code>File</code> collector; and the complete <code>using</code> statement text — not
+just the namespace or module name — for a <code>Using</code> collector. All matches are case-insensitive.</p>
+<p>For a <code>Using</code> collector, that means passing the full statement. The returned object's
+<code>SourceFiles</code> property lists every file where the statement was found — since a <code>using</code>
+statement is deduplicated across files, the same statement appearing in more than one file
+still returns as a single item:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nv">$usingCollector</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Using</span> <span class="n">-IncludePath</span> <span class="s2">"src"</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="nv">$usingStatement</span> <span class="p">=</span> <span class="nb">Get-PSScriptBuilderCollectorContent</span> <span class="p">`</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>    <span class="n">-Collector</span> <span class="nv">$usingCollector</span> <span class="p">`</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>    <span class="n">-ItemName</span>  <span class="s2">"using namespace System.Collections.Generic"</span>
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="nv">$usingStatement</span><span class="p">.</span><span class="n">SourceFiles</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Expected output</span><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>...\src\Classes\MyClass.ps1
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>...\src\Classes\BaseClass.ps1
+</code></pre></div>
+<h4 id="look-up-multiple-items-efficiently">Look Up Multiple Items Efficiently<a class="headerlink" href="#look-up-multiple-items-efficiently" title="Permanent link">&para;</a></h4>
+<p><code>Get-PSScriptBuilderCollectorContent</code> doesn't scan the files itself — it calls the collector's
+own <code>.Collect()</code> method internally, then returns the data you asked for. That method is public:
+nothing stops you from calling it directly instead.</p>
+<p>To look up more than one item from the same collector, calling
+<code>Get-PSScriptBuilderCollectorContent -ItemName</code> again for each one works, but reruns
+<code>.Collect()</code> — a full reset and file rescan — every time:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="nv">$employee</span> <span class="p">=</span> <span class="nb">Get-PSScriptBuilderCollectorContent</span> <span class="n">-Collector</span> <span class="nv">$classCollector</span> <span class="n">-ItemName</span> <span class="s2">"Employee"</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="nv">$address</span> <span class="p">=</span> <span class="nb">Get-PSScriptBuilderCollectorContent</span> <span class="n">-Collector</span> <span class="nv">$classCollector</span> <span class="n">-ItemName</span> <span class="s2">"Address"</span>
+</code></pre></div>
+<p>Calling <code>.Collect()</code> yourself once instead, then querying the dictionary directly, avoids the
+repeated rescans:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="nv">$classCollector</span><span class="p">.</span><span class="n">Collect</span><span class="p">()</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="nv">$employee</span> <span class="p">=</span> <span class="nv">$classCollector</span><span class="p">.</span><span class="n">ClassData</span><span class="p">[</span><span class="s1">'Employee'</span><span class="p">]</span>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="nv">$address</span> <span class="p">=</span> <span class="nv">$classCollector</span><span class="p">.</span><span class="n">ClassData</span><span class="p">[</span><span class="s1">'Address'</span><span class="p">]</span>
 </code></pre></div>
 <h3 id="6-updating-collector-configuration">6. Updating Collector Configuration<a class="headerlink" href="#6-updating-collector-configuration" title="Permanent link">&para;</a></h3>
 <p>A <code>ContentCollector</code> is mutable — collectors can be removed and replaced after the initial
 setup. This is useful when build logic is conditional: for example, when a collector's path
 or type depends on a parameter passed to the build script.</p>
-<p><a href="../../cmdlets/Remove-PSScriptBuilderCollector/"><code>Remove-PSScriptBuilderCollector</code></a> removes a
-registered collector by key. The operation is idempotent — removing a non-existent key
-produces a warning, not an error:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nv">$contentCollector</span> <span class="p">=</span> <span class="nv">$contentCollector</span> <span class="p">|</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    <span class="nb">Remove-PSScriptBuilderCollector</span> <span class="n">-CollectionKey</span> <span class="s2">&quot;OLD_FUNCTIONS&quot;</span> <span class="p">|</span>
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="k">Function</span> <span class="n">-CollectionKey</span> <span class="s2">&quot;NEW_FUNCTIONS&quot;</span> <span class="n">-IncludePath</span> <span class="s2">&quot;src\v2&quot;</span>
+<p>Say a <code>$demoCollector</code> currently has a <code>Function</code> collector under a custom key:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="nv">$demoCollector</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderContentCollector</span> <span class="p">|</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="p">`</span>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>        <span class="n">-Type</span>          <span class="k">Function</span> <span class="p">`</span>
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>        <span class="n">-CollectionKey</span> <span class="s2">"OLD_FUNCTIONS"</span> <span class="p">`</span>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>        <span class="n">-IncludePath</span>   <span class="s2">"src\Functions"</span>
 </code></pre></div>
+<p>To remove a registered collector by key, use
+<a href="../../cmdlets/Remove-PSScriptBuilderCollector/"><code>Remove-PSScriptBuilderCollector</code></a>. The
+operation is idempotent — removing a non-existent key produces a warning, not an error.
+Chained with <code>Add-PSScriptBuilderCollector</code>, it replaces the old collector with a new one in a
+single pipeline:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="nv">$demoCollector</span> <span class="p">=</span> <span class="nv">$demoCollector</span> <span class="p">|</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>    <span class="nb">Remove-PSScriptBuilderCollector</span> <span class="n">-CollectionKey</span> <span class="s2">"OLD_FUNCTIONS"</span> <span class="p">|</span>
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="p">`</span>
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>        <span class="n">-Type</span>          <span class="k">Function</span> <span class="p">`</span>
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>        <span class="n">-CollectionKey</span> <span class="s2">"NEW_FUNCTIONS"</span> <span class="p">`</span>
+<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>        <span class="n">-IncludePath</span>   <span class="s2">"src\Functions\v2"</span>
+<a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a>
+<a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a><span class="nb">Get-PSScriptBuilderCollector</span> <span class="n">-ContentCollector</span> <span class="nv">$demoCollector</span> <span class="p">|</span> <span class="nb">Format-Table</span> <span class="n">CollectionKey</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Expected output</span><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>CollectionKey
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>-------------
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>NEW_FUNCTIONS
+</code></pre></div>
+<p>See <a href="#stale-data-after-modification">Stale Data After Modification</a> for an important caveat
+about modifying a <code>ContentCollector</code> that has already been executed.</p>
+<hr />
+<h2 id="cross-collector-dependencies">Cross-Collector Dependencies<a class="headerlink" href="#cross-collector-dependencies" title="Permanent link">&para;</a></h2>
+<p>When components in different collectors depend on each other — through inheritance, type
+references, static initializers, or called functions — PSScriptBuilder tracks the relationship
+and warns if the template's placeholder order might not match it. This only applies in
+<a href="../templates/#validation-modes">Free Mode</a>; Ordered and Hybrid Mode place all Enum, Class, and
+Function components in a single, automatically-ordered block, so cross-collector order is never
+a concern there.</p>
+<p>The actual consequence of ignoring the warning differs by cause:</p>
+<ul>
+<li><strong>Inheritance</strong> genuinely requires the correct order: PowerShell resolves a base class the
+  moment the <code>class X : Y</code> statement is parsed, so if <code>Y</code>'s collector placeholder comes after
+  <code>X</code>'s, the built script fails to even load, with <code>Unable to find type [Y]</code>. PSScriptBuilder's
+  own build-time syntax check cannot catch this — it deliberately ignores <code>TypeNotFound</code> errors,
+  since they're also produced by legitimate external type references. The warning is the only
+  safety net.</li>
+<li><strong>Type references and static initializer references</strong> — a property's type, a static field's
+  initializer expression — are resolved lazily once the whole script has loaded, so their order
+  in the template doesn't actually affect correctness.</li>
+<li><strong>Called functions</strong> aren't left to placeholder order at all: a class depending on a function
+  automatically requires <a href="../templates/#validation-modes">Ordered Mode</a>, and the build fails
+  validation outright until the template provides <code>{{ORDERED_COMPONENTS}}</code>.</li>
+<li>A genuinely <strong>circular</strong> dependency — regardless of which of the above caused it — is caught
+  during the build itself, which fails with <code>Circular dependency detected: ...</code> before a broken
+  script could ever be produced.</li>
+</ul>
+<p>In practice, inheritance is the one case that requires you to actively verify placeholder order
+yourself. See the <a href="../dependency-analysis/#dependencies-across-collectors">Dependency Analysis Guide</a>
+for a full explanation and examples.</p>
+<hr />
+<h2 id="stale-data-after-modification">Stale Data After Modification<a class="headerlink" href="#stale-data-after-modification" title="Permanent link">&para;</a></h2>
+<p>A <code>ContentCollector</code> that has already been executed — directly via <code>.Execute()</code>, or as part of
+a build — can end up holding inconsistent data if you modify it afterward: some collectors show
+real results while others show none at all.</p>
+<p>This happens because adding or removing a collector doesn't trigger a new collection run.
+Existing collectors keep whatever data they gathered the last time <code>.Execute()</code> ran, while a
+newly added collector starts with <code>HasCollected</code> still <code>$false</code> and no data collected yet.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="nv">$demoCollector</span> <span class="p">=</span> <span class="nb">New-PSScriptBuilderContentCollector</span> <span class="p">|</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="n">Class</span> <span class="n">-IncludePath</span> <span class="s2">"src\Classes"</span>
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="nv">$demoCollector</span><span class="p">.</span><span class="n">Execute</span><span class="p">()</span>
+<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>
+<a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="nv">$demoCollector</span> <span class="p">=</span> <span class="nv">$demoCollector</span> <span class="p">|</span>
+<a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a>    <span class="nb">Add-PSScriptBuilderCollector</span> <span class="n">-Type</span> <span class="k">Function</span> <span class="n">-IncludePath</span> <span class="s2">"src\Functions"</span>
+<a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a>
+<a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a><span class="nv">$classCollector</span> <span class="p">=</span> <span class="nb">Get-PSScriptBuilderCollector</span> <span class="p">`</span>
+<a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a>    <span class="n">-ContentCollector</span> <span class="nv">$demoCollector</span> <span class="p">`</span>
+<a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a>    <span class="n">-CollectionKey</span>    <span class="s2">"CLASS_DEFINITIONS"</span>
+<a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a>
+<a id="__codelineno-30-12" name="__codelineno-30-12" href="#__codelineno-30-12"></a><span class="nv">$funcCollector</span> <span class="p">=</span> <span class="nb">Get-PSScriptBuilderCollector</span> <span class="p">`</span>
+<a id="__codelineno-30-13" name="__codelineno-30-13" href="#__codelineno-30-13"></a>    <span class="n">-ContentCollector</span> <span class="nv">$demoCollector</span> <span class="p">`</span>
+<a id="__codelineno-30-14" name="__codelineno-30-14" href="#__codelineno-30-14"></a>    <span class="n">-CollectionKey</span>    <span class="s2">"FUNCTION_DEFINITIONS"</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">Expected output</span><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>$classCollector.HasCollected  # True  - already has data from the earlier Execute()
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>$funcCollector.HasCollected   # False - never collected
+</code></pre></div>
+<p>Re-run the affected step — a fresh build, or <code>.Execute()</code> yourself — before relying on the
+<code>ContentCollector</code>'s data again.</p>
 <hr />
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
 <h3 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h3>
-<p>All parameters are available on both <code>New-PSScriptBuilderCollector</code> and
-<code>Add-PSScriptBuilderCollector</code>:</p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>-Type</code></td>
-<td><code>string</code></td>
-<td><strong>Required.</strong> One of: <code>Using</code>, <code>Enum</code>, <code>Class</code>, <code>Function</code>, <code>File</code></td>
-</tr>
-<tr>
-<td><code>-CollectionKey</code></td>
-<td><code>string</code></td>
-<td>Custom token key for use in templates. Defaults to the type's default key</td>
-</tr>
-<tr>
-<td><code>-IncludePath</code></td>
-<td><code>string[]</code></td>
-<td>Directories to scan. Relative to project root or absolute</td>
-</tr>
-<tr>
-<td><code>-IncludeFile</code></td>
-<td><code>string[]</code></td>
-<td>Specific files or glob patterns to include. Bypasses path exclusion filters</td>
-</tr>
-<tr>
-<td><code>-ExcludePath</code></td>
-<td><code>string[]</code></td>
-<td>Directories to exclude. Takes precedence over <code>-IncludePath</code></td>
-</tr>
-<tr>
-<td><code>-ExcludeFile</code></td>
-<td><code>string[]</code></td>
-<td>File patterns to exclude (e.g. <code>"*.Tests.ps1"</code>)</td>
-</tr>
-<tr>
-<td><code>-FileExtension</code></td>
-<td><code>string[]</code></td>
-<td>File extensions to scan. Defaults to <code>@(".ps1")</code>. Use to include additional types, e.g. <code>@(".ps1", ".psm1")</code></td>
-</tr>
-<tr>
-<td><code>-NoRecurse</code></td>
-<td><code>switch</code></td>
-<td>Scan only the top-level directory of each <code>-IncludePath</code>. Default is recursive</td>
-</tr>
-</tbody>
-</table>
+<p><code>New-PSScriptBuilderCollector</code> and <code>Add-PSScriptBuilderCollector</code> share the exact same
+parameter set — unsurprising, since <code>Add-PSScriptBuilderCollector</code> calls
+<code>New-PSScriptBuilderCollector</code> internally before registering the result on a <code>ContentCollector</code>
+(see <a href="#2-create-a-contentcollector">Create a ContentCollector</a>).</p>
+<p>Every parameter here was already demonstrated in context earlier in this guide: <code>-CollectionKey</code>
+in <a href="#3-collection-keys">Collection Keys</a>, and the rest in <a href="#4-filtering-files">Filtering Files</a>.</p>
+<p>See <a href="../../cmdlets/New-PSScriptBuilderCollector/">Cmdlet Reference: New-PSScriptBuilderCollector</a>
+or <a href="../../cmdlets/Add-PSScriptBuilderCollector/">Cmdlet Reference: Add-PSScriptBuilderCollector</a>
+for the full parameter table.</p>
 <h3 id="file-resolution-rules">File Resolution Rules<a class="headerlink" href="#file-resolution-rules" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Relative paths are resolved against <code>$Global:PSScriptBuilderProjectRoot</code></li>
-<li><code>-IncludeFile</code> entries bypass all path exclusion filters</li>
+<li>Relative paths are resolved against the project root — see the
+  <a href="../configuration/#project-root-discovery">Configuration Guide</a> for how that's determined and
+  how to override it</li>
 <li>A non-existent <code>-IncludePath</code> produces a <strong>warning</strong> at collector creation time — the
   collector is still created to support scenarios where the directory is generated later.
   At collection time (when the build runs), a still-missing path throws an <code>IOException</code>.</li>
 <li><code>-NoRecurse</code> only affects <code>-IncludePath</code> scanning; <code>-IncludeFile</code> entries are always explicit</li>
 </ul>
 <h3 id="collected-data-properties">Collected Data Properties<a class="headerlink" href="#collected-data-properties" title="Permanent link">&para;</a></h3>
-<p>Each collector type exposes type-specific properties on its data objects:</p>
+<p>Every collector, once run, returns one data object describing each item it finds in your source
+files: a class, a function, an enum, a using statement, or a file, depending on the collector's
+type. The exact structure of that data object differs accordingly — <code>Name</code>, <code>SourceCode</code>, and
+<code>SourceFile</code> are common to <code>Class</code>, <code>Function</code>, and <code>Enum</code>, while <code>Using</code> and <code>File</code> expose a
+different, purpose-specific set instead — reflecting that a using statement and a raw file are
+conceptually different from a named PowerShell definition.</p>
+<p>The remaining properties — <code>BaseClass</code>, <code>TypeReferences</code>, <code>StaticInitializerReferences</code>, and
+<code>CalledFunctions</code> — are what PSScriptBuilder itself uses internally to build the dependency
+graph that drives topological sorting and cross-collector dependency detection (see
+<a href="#cross-collector-dependencies">Cross-Collector Dependencies</a>). Like everything else a collector
+extracts, they come from static AST analysis, not from running any code, and they're available
+to you the same way — whether you're inspecting a collector interactively, as in
+<a href="#5-inspecting-results">Inspecting Results</a>, or writing your own validation logic against
+collected data.</p>
+<p>The full property reference:</p>
 <table>
 <thead>
 <tr>
-<th>Collector Type</th>
-<th>Data Properties</th>
+<th>Property</th>
+<th>Applies To</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>Class</code></td>
-<td><code>Name</code>, <code>SourceCode</code>, <code>SourceFile</code>, <code>BaseClass</code>, <code>TypeReferences</code>, <code>StaticInitializerReferences</code>, <code>CalledFunctions</code></td>
+<td><code>Name</code></td>
+<td>Class, Function, Enum</td>
+<td>Component name</td>
 </tr>
 <tr>
-<td><code>Function</code></td>
-<td><code>Name</code>, <code>SourceCode</code>, <code>SourceFile</code>, <code>CalledFunctions</code>, <code>TypeReferences</code></td>
+<td><code>SourceCode</code></td>
+<td>Class, Function, Enum</td>
+<td>Exact source code as extracted from the file</td>
 </tr>
 <tr>
-<td><code>Enum</code></td>
-<td><code>Name</code>, <code>SourceCode</code>, <code>SourceFile</code></td>
+<td><code>SourceFile</code></td>
+<td>Class, Function, Enum</td>
+<td>Path to the file it was collected from</td>
 </tr>
 <tr>
-<td><code>Using</code></td>
-<td><code>Statement</code>, <code>SourceFiles</code></td>
+<td><code>BaseClass</code></td>
+<td>Class</td>
+<td>Name of the inherited class, or empty if none. Has a hard load-order requirement — see <a href="#cross-collector-dependencies">Cross-Collector Dependencies</a></td>
 </tr>
 <tr>
-<td><code>File</code></td>
-<td><code>FileName</code>, <code>FullPath</code>, <code>Content</code></td>
+<td><code>TypeReferences</code></td>
+<td>Class, Function</td>
+<td>Non-built-in types referenced in the body (property/parameter types, return types, casts)</td>
+</tr>
+<tr>
+<td><code>StaticInitializerReferences</code></td>
+<td>Class</td>
+<td>Types referenced in static property initializer expressions</td>
+</tr>
+<tr>
+<td><code>CalledFunctions</code></td>
+<td>Class, Function</td>
+<td>Names of other project-defined functions called in the body. A <code>Class</code> calling a function this way requires <a href="../templates/#validation-modes">Ordered Mode</a> — see <a href="#cross-collector-dependencies">Cross-Collector Dependencies</a></td>
+</tr>
+<tr>
+<td><code>Statement</code></td>
+<td>Using</td>
+<td>The full <code>using namespace</code>/<code>using module</code> statement</td>
+</tr>
+<tr>
+<td><code>SourceFiles</code></td>
+<td>Using</td>
+<td>Every file where the statement was found (deduplicated)</td>
+</tr>
+<tr>
+<td><code>FileName</code></td>
+<td>File</td>
+<td>The file's name</td>
+</tr>
+<tr>
+<td><code>FullPath</code></td>
+<td>File</td>
+<td>The file's absolute path</td>
+</tr>
+<tr>
+<td><code>Content</code></td>
+<td>File</td>
+<td>The complete raw file content</td>
 </tr>
 </tbody>
 </table>
-<p><code>Name</code>, <code>SourceCode</code>, and <code>SourceFile</code> are present on all types except <code>Using</code> and <code>File</code> and
-contain the component name, the exact source code as extracted from the file, and the path to
-the file it was collected from. The following properties carry additional dependency and
-structural information:</p>
-<p><strong><code>BaseClass</code></strong> (<code>Class</code> only)</p>
-<p>The name of the class this class inherits from, or an empty string if the class has no base
-class. PSScriptBuilder uses this to add an <code>Inheritance</code> edge in the dependency graph, which
-creates a hard ordering constraint: the base class must appear before the derived class in the
-output script.</p>
-<p><strong><code>TypeReferences</code></strong> (<code>Class</code>, <code>Function</code>)</p>
-<p>All non-built-in types referenced in the component's body. For classes, this includes property
-type annotations, method parameter types, return types, and type casts in method bodies. For
-functions, it includes parameter types, return types, and type casts. Built-in .NET types
-(<code>string</code>, <code>int</code>, <code>bool</code>, <code>System.*</code>, etc.) are automatically excluded. PSScriptBuilder uses
-these references to add <code>TypeReference</code> edges in the dependency graph. Unlike <code>Inheritance</code> and
-<code>StaticInitializer</code> edges, <code>TypeReference</code> edges do not create a hard ordering constraint —
-methods only execute after all types are loaded — but they still influence the topological sort.</p>
-<p><strong><code>StaticInitializerReferences</code></strong> (<code>Class</code> only)</p>
-<p>Types referenced in static property initializer expressions, for example
-<code>static [MyClass] $Default = [MyClass]::new()</code>. PowerShell evaluates static initializers
-immediately when a class definition is loaded, so any type referenced in an initializer must
-already be defined at that point. This creates the same hard ordering constraint as inheritance.
-PSScriptBuilder adds <code>StaticInitializer</code> edges for these references and treats them identically
-to <code>Inheritance</code> edges when detecting fatal cycles.</p>
-<p><strong><code>CalledFunctions</code></strong> (<code>Class</code>, <code>Function</code>)</p>
-<p>Names of other functions called within the component's body. PSScriptBuilder uses these to add
-<code>FunctionCall</code> edges in the dependency graph. These edges do not create a hard ordering
-constraint but can contribute to cross-dependencies when classes and functions reference each
-other.</p>
-<p><strong><code>Statement</code></strong> (<code>Using</code> only)</p>
-<p>The full <code>using namespace</code> or <code>using module</code> statement as a string. <code>SourceFiles</code> contains the
-paths of all files where this statement was found — the Using collector deduplicates identical
-statements across files.</p>
-<p><strong><code>FileName</code></strong>, <strong><code>FullPath</code></strong>, <strong><code>Content</code></strong> (<code>File</code> only)</p>
-<p>The file name, absolute path, and complete raw content of the file. File collectors include
-files as-is without any AST analysis.</p>
 <h3 id="execution-order">Execution Order<a class="headerlink" href="#execution-order" title="Permanent link">&para;</a></h3>
-<p>Collectors always execute in <code>CollectorType</code> enum order, regardless of registration order:</p>
+<p>Collectors always execute in a fixed order — <code>Using</code>, <code>Enum</code>, <code>Class</code>, <code>Function</code>, <code>File</code> —
+regardless of the order you registered them in. Whether you call
+<code>Add-PSScriptBuilderCollector</code> for <code>Function</code> before <code>Class</code>, or the other way around, execution
+always follows this same sequence; a <code>ContentCollector</code> groups its collectors internally by type
+before running any of them.</p>
+<p>This means you don't need to think about registration order when building a <code>ContentCollector</code>
+— add collectors in whatever order is most convenient for your build script, and
+PSScriptBuilder handles the rest.</p>
 <table>
 <thead>
 <tr>
@@ -3589,95 +4610,17 @@ files as-is without any AST analysis.</p>
 </tr>
 </tbody>
 </table>
-<p>This is the order of the <em>collection phase</em>. The position of each collector's output in the
-final script is controlled by the template — see the <a href="../templates/">Templates Guide</a>.</p>
-<h3 id="contentcollector-methods">ContentCollector Methods<a class="headerlink" href="#contentcollector-methods" title="Permanent link">&para;</a></h3>
-<p><code>New-PSScriptBuilderContentCollector</code> returns a <code>PSScriptBuilderContentCollector</code> object. Most
-operations on it are covered by the collector cmdlets, but the object also exposes the following
-methods directly:</p>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Returns</th>
-<th>Cmdlet equivalent</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>AddCollector(collector)</code></td>
-<td><code>void</code></td>
-<td><code>Add-PSScriptBuilderCollector</code></td>
-<td>Adds a collector to the collection</td>
-</tr>
-<tr>
-<td><code>RemoveCollector(key)</code></td>
-<td><code>bool</code></td>
-<td><code>Remove-PSScriptBuilderCollector</code></td>
-<td>Removes a collector by key. Returns <code>$true</code> if removed, <code>$false</code> if not found</td>
-</tr>
-<tr>
-<td><code>GetCollector(key)</code></td>
-<td><code>PSScriptBuilderCollectorBase</code></td>
-<td><code>Get-PSScriptBuilderCollector</code></td>
-<td>Returns the collector with the given key</td>
-</tr>
-<tr>
-<td><code>GetCollectors()</code></td>
-<td><code>PSScriptBuilderCollectorBase[]</code></td>
-<td><code>Get-PSScriptBuilderCollector</code></td>
-<td>Returns all collectors, sorted by <code>CollectorType</code></td>
-</tr>
-<tr>
-<td><code>GetCount()</code></td>
-<td><code>int</code></td>
-<td>—</td>
-<td>Number of registered collectors</td>
-</tr>
-<tr>
-<td><code>Clear()</code></td>
-<td><code>void</code></td>
-<td>—</td>
-<td>Removes all collectors at once</td>
-</tr>
-</tbody>
-</table>
-<p><code>GetCount()</code> and <code>Clear()</code> have no cmdlet equivalent. <code>GetCount()</code> is useful for asserting that
-all expected collectors were registered before starting a build. <code>Clear()</code> resets the object for
-reuse — for example in a script that dynamically rebuilds the collector configuration.</p>
-<hr />
-<h2 id="tips">Tips<a class="headerlink" href="#tips" title="Permanent link">&para;</a></h2>
-<div class="admonition tip">
-<p class="admonition-title">Use fluent chaining for build scripts</p>
-<p><code>Add-PSScriptBuilderCollector</code> returns the <code>ContentCollector</code>, making it easy to chain
-multiple registrations in one expression. This keeps build scripts readable and compact.</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Prefer <code>-IncludePath</code> over <code>-IncludeFile</code> for directories</p>
-<p><code>-IncludePath</code> handles new files automatically as your project grows. Use <code>-IncludeFile</code>
-only when you need precise control over a small, fixed set of files.</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Use <code>-NoRecurse</code> for flat source layouts</p>
-<p>If all your classes sit directly in one folder without subdirectories, <code>-NoRecurse</code> avoids
-accidentally picking up files in nested test or temporary directories.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Collection keys must be unique</p>
-<p>Adding two collectors with the same <code>CollectionKey</code> throws an <code>InvalidOperationException</code>.
-Use distinct keys when registering multiple collectors of the same type.</p>
-</div>
-<div class="admonition info">
-<p class="admonition-title">Class and Function collectors track dependencies</p>
-<p>The <code>TypeReferences</code>, <code>StaticInitializerReferences</code>, and <code>CalledFunctions</code> properties are populated by the AST engine
-during collection and are used by the dependency analyzer to determine load order. You do
-not need to configure this — it happens automatically.</p>
-</div>
+<p>This is the order of the <em>collection phase</em> only — it determines when each collector's files
+are scanned, not where its content ends up in the final output. The position of each
+collector's output in the assembled script is controlled entirely by the template's placeholder
+order — see the <a href="../templates/">Templates Guide</a>.</p>
 <hr />
 <h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
 <ul>
+<li><a href="../templates/">Templates Guide</a> — how a collector's <code>CollectionKey</code> becomes a template placeholder</li>
 <li><a href="../dependency-analysis/">Dependency Analysis Guide</a> — how class and function dependencies are resolved</li>
+<li><a href="../file-watching/">File Watching Guide</a> — every collector's <code>-IncludePath</code> is watched recursively for automatic rebuilds</li>
+<li><a href="../../reference/types/#collectors">Type Reference: Collectors</a> — <code>PSScriptBuilderContentCollector</code> method table and collected data type summary</li>
 </ul>
 
 
