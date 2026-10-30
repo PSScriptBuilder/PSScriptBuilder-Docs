@@ -3862,6 +3862,23 @@ the following phases in order:</p>
 <li>Writes the final output file</li>
 <li>Optionally writes a source map sidecar alongside the output file</li>
 </ol>
+<p>The same phases, grouped:</p>
+<pre class="mermaid"><code>%%{init: {'flowchart': {'subGraphTitleMargin': {'top': 10, 'bottom': 10}}}}%%
+flowchart TD
+    A[Load Template] --&gt; B[Collect Sources]
+    B --&gt; C
+
+    subgraph C[Analyze Dependencies]
+        direction LR
+        C1[Build Dependency Graph] --&gt; C2[Detect Circular Dependencies]
+        C2 --&gt; C3[Topological Sort]
+    end
+
+    C --&gt; D[Assemble Output]
+    D --&gt; E[Write Result]
+
+    classDef failStyle stroke:#e53935,stroke-width:2px,stroke-dasharray: 3 3
+    C -.-&gt;|error| X[Build fails immediately]:::failStyle</code></pre>
 <p>This is a fail-fast pipeline: any step failing stops the build immediately, rather than
 producing partial output. See <a href="#error-handling">Error Handling</a> for what each failure looks like
 and how to resolve it.</p>

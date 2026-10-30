@@ -3643,6 +3643,20 @@ isn't.</p>
 <p>Free Mode, possible whenever no dependency forces otherwise, is used throughout the Walkthrough
 below; see <a href="#3-ordered-mode-and-hybrid-mode">Ordered Mode and Hybrid Mode</a> for when the other
 two apply.</p>
+<p>Which mode applies, visualized:</p>
+<pre class="mermaid"><code>flowchart TD
+    A[Analyze code dependencies] --&gt; B{Class depends on function?}
+    B --&gt;|yes| Ordered[Ordered Mode&lt;br/&gt;required]
+    B --&gt;|no| C{Combined placeholder already used?}
+    C --&gt;|yes| Hybrid[Hybrid Mode]
+    C --&gt;|no| Free[Free Mode]
+
+    classDef orderedStyle stroke:#e53935,stroke-width:2px
+    classDef hybridStyle stroke:#fb8c00,stroke-width:2px
+    classDef freeStyle stroke:#43a047,stroke-width:2px
+    class Ordered orderedStyle
+    class Hybrid hybridStyle
+    class Free freeStyle</code></pre>
 <hr />
 <h2 id="walkthrough">Walkthrough<a class="headerlink" href="#walkthrough" title="Permanent link">&para;</a></h2>
 <p>A collector connects to the template through its <code>CollectionKey</code> — this is the value that

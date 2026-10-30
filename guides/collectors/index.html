@@ -3977,6 +3977,34 @@ This allows the build to determine the correct load order and produce a topologi
 output script.</p>
 <p>The collectors define <em>what</em> gets collected and <em>from where</em> — the
 <a href="../templates/">template</a> defines <em>how</em> it is assembled.</p>
+<pre class="mermaid"><code>flowchart LR
+    classDef collectorStyle stroke:#1e88e5,stroke-width:2px
+    classDef containerStyle stroke:#8e24aa,stroke-width:2px
+    classDef buildStyle stroke:#43a047,stroke-width:2px
+
+    Source[Source Files]
+
+    Using([Using Collector]):::collectorStyle
+    Enum([Enum Collector]):::collectorStyle
+    Class([Class Collector]):::collectorStyle
+    Function([Function Collector]):::collectorStyle
+    File([File Collector]):::collectorStyle
+
+    Source --&gt; Using
+    Source --&gt; Enum
+    Source --&gt; Class
+    Source --&gt; Function
+    Source --&gt; File
+
+    CC[ContentCollector]:::containerStyle
+    Using --&gt; CC
+    Enum --&gt; CC
+    Class --&gt; CC
+    Function --&gt; CC
+    File --&gt; CC
+
+    Build[["Invoke-PSScriptBuilderBuild&lt;br/&gt;+ Template"]]:::buildStyle
+    CC --&gt; Build</code></pre>
 <h2 id="collector-types">Collector Types<a class="headerlink" href="#collector-types" title="Permanent link">&para;</a></h2>
 <p>PSScriptBuilder provides five collector types, each responsible for exactly one kind of
 component:</p>

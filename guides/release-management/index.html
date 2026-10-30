@@ -3876,6 +3876,16 @@ a single step.</p>
 <p>The workflow follows the same three-phase sequence on every release: bump the version and
 refresh metadata, propagate the updated values to your project files, then build the output
 script from the updated sources.</p>
+<p>The release workflow, visualized:</p>
+<pre class="mermaid"><code>flowchart LR
+    A[1. Bump Version +&lt;br/&gt;Refresh Metadata] --&gt; B[2. Propagate to&lt;br/&gt;Project Files]
+    B --&gt; C[3. Build Output&lt;br/&gt;Script]
+
+    Backup[Backup created first,&lt;br/&gt;restored automatically on error]
+    B -.- Backup
+
+    classDef safetyStyle stroke:#43a047,stroke-width:2px,stroke-dasharray: 2 2
+    class Backup safetyStyle</code></pre>
 <hr />
 <h2 id="walkthrough">Walkthrough<a class="headerlink" href="#walkthrough" title="Permanent link">&para;</a></h2>
 <p>The following steps are grouped into three stages, one for each phase of the release workflow:
